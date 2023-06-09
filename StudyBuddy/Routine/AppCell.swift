@@ -27,7 +27,7 @@ final class AppCell: UITableViewCell, Identifiable {
         label.font = UIFont(name: "Courier New", size: 15)
         return label
     }()
-    private lazy var toggle: UISwitch = {
+    lazy var toggle: UISwitch = {
         let toggle = UISwitch()
         toggle.isOn = false
         toggle.isEnabled = true
