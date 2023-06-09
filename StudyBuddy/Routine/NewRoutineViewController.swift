@@ -25,6 +25,8 @@ class NewRoutineViewController: UIViewController {
         textField.textColor = .black
         textField.font = UIFont(name: "Courier New", size: 18)
         textField.layer.borderWidth = 1
+        textField.addPadding(.left(6))
+        textField.delegate = self
         return textField
     }()
     private lazy var descriptionLabel: UILabel = {
@@ -41,6 +43,8 @@ class NewRoutineViewController: UIViewController {
         textField.textColor = .black
         textField.font = UIFont(name: "Courier New", size: 15)
         textField.layer.borderWidth = 1
+        textField.addPadding(.left(6))
+        textField.delegate = self
         return textField
     }()
 
@@ -216,5 +220,12 @@ extension NewRoutineViewController: UIPickerViewDelegate, UIPickerViewDataSource
         default:
             return 1
         }
+    }
+}
+
+extension NewRoutineViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
     }
 }

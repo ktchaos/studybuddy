@@ -11,18 +11,104 @@ import SnapKit
 class SelectPomodoroViewController: UIViewController {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Selecione a quantidade de sessões:"
+        label.text = "Para 2 horas, sugerimos esses dois tipos de configuração para utilizar o pomodoro.\n\n Selecione a quantidade de sessões:"
         label.numberOfLines = 0
-        label.font = UIFont(name: "Courier New", size: 15)
+        label.font = UIFont(name: "Courier New", size: 22)
         label.textColor = .black
         return label
     }()
 
-    private lazy var pomodoroPickerView: UIPickerView = {
-        let pickerView = UIPickerView()
-        pickerView.dataSource = self
-        pickerView.delegate = self
-        return pickerView
+    // MARK: First Option
+    private lazy var sessionOneTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "4 sessões"
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.font = UIFont(name: "Courier New", size: 20)
+        label.textColor = .black
+        return label
+    }()
+
+    private lazy var sessionOneDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "(25 minutos de foco + 5 minutos de descanso)"
+        label.numberOfLines = 0
+        let font = UIFont(name: "Courier New", size: 15)
+        label.font = font
+        label.textColor = .black
+        return label
+    }()
+
+    private lazy var helperOneStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [sessionOneTitleLabel, sessionOneDescriptionLabel])
+        stack.axis = .vertical
+        stack.spacing = 6
+        return stack
+    }()
+
+    lazy var toggleOne: UISwitch = {
+        let toggle = UISwitch()
+        toggle.isOn = false
+        toggle.isEnabled = true
+        toggle.addTarget(self, action: #selector(self.switchValueDidChange), for: .valueChanged)
+        toggle.tag = 1
+        return toggle
+    }()
+
+    private lazy var optionOneStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [helperOneStackView, toggleOne])
+        stack.axis = .horizontal
+        stack.distribution = .fill
+        stack.backgroundColor = .systemGray6
+        stack.layer.cornerRadius = 5
+        return stack
+    }()
+
+    // MARK: Second Option
+    private lazy var sessionTwoTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "2 sessões"
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.font = UIFont(name: "Courier New", size: 20)
+        label.textColor = .black
+        return label
+    }()
+
+    private lazy var sessionTwoDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "(50 minutos de foco + 10 minutos de descanso)"
+        label.numberOfLines = 0
+        let font = UIFont(name: "Courier New", size: 15)
+        label.font = font
+        label.textColor = .black
+        return label
+    }()
+
+    private lazy var helperTwoStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [sessionTwoTitleLabel, sessionTwoDescriptionLabel])
+        stack.axis = .vertical
+        stack.spacing = 6
+        return stack
+    }()
+
+    lazy var toggleTwo: UISwitch = {
+        let toggle = UISwitch()
+        toggle.isOn = false
+        toggle.isEnabled = true
+        toggle.tag = 2
+        toggle.addTarget(self, action: #selector(self.switchValueDidChange), for: .valueChanged)
+        return toggle
+    }()
+
+    private lazy var optionTwoStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [helperTwoStackView, toggleTwo])
+        stack.axis = .horizontal
+        stack.distribution = .fill
+
+        stack.backgroundColor = .systemGray6
+        stack.layer.cornerRadius = 5
+        return stack
     }()
 
     private lazy var noButton: UIButton = {
@@ -46,7 +132,6 @@ class SelectPomodoroViewController: UIViewController {
         return button
     }()
 
-    var pickerData: [String] = ["1", "2", "3", "4"]
     var routine: Routine?
 
     override func viewDidLoad() {
@@ -63,26 +148,35 @@ class SelectPomodoroViewController: UIViewController {
     }
 
     func setupViews() {
-        addShadow(view: pomodoroPickerView, shadowOpacity: 0.2)
         addShadow(view: noButton)
         addShadow(view: nextButton)
+        addShadow(view: optionOneStackView)
+        addShadow(view: optionTwoStackView)
         view.addSubview(descriptionLabel)
-        view.addSubview(pomodoroPickerView)
         view.addSubview(noButton)
         view.addSubview(nextButton)
+        view.addSubview(optionOneStackView)
+        view.addSubview(optionTwoStackView)
 
         descriptionLabel.snp.makeConstraints {
-            $0.height.equalTo(48)
+            $0.height.equalTo(94)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
             $0.top.equalToSuperview().offset(150)
         }
 
-        pomodoroPickerView.snp.makeConstraints {
-            $0.height.equalTo(100)
+        optionOneStackView.snp.makeConstraints {
+            $0.height.equalTo(64)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(descriptionLabel.snp.bottom)
+            $0.top.equalTo(descriptionLabel.snp.bottom).offset(32)
+        }
+
+        optionTwoStackView.snp.makeConstraints {
+            $0.height.equalTo(64)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().inset(16)
+            $0.top.equalTo(optionOneStackView.snp.bottom).offset(16)
         }
 
         nextButton.snp.makeConstraints {
@@ -117,16 +211,15 @@ class SelectPomodoroViewController: UIViewController {
     }
 }
 
-extension SelectPomodoroViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+extension SelectPomodoroViewController {
+    @objc func switchValueDidChange(sender:UISwitch!) {
+        switch sender.tag {
+        case 1:
+            toggleTwo.isOn = false
+        case 2:
+            toggleOne.isOn = false
+        default:
+            return
+        }
     }
 }

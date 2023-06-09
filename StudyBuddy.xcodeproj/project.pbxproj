@@ -25,6 +25,7 @@
 		CB490E192A329F3100276780 /* SelectAppsToBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E182A329F3100276780 /* SelectAppsToBlockViewController.swift */; };
 		CB490E1B2A32A36E00276780 /* SoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E1A2A32A36E00276780 /* SoundCell.swift */; };
 		CB490E1D2A32B02900276780 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E1C2A32B02900276780 /* AppCell.swift */; };
+		CB510DCE2A336C390092147D /* TextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB510DCD2A336C390092147D /* TextField+Extensions.swift */; };
 		CBEFAABC2A325C5D00DA24CB /* RoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFAABB2A325C5D00DA24CB /* RoutineCell.swift */; };
 		CBEFAAC32A325D6E00DA24CB /* Cell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFAAC22A325D6E00DA24CB /* Cell+Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		CB490E182A329F3100276780 /* SelectAppsToBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAppsToBlockViewController.swift; sourceTree = "<group>"; };
 		CB490E1A2A32A36E00276780 /* SoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCell.swift; sourceTree = "<group>"; };
 		CB490E1C2A32B02900276780 /* AppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
+		CB510DCD2A336C390092147D /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
 		CBEFAABB2A325C5D00DA24CB /* RoutineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCell.swift; sourceTree = "<group>"; };
 		CBEFAAC22A325D6E00DA24CB /* Cell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Extensions.swift"; sourceTree = "<group>"; };
 		D9F7E1D2E159FAA28FCA95C6 /* Pods-StudyBuddyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyTests.debug.xcconfig"; path = "Target Support Files/Pods-StudyBuddyTests/Pods-StudyBuddyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				CBEFAAC22A325D6E00DA24CB /* Cell+Extensions.swift */,
+				CB510DCD2A336C390092147D /* TextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				CB178BF52A16F5DE0079A20F /* MainViewController.swift in Sources */,
 				CB178BF12A16F5DE0079A20F /* AppDelegate.swift in Sources */,
 				CB490E102A326FDA00276780 /* RoutineDetailsViewController.swift in Sources */,
+				CB510DCE2A336C390092147D /* TextField+Extensions.swift in Sources */,
 				CBEFAAC32A325D6E00DA24CB /* Cell+Extensions.swift in Sources */,
 				CBEFAABC2A325C5D00DA24CB /* RoutineCell.swift in Sources */,
 				CB490E192A329F3100276780 /* SelectAppsToBlockViewController.swift in Sources */,
