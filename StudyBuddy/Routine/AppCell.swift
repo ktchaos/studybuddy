@@ -31,7 +31,6 @@ final class AppCell: UITableViewCell, Identifiable {
         let toggle = UISwitch()
         toggle.isOn = false
         toggle.isEnabled = true
-        
         return toggle
     }()
     private lazy var hStack: UIStackView = {

@@ -117,7 +117,6 @@ class NewRoutineViewController: UIViewController {
             $0.top.equalTo(titleLabel.snp.bottom)
         }
 
-
         descriptionLabel.snp.makeConstraints {
             $0.height.equalTo(48)
             $0.leading.equalToSuperview().offset(16)

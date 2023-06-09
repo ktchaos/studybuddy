@@ -9,29 +9,13 @@ import Foundation
 import UIKit
 
 struct Routine {
+    var titleOfRoutine: String
     var nameOfTheRoutine: String
     var rangeTime: String
 }
 
 final class RoutineCell: UITableViewCell, Identifiable {
     // MARK: Properties
-
-    private lazy var icon: UIImageView = {
-        let imageView = UIImageView()
-        imageView.tintColor = .black
-        return imageView
-    }()
-    private lazy var helperView: UIView = {
-        let view = UIView()
-        return view
-    }()
-    private lazy var vStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [icon, helperView])
-        stack.axis = .vertical
-        stack.setContentHuggingPriority(.defaultLow, for: .horizontal)
-        stack.distribution = .fillProportionally
-        return stack
-    }()
     private lazy var nameOfTheRoutineLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -45,11 +29,17 @@ final class RoutineCell: UITableViewCell, Identifiable {
         label.font = UIFont(name: "Courier New", size: 15)
         return label
     }()
+    private lazy var toggle: UISwitch = {
+        let toggle = UISwitch()
+        toggle.isOn = false
+        toggle.isEnabled = true
+        return toggle
+    }()
     private lazy var hStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [nameOfTheRoutineLabel, durationLabel])
+        let stack = UIStackView(arrangedSubviews: [nameOfTheRoutineLabel, durationLabel, toggle])
         stack.axis = .horizontal
         stack.spacing = 16
-        stack.distribution = .fillEqually
+        stack.distribution = .fill
         return stack
     }()
 
@@ -69,6 +59,12 @@ final class RoutineCell: UITableViewCell, Identifiable {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        toggle.setOn(selected, animated: true)
+    }
+
+
     // MARK: Setup
 
     func setupSubviews() {
@@ -77,10 +73,6 @@ final class RoutineCell: UITableViewCell, Identifiable {
     }
 
     func setupConstraints() {
-//        icon.snp.makeConstraints {
-//            $0.width.equalTo(42)
-//            $0.height.equalTo(42)
-//        }
         hStack.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(6)
             $0.trailing.equalToSuperview().inset(6)
@@ -90,7 +82,7 @@ final class RoutineCell: UITableViewCell, Identifiable {
 
     func setupCell(with routine: Routine) {
         self.addShadow()
-        nameOfTheRoutineLabel.text = routine.nameOfTheRoutine
+        nameOfTheRoutineLabel.text = routine.titleOfRoutine
         durationLabel.text = routine.rangeTime
     }
 

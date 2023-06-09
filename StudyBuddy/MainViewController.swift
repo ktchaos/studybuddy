@@ -28,6 +28,7 @@ class MainViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.allowsMultipleSelection = true
         return tableView
     }()
 
@@ -83,7 +84,7 @@ class MainViewController: UIViewController {
 
     func createLastRoutine() {
         let newRoutineCell = RoutineCell()
-        let newRoutine = Routine(nameOfTheRoutine: "Foco na aula", rangeTime: "2 horas")
+        let newRoutine = Routine(titleOfRoutine: "Foco na aula", nameOfTheRoutine: "Para focar em horários de aula", rangeTime: "2 horas")
         newRoutineCell.routine = newRoutine
         self.dataSource.append(newRoutineCell)
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -94,9 +95,9 @@ class MainViewController: UIViewController {
 
 extension MainViewController {
     private func setupCells() -> [RoutineCell] {
-        let routine1 = Routine(nameOfTheRoutine: "Hora do foco!", rangeTime: "5 horas")
-        let routine2 = Routine(nameOfTheRoutine: "Leitura", rangeTime: "2 horas")
-        let routine3 = Routine(nameOfTheRoutine: "Meditação", rangeTime: "30 minutos")
+        let routine1 = Routine(titleOfRoutine: "Hora do foco!", nameOfTheRoutine: "Hora de estudar em casa ou no escritório", rangeTime: "5 horas")
+        let routine2 = Routine(titleOfRoutine: "Leitura", nameOfTheRoutine: "Tire sempre esse tempinho pra atualizar aquele livro", rangeTime: "2 horas")
+        let routine3 = Routine(titleOfRoutine: "Meditação", nameOfTheRoutine: "🧘🏻‍♀️", rangeTime: "30 minutos")
 
         let routine1Cell = RoutineCell()
         routine1Cell.routine = routine1
