@@ -1,0 +1,803 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5E6B8290C1F0F656A40CC8B0 /* Pods_StudyBuddyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D32738352E3B907FB7FA6A1 /* Pods_StudyBuddyTests.framework */; };
+		88D01165747A6804EFE17A50 /* Pods_StudyBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F0046018EB9F16F7204EEC /* Pods_StudyBuddy.framework */; };
+		A63FBFDC78D4801A0408A5ED /* Pods_StudyBuddy_StudyBuddyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369C0CD7BF5390BFD0ABACFB /* Pods_StudyBuddy_StudyBuddyUITests.framework */; };
+		CB178BF12A16F5DE0079A20F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB178BF02A16F5DE0079A20F /* AppDelegate.swift */; };
+		CB178BF32A16F5DE0079A20F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB178BF22A16F5DE0079A20F /* SceneDelegate.swift */; };
+		CB178BF52A16F5DE0079A20F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB178BF42A16F5DE0079A20F /* MainViewController.swift */; };
+		CB178BFA2A16F5DF0079A20F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB178BF92A16F5DF0079A20F /* Assets.xcassets */; };
+		CB178BFD2A16F5DF0079A20F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB178BFB2A16F5DF0079A20F /* LaunchScreen.storyboard */; };
+		CB178C082A16F5DF0079A20F /* StudyBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB178C072A16F5DF0079A20F /* StudyBuddyTests.swift */; };
+		CB178C122A16F5DF0079A20F /* StudyBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB178C112A16F5DF0079A20F /* StudyBuddyUITests.swift */; };
+		CB178C142A16F5DF0079A20F /* StudyBuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB178C132A16F5DF0079A20F /* StudyBuddyUITestsLaunchTests.swift */; };
+		CB490E102A326FDA00276780 /* RoutineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */; };
+		CB490E132A32736100276780 /* NewRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E122A32736100276780 /* NewRoutineViewController.swift */; };
+		CB490E152A329B3000276780 /* SelectPomodoroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E142A329B3000276780 /* SelectPomodoroViewController.swift */; };
+		CB490E172A329E1900276780 /* SelectBackgroundSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E162A329E1900276780 /* SelectBackgroundSoundViewController.swift */; };
+		CB490E192A329F3100276780 /* SelectAppsToBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E182A329F3100276780 /* SelectAppsToBlockViewController.swift */; };
+		CB490E1B2A32A36E00276780 /* SoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E1A2A32A36E00276780 /* SoundCell.swift */; };
+		CB490E1D2A32B02900276780 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E1C2A32B02900276780 /* AppCell.swift */; };
+		CBEFAABC2A325C5D00DA24CB /* RoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFAABB2A325C5D00DA24CB /* RoutineCell.swift */; };
+		CBEFAAC32A325D6E00DA24CB /* Cell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFAAC22A325D6E00DA24CB /* Cell+Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB178C042A16F5DF0079A20F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB178BE52A16F5DE0079A20F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB178BEC2A16F5DE0079A20F;
+			remoteInfo = StudyBuddy;
+		};
+		CB178C0E2A16F5DF0079A20F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB178BE52A16F5DE0079A20F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB178BEC2A16F5DE0079A20F;
+			remoteInfo = StudyBuddy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		369C0CD7BF5390BFD0ABACFB /* Pods_StudyBuddy_StudyBuddyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddy_StudyBuddyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57449A07D4AC2C2E73C7D7D6 /* Pods-StudyBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.release.xcconfig"; path = "Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.release.xcconfig"; sourceTree = "<group>"; };
+		6D32738352E3B907FB7FA6A1 /* Pods_StudyBuddyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78832485FAFAF66218C93E5C /* Pods-StudyBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.debug.xcconfig"; path = "Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.debug.xcconfig"; sourceTree = "<group>"; };
+		8824CCA74972B7771DA6B0F2 /* Pods-StudyBuddy-StudyBuddyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy-StudyBuddyUITests.release.xcconfig"; path = "Target Support Files/Pods-StudyBuddy-StudyBuddyUITests/Pods-StudyBuddy-StudyBuddyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		89F0046018EB9F16F7204EEC /* Pods_StudyBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE1752F5E98791143F1D3A0D /* Pods-StudyBuddyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyTests.release.xcconfig"; path = "Target Support Files/Pods-StudyBuddyTests/Pods-StudyBuddyTests.release.xcconfig"; sourceTree = "<group>"; };
+		CB178BED2A16F5DE0079A20F /* StudyBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB178BF02A16F5DE0079A20F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB178BF22A16F5DE0079A20F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CB178BF42A16F5DE0079A20F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CB178BF92A16F5DF0079A20F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB178BFC2A16F5DF0079A20F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB178BFE2A16F5DF0079A20F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB178C032A16F5DF0079A20F /* StudyBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB178C072A16F5DF0079A20F /* StudyBuddyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyBuddyTests.swift; sourceTree = "<group>"; };
+		CB178C0D2A16F5DF0079A20F /* StudyBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB178C112A16F5DF0079A20F /* StudyBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyBuddyUITests.swift; sourceTree = "<group>"; };
+		CB178C132A16F5DF0079A20F /* StudyBuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyBuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailsViewController.swift; sourceTree = "<group>"; };
+		CB490E122A32736100276780 /* NewRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewController.swift; sourceTree = "<group>"; };
+		CB490E142A329B3000276780 /* SelectPomodoroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPomodoroViewController.swift; sourceTree = "<group>"; };
+		CB490E162A329E1900276780 /* SelectBackgroundSoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBackgroundSoundViewController.swift; sourceTree = "<group>"; };
+		CB490E182A329F3100276780 /* SelectAppsToBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAppsToBlockViewController.swift; sourceTree = "<group>"; };
+		CB490E1A2A32A36E00276780 /* SoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCell.swift; sourceTree = "<group>"; };
+		CB490E1C2A32B02900276780 /* AppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
+		CBEFAABB2A325C5D00DA24CB /* RoutineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCell.swift; sourceTree = "<group>"; };
+		CBEFAAC22A325D6E00DA24CB /* Cell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Extensions.swift"; sourceTree = "<group>"; };
+		D9F7E1D2E159FAA28FCA95C6 /* Pods-StudyBuddyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyTests.debug.xcconfig"; path = "Target Support Files/Pods-StudyBuddyTests/Pods-StudyBuddyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F9460A33ADF8578A27B17EAB /* Pods-StudyBuddy-StudyBuddyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy-StudyBuddyUITests.debug.xcconfig"; path = "Target Support Files/Pods-StudyBuddy-StudyBuddyUITests/Pods-StudyBuddy-StudyBuddyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB178BEA2A16F5DE0079A20F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88D01165747A6804EFE17A50 /* Pods_StudyBuddy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB178C002A16F5DF0079A20F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E6B8290C1F0F656A40CC8B0 /* Pods_StudyBuddyTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB178C0A2A16F5DF0079A20F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A63FBFDC78D4801A0408A5ED /* Pods_StudyBuddy_StudyBuddyUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28283E331AE0391CE9628A37 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78832485FAFAF66218C93E5C /* Pods-StudyBuddy.debug.xcconfig */,
+				57449A07D4AC2C2E73C7D7D6 /* Pods-StudyBuddy.release.xcconfig */,
+				F9460A33ADF8578A27B17EAB /* Pods-StudyBuddy-StudyBuddyUITests.debug.xcconfig */,
+				8824CCA74972B7771DA6B0F2 /* Pods-StudyBuddy-StudyBuddyUITests.release.xcconfig */,
+				D9F7E1D2E159FAA28FCA95C6 /* Pods-StudyBuddyTests.debug.xcconfig */,
+				BE1752F5E98791143F1D3A0D /* Pods-StudyBuddyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		42307F69FE9FD6B5C5519F67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89F0046018EB9F16F7204EEC /* Pods_StudyBuddy.framework */,
+				369C0CD7BF5390BFD0ABACFB /* Pods_StudyBuddy_StudyBuddyUITests.framework */,
+				6D32738352E3B907FB7FA6A1 /* Pods_StudyBuddyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB178BE42A16F5DE0079A20F = {
+			isa = PBXGroup;
+			children = (
+				CB178BEF2A16F5DE0079A20F /* StudyBuddy */,
+				CB178C062A16F5DF0079A20F /* StudyBuddyTests */,
+				CB178C102A16F5DF0079A20F /* StudyBuddyUITests */,
+				CB178BEE2A16F5DE0079A20F /* Products */,
+				28283E331AE0391CE9628A37 /* Pods */,
+				42307F69FE9FD6B5C5519F67 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CB178BEE2A16F5DE0079A20F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB178BED2A16F5DE0079A20F /* StudyBuddy.app */,
+				CB178C032A16F5DF0079A20F /* StudyBuddyTests.xctest */,
+				CB178C0D2A16F5DF0079A20F /* StudyBuddyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB178BEF2A16F5DE0079A20F /* StudyBuddy */ = {
+			isa = PBXGroup;
+			children = (
+				CB490E112A32735000276780 /* Routine */,
+				CBEFAAC12A325D5500DA24CB /* Extensions */,
+				CBEFAABA2A325C1F00DA24CB /* RoutineCell */,
+				CB178BF02A16F5DE0079A20F /* AppDelegate.swift */,
+				CB178BF22A16F5DE0079A20F /* SceneDelegate.swift */,
+				CB178BF42A16F5DE0079A20F /* MainViewController.swift */,
+				CB178BF92A16F5DF0079A20F /* Assets.xcassets */,
+				CB178BFB2A16F5DF0079A20F /* LaunchScreen.storyboard */,
+				CB178BFE2A16F5DF0079A20F /* Info.plist */,
+			);
+			path = StudyBuddy;
+			sourceTree = "<group>";
+		};
+		CB178C062A16F5DF0079A20F /* StudyBuddyTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB178C072A16F5DF0079A20F /* StudyBuddyTests.swift */,
+			);
+			path = StudyBuddyTests;
+			sourceTree = "<group>";
+		};
+		CB178C102A16F5DF0079A20F /* StudyBuddyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CB178C112A16F5DF0079A20F /* StudyBuddyUITests.swift */,
+				CB178C132A16F5DF0079A20F /* StudyBuddyUITestsLaunchTests.swift */,
+			);
+			path = StudyBuddyUITests;
+			sourceTree = "<group>";
+		};
+		CB490E112A32735000276780 /* Routine */ = {
+			isa = PBXGroup;
+			children = (
+				CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */,
+				CB490E122A32736100276780 /* NewRoutineViewController.swift */,
+				CB490E142A329B3000276780 /* SelectPomodoroViewController.swift */,
+				CB490E162A329E1900276780 /* SelectBackgroundSoundViewController.swift */,
+				CB490E182A329F3100276780 /* SelectAppsToBlockViewController.swift */,
+				CB490E1A2A32A36E00276780 /* SoundCell.swift */,
+				CB490E1C2A32B02900276780 /* AppCell.swift */,
+			);
+			path = Routine;
+			sourceTree = "<group>";
+		};
+		CBEFAABA2A325C1F00DA24CB /* RoutineCell */ = {
+			isa = PBXGroup;
+			children = (
+				CBEFAABB2A325C5D00DA24CB /* RoutineCell.swift */,
+			);
+			path = RoutineCell;
+			sourceTree = "<group>";
+		};
+		CBEFAAC12A325D5500DA24CB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CBEFAAC22A325D6E00DA24CB /* Cell+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB178BEC2A16F5DE0079A20F /* StudyBuddy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB178C172A16F5DF0079A20F /* Build configuration list for PBXNativeTarget "StudyBuddy" */;
+			buildPhases = (
+				8F7AE794FBF044B9B7206109 /* [CP] Check Pods Manifest.lock */,
+				CB178BE92A16F5DE0079A20F /* Sources */,
+				CB178BEA2A16F5DE0079A20F /* Frameworks */,
+				CB178BEB2A16F5DE0079A20F /* Resources */,
+				ABD2C48025F099CA295E6DCF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StudyBuddy;
+			productName = StudyBuddy;
+			productReference = CB178BED2A16F5DE0079A20F /* StudyBuddy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB178C022A16F5DF0079A20F /* StudyBuddyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB178C1A2A16F5DF0079A20F /* Build configuration list for PBXNativeTarget "StudyBuddyTests" */;
+			buildPhases = (
+				6D13C914C9AEF265766963EB /* [CP] Check Pods Manifest.lock */,
+				CB178BFF2A16F5DF0079A20F /* Sources */,
+				CB178C002A16F5DF0079A20F /* Frameworks */,
+				CB178C012A16F5DF0079A20F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB178C052A16F5DF0079A20F /* PBXTargetDependency */,
+			);
+			name = StudyBuddyTests;
+			productName = StudyBuddyTests;
+			productReference = CB178C032A16F5DF0079A20F /* StudyBuddyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CB178C0C2A16F5DF0079A20F /* StudyBuddyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB178C1D2A16F5DF0079A20F /* Build configuration list for PBXNativeTarget "StudyBuddyUITests" */;
+			buildPhases = (
+				12F8860F037660B6B13224E9 /* [CP] Check Pods Manifest.lock */,
+				CB178C092A16F5DF0079A20F /* Sources */,
+				CB178C0A2A16F5DF0079A20F /* Frameworks */,
+				CB178C0B2A16F5DF0079A20F /* Resources */,
+				B92EAFBEE1A583213B8BBD0E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB178C0F2A16F5DF0079A20F /* PBXTargetDependency */,
+			);
+			name = StudyBuddyUITests;
+			productName = StudyBuddyUITests;
+			productReference = CB178C0D2A16F5DF0079A20F /* StudyBuddyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB178BE52A16F5DE0079A20F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					CB178BEC2A16F5DE0079A20F = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					CB178C022A16F5DF0079A20F = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = CB178BEC2A16F5DE0079A20F;
+					};
+					CB178C0C2A16F5DF0079A20F = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = CB178BEC2A16F5DE0079A20F;
+					};
+				};
+			};
+			buildConfigurationList = CB178BE82A16F5DE0079A20F /* Build configuration list for PBXProject "StudyBuddy" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB178BE42A16F5DE0079A20F;
+			productRefGroup = CB178BEE2A16F5DE0079A20F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB178BEC2A16F5DE0079A20F /* StudyBuddy */,
+				CB178C022A16F5DF0079A20F /* StudyBuddyTests */,
+				CB178C0C2A16F5DF0079A20F /* StudyBuddyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB178BEB2A16F5DE0079A20F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB178BFD2A16F5DF0079A20F /* LaunchScreen.storyboard in Resources */,
+				CB178BFA2A16F5DF0079A20F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB178C012A16F5DF0079A20F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB178C0B2A16F5DF0079A20F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12F8860F037660B6B13224E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StudyBuddy-StudyBuddyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D13C914C9AEF265766963EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StudyBuddyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F7AE794FBF044B9B7206109 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StudyBuddy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABD2C48025F099CA295E6DCF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B92EAFBEE1A583213B8BBD0E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyBuddy-StudyBuddyUITests/Pods-StudyBuddy-StudyBuddyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyBuddy-StudyBuddyUITests/Pods-StudyBuddy-StudyBuddyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StudyBuddy-StudyBuddyUITests/Pods-StudyBuddy-StudyBuddyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB178BE92A16F5DE0079A20F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB490E1B2A32A36E00276780 /* SoundCell.swift in Sources */,
+				CB490E132A32736100276780 /* NewRoutineViewController.swift in Sources */,
+				CB490E172A329E1900276780 /* SelectBackgroundSoundViewController.swift in Sources */,
+				CB178BF52A16F5DE0079A20F /* MainViewController.swift in Sources */,
+				CB178BF12A16F5DE0079A20F /* AppDelegate.swift in Sources */,
+				CB490E102A326FDA00276780 /* RoutineDetailsViewController.swift in Sources */,
+				CBEFAAC32A325D6E00DA24CB /* Cell+Extensions.swift in Sources */,
+				CBEFAABC2A325C5D00DA24CB /* RoutineCell.swift in Sources */,
+				CB490E192A329F3100276780 /* SelectAppsToBlockViewController.swift in Sources */,
+				CB490E1D2A32B02900276780 /* AppCell.swift in Sources */,
+				CB178BF32A16F5DE0079A20F /* SceneDelegate.swift in Sources */,
+				CB490E152A329B3000276780 /* SelectPomodoroViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB178BFF2A16F5DF0079A20F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB178C082A16F5DF0079A20F /* StudyBuddyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB178C092A16F5DF0079A20F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB178C122A16F5DF0079A20F /* StudyBuddyUITests.swift in Sources */,
+				CB178C142A16F5DF0079A20F /* StudyBuddyUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB178C052A16F5DF0079A20F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB178BEC2A16F5DE0079A20F /* StudyBuddy */;
+			targetProxy = CB178C042A16F5DF0079A20F /* PBXContainerItemProxy */;
+		};
+		CB178C0F2A16F5DF0079A20F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB178BEC2A16F5DE0079A20F /* StudyBuddy */;
+			targetProxy = CB178C0E2A16F5DF0079A20F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB178BFB2A16F5DF0079A20F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB178BFC2A16F5DF0079A20F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB178C152A16F5DF0079A20F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CB178C162A16F5DF0079A20F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB178C182A16F5DF0079A20F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78832485FAFAF66218C93E5C /* Pods-StudyBuddy.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DZA2L753SZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StudyBuddy/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaos.StudyBuddy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB178C192A16F5DF0079A20F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57449A07D4AC2C2E73C7D7D6 /* Pods-StudyBuddy.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DZA2L753SZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StudyBuddy/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaos.StudyBuddy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CB178C1B2A16F5DF0079A20F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9F7E1D2E159FAA28FCA95C6 /* Pods-StudyBuddyTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaos.StudyBuddyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StudyBuddy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StudyBuddy";
+			};
+			name = Debug;
+		};
+		CB178C1C2A16F5DF0079A20F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE1752F5E98791143F1D3A0D /* Pods-StudyBuddyTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaos.StudyBuddyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StudyBuddy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StudyBuddy";
+			};
+			name = Release;
+		};
+		CB178C1E2A16F5DF0079A20F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9460A33ADF8578A27B17EAB /* Pods-StudyBuddy-StudyBuddyUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaos.StudyBuddyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StudyBuddy;
+			};
+			name = Debug;
+		};
+		CB178C1F2A16F5DF0079A20F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8824CCA74972B7771DA6B0F2 /* Pods-StudyBuddy-StudyBuddyUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaos.StudyBuddyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StudyBuddy;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB178BE82A16F5DE0079A20F /* Build configuration list for PBXProject "StudyBuddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB178C152A16F5DF0079A20F /* Debug */,
+				CB178C162A16F5DF0079A20F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB178C172A16F5DF0079A20F /* Build configuration list for PBXNativeTarget "StudyBuddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB178C182A16F5DF0079A20F /* Debug */,
+				CB178C192A16F5DF0079A20F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB178C1A2A16F5DF0079A20F /* Build configuration list for PBXNativeTarget "StudyBuddyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB178C1B2A16F5DF0079A20F /* Debug */,
+				CB178C1C2A16F5DF0079A20F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB178C1D2A16F5DF0079A20F /* Build configuration list for PBXNativeTarget "StudyBuddyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB178C1E2A16F5DF0079A20F /* Debug */,
+				CB178C1F2A16F5DF0079A20F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB178BE52A16F5DE0079A20F /* Project object */;
+}
