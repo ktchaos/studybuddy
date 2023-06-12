@@ -11,9 +11,9 @@ import SnapKit
 class SelectPomodoroViewController: UIViewController {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Para 2 horas, sugerimos esses dois tipos de configuração para utilizar o pomodoro.\n\n Selecione a quantidade de sessões:"
+        label.text = "Para 2 horas, sugerimos esses dois tipos de configuração para utilizar o pomodoro.\n\nSelecione a quantidade de sessões:"
         label.numberOfLines = 0
-        label.font = UIFont(name: "Courier New", size: 22)
+        label.font = UIFont(name: "Courier New", size: 19)
         label.textColor = .black
         return label
     }()
@@ -159,7 +159,7 @@ class SelectPomodoroViewController: UIViewController {
         view.addSubview(optionTwoStackView)
 
         descriptionLabel.snp.makeConstraints {
-            $0.height.equalTo(94)
+            $0.height.equalTo(124)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
             $0.top.equalToSuperview().offset(150)

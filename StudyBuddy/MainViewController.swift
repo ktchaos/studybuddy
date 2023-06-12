@@ -86,6 +86,7 @@ class MainViewController: UIViewController {
         let newRoutineCell = RoutineCell()
         let newRoutine = Routine(titleOfRoutine: "Foco na aula", nameOfTheRoutine: "Para focar em horários de aula", rangeTime: "2 horas")
         newRoutineCell.routine = newRoutine
+        newRoutineCell.toggle.setOn(true, animated: true)
         self.dataSource.append(newRoutineCell)
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.routineTableView.reloadData()
