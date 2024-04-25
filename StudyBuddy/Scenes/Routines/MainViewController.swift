@@ -11,9 +11,23 @@ import RxSwift
 import RxCocoa
 
 class MainViewController: UIViewController {
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Minhas rotinas"
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
+        return label
+    }()
+
     private lazy var addButton: UIButton = {
         let button = UIButton()
+        button.backgroundColor = .lightGray
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor.darkGray.cgColor
         button.tintColor = .black
+        button.setTitle(" Criar rotina", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        button.setTitleColor(.black, for: .normal)
         button.setImage(UIImage(systemName: "plus"), for: .normal)
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(self.onAddTap), for: .touchUpInside)
@@ -34,6 +48,12 @@ class MainViewController: UIViewController {
 
     var dataSource: [RoutineCell] = []
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.navigationController?.tabBarController?.tabBar.isHidden = false
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,7 +64,6 @@ class MainViewController: UIViewController {
     }
 
     func setupUI() {
-        title = "Minhas rotinas"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
     }
@@ -58,13 +77,20 @@ class MainViewController: UIViewController {
     }
 
     func setupViews() {
+        view.addSubview(titleLabel)
         view.addSubview(addButton)
         view.addSubview(routineTableView)
 
-        addButton.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(150)
+        titleLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(100)
             $0.leading.equalToSuperview().offset(16)
-            $0.height.width.equalTo(32)
+        }
+
+        addButton.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(16)
+            $0.leading.equalToSuperview().offset(16)
+            $0.width.equalTo(120)
+            $0.height.equalTo(32)
         }
 
         routineTableView.snp.makeConstraints {

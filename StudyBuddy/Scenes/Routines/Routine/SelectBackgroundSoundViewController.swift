@@ -40,7 +40,7 @@ class SelectBackgroundSoundViewController: UIViewController {
         return button
     }()
 
-    private lazy var nextButton: UIButton = {
+    lazy var nextButton: UIButton = {
         let button = UIButton()
         button.setTitle("Continuar", for: .normal)
         button.setTitleColor(.white, for: .normal)

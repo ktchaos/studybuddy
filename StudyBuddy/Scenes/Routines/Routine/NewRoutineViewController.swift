@@ -17,6 +17,7 @@ class NewRoutineViewController: UIViewController {
         label.numberOfLines = 0
         label.font = UIFont(name: "Courier New", size: 22)
         label.textColor = .black
+        label.addGestureRecognizer(.init(target: self, action: #selector(self.onViewTouch)))
         return label
     }()
 
@@ -79,6 +80,12 @@ class NewRoutineViewController: UIViewController {
     var pickerData: [[String]] = [[]]
     var routine: Routine?
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.navigationController?.tabBarController?.tabBar.isHidden = true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -92,6 +99,7 @@ class NewRoutineViewController: UIViewController {
         title = "Nova rotina"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
+        view.addGestureRecognizer(.init(target: self, action: #selector(self.onViewTouch)))
     }
 
     func setupViews() {
@@ -227,5 +235,11 @@ extension NewRoutineViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return false
+    }
+}
+
+extension NewRoutineViewController {
+    @objc func onViewTouch() {
+        view.endEditing(true)
     }
 }

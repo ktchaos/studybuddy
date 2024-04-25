@@ -26,7 +26,7 @@ final class RoutineCell: UITableViewCell, Identifiable {
     private lazy var durationLabel: UILabel = {
         let label = UILabel()
         label.textColor = .gray
-        label.font = UIFont(name: "Courier New", size: 15)
+//        label.font = UIFont(name: "Courier New", size: 15)
         return label
     }()
     lazy var toggle: UISwitch = {

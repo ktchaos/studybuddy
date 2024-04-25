@@ -28,7 +28,7 @@ class SelectAppsToBlockViewController: UIViewController {
         tableView.dataSource = self
         return tableView
     }()
-    private lazy var finishButton: UIButton = {
+    lazy var finishButton: UIButton = {
         let button = UIButton()
         button.setTitle("Criar rotina", for: .normal)
         button.setTitleColor(.white, for: .normal)
