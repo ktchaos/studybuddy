@@ -13,7 +13,7 @@ class SelectPomodoroViewController: UIViewController {
         let label = UILabel()
         label.text = "Para 2 horas, sugerimos esses dois tipos de configuração para utilizar o pomodoro.\n\nSelecione a quantidade de sessões:"
         label.numberOfLines = 0
-        label.font = UIFont(name: "Courier New", size: 19)
+        label.font = UIFont.systemFont(ofSize: 19)//UIFont(name: "Courier New", size: 19)
         label.textColor = .black
         return label
     }()
@@ -24,7 +24,7 @@ class SelectPomodoroViewController: UIViewController {
         label.text = "4 sessões"
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.font = UIFont(name: "Courier New", size: 20)
+        label.font = UIFont.systemFont(ofSize: 20)//UIFont(name: "Courier New", size: 20)
         label.textColor = .black
         return label
     }()
@@ -33,7 +33,7 @@ class SelectPomodoroViewController: UIViewController {
         let label = UILabel()
         label.text = "(25 minutos de foco + 5 minutos de descanso)"
         label.numberOfLines = 0
-        let font = UIFont(name: "Courier New", size: 15)
+        let font = UIFont.systemFont(ofSize: 15)//UIFont(name: "Courier New", size: 15)
         label.font = font
         label.textColor = .black
         return label
@@ -70,7 +70,7 @@ class SelectPomodoroViewController: UIViewController {
         label.text = "2 sessões"
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.font = UIFont(name: "Courier New", size: 20)
+        label.font = UIFont.systemFont(ofSize: 20)//UIFont(name: "Courier New", size: 20)
         label.textColor = .black
         return label
     }()
@@ -79,7 +79,7 @@ class SelectPomodoroViewController: UIViewController {
         let label = UILabel()
         label.text = "(50 minutos de foco + 10 minutos de descanso)"
         label.numberOfLines = 0
-        let font = UIFont(name: "Courier New", size: 15)
+        let font = UIFont.systemFont(ofSize: 15)//UIFont(name: "Courier New", size: 15)
         label.font = font
         label.textColor = .black
         return label
@@ -115,7 +115,7 @@ class SelectPomodoroViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Não vou usar pomodoro", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Courier New", size: 20)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)//UIFont(name: "Courier New", size: 20)
         button.backgroundColor = .white
         button.layer.borderWidth = 1
         button.addTarget(self, action: #selector(self.onNextTap), for: .touchUpInside)
@@ -126,7 +126,7 @@ class SelectPomodoroViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Continuar", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Courier New", size: 20)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)//UIFont(name: "Courier New", size: 20)
         button.backgroundColor = .black
         button.addTarget(self, action: #selector(self.onNextTap), for: .touchUpInside)
         return button
@@ -166,14 +166,14 @@ class SelectPomodoroViewController: UIViewController {
         }
 
         optionOneStackView.snp.makeConstraints {
-            $0.height.equalTo(64)
+            $0.height.equalTo(84)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
             $0.top.equalTo(descriptionLabel.snp.bottom).offset(32)
         }
 
         optionTwoStackView.snp.makeConstraints {
-            $0.height.equalTo(64)
+            $0.height.equalTo(84)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
             $0.top.equalTo(optionOneStackView.snp.bottom).offset(16)

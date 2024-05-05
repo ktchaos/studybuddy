@@ -14,14 +14,14 @@ class EditRoutineViewController: UIViewController {
     private lazy var titleTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
-        textField.font = UIFont(name: "Courier New", size: 20)
+        textField.font = UIFont.systemFont(ofSize: 20)//UIFont(name: "Courier New", size: 20)
         textField.textColor = .black
         return textField
     }()
     private lazy var descriptionTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
-        textField.font = UIFont(name: "Courier New", size: 20)
+        textField.font = UIFont.systemFont(ofSize: 20)//UIFont(name: "Courier New", size: 20)
         textField.textColor = .black
         return textField
     }()
@@ -30,7 +30,7 @@ class EditRoutineViewController: UIViewController {
         label.textColor = .black
         label.text = "  Pomodoro"
         label.numberOfLines = 0
-        label.font = UIFont(name: "Courier New", size: 17)
+        label.font = UIFont.systemFont(ofSize: 17)//UIFont(name: "Courier New", size: 17)
         return label
     }()
     private lazy var pomodoroToggle: UIButton = {
@@ -71,7 +71,7 @@ class EditRoutineViewController: UIViewController {
         label.textColor = .black
         label.text = "  Som em background"
         label.numberOfLines = 0
-        label.font = UIFont(name: "Courier New", size: 17)
+        label.font = UIFont.systemFont(ofSize: 17)//UIFont(name: "Courier New", size: 17)
         return label
     }()
     private lazy var soundToggle: UIButton = {

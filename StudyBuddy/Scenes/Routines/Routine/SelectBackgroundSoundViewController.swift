@@ -13,7 +13,7 @@ class SelectBackgroundSoundViewController: UIViewController {
         let label = UILabel()
         label.text = "Selecione um som para acompanhar sua rotina"
         label.numberOfLines = 0
-        label.font = UIFont(name: "Courier New", size: 15)
+        label.font = UIFont.systemFont(ofSize: 19)//UIFont(name: "Courier New", size: 15)
         label.textColor = .black
         return label
     }()
@@ -33,7 +33,7 @@ class SelectBackgroundSoundViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Não vou usar som", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Courier New", size: 20)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)//UIFont(name: "Courier New", size: 20)
         button.backgroundColor = .white
         button.layer.borderWidth = 1
         button.addTarget(self, action: #selector(self.onNextTap), for: .touchUpInside)
@@ -44,7 +44,7 @@ class SelectBackgroundSoundViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Continuar", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Courier New", size: 20)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)//UIFont(name: "Courier New", size: 20)
         button.backgroundColor = .black
         button.addTarget(self, action: #selector(self.onNextTap), for: .touchUpInside)
         return button

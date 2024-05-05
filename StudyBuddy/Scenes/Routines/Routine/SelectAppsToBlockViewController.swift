@@ -13,7 +13,7 @@ class SelectAppsToBlockViewController: UIViewController {
         let label = UILabel()
         label.text = "Selecione alguns aplicativos para bloquear temporariamente"
         label.numberOfLines = 0
-        label.font = UIFont(name: "Courier New", size: 15)
+        label.font = UIFont.systemFont(ofSize: 19)//UIFont(name: "Courier New", size: 15)
         label.textColor = .black
         return label
     }()
@@ -32,7 +32,7 @@ class SelectAppsToBlockViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Criar rotina", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Courier New", size: 20)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)//UIFont(name: "Courier New", size: 20)
         button.backgroundColor = .black
         button.addTarget(self, action: #selector(self.onNextTap), for: .touchUpInside)
         return button

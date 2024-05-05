@@ -24,7 +24,7 @@ final class AppCell: UITableViewCell, Identifiable {
         let label = UILabel()
         label.textColor = .black
         label.numberOfLines = 0
-        label.font = UIFont(name: "Courier New", size: 15)
+        label.font = UIFont.systemFont(ofSize: 15)//UIFont(name: "Courier New", size: 15)
         return label
     }()
     lazy var toggle: UISwitch = {

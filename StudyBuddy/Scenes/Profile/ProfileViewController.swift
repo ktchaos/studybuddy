@@ -54,12 +54,23 @@ class ProfileViewController: UIViewController {
 
     private lazy var rankingButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Ranking", for: .normal)
+        button.setTitle("Ver ranking", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         button.layer.cornerRadius = 8
         button.backgroundColor = .lightGray
         button.addTarget(self, action: #selector(self.onRankingTap), for: .touchUpInside)
+        return button
+    }()
+
+    private lazy var helpButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Ajuda", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        button.layer.cornerRadius = 8
+        button.backgroundColor = .lightGray
+        button.addTarget(self, action: #selector(self.onHelpTap), for: .touchUpInside)
         return button
     }()
 
@@ -77,6 +88,7 @@ class ProfileViewController: UIViewController {
         view.addSubview(myScoreLabel)
         view.addSubview(totalScoreLabel)
         view.addSubview(rankingButton)
+        view.addSubview(helpButton)
 
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(100)
@@ -109,10 +121,21 @@ class ProfileViewController: UIViewController {
             $0.leading.equalToSuperview().offset(24)
             $0.trailing.equalToSuperview().inset(24)
         }
+
+        helpButton.snp.makeConstraints {
+            $0.top.equalTo(rankingButton.snp.bottom).offset(24)
+            $0.leading.equalToSuperview().offset(24)
+            $0.trailing.equalToSuperview().inset(24)
+        }
     }
 
     @objc func onRankingTap() {
         let rankingViewController = RankingViewController()
         self.navigationController?.pushViewController(rankingViewController, animated: true)
+    }
+
+    @objc func onHelpTap() {
+        let helpViewController = HelpViewController()
+        self.navigationController?.pushViewController(helpViewController, animated: true)
     }
 }

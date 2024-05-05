@@ -18,6 +18,7 @@
 		CB178C082A16F5DF0079A20F /* StudyBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB178C072A16F5DF0079A20F /* StudyBuddyTests.swift */; };
 		CB178C122A16F5DF0079A20F /* StudyBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB178C112A16F5DF0079A20F /* StudyBuddyUITests.swift */; };
 		CB178C142A16F5DF0079A20F /* StudyBuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB178C132A16F5DF0079A20F /* StudyBuddyUITestsLaunchTests.swift */; };
+		CB3799EC2BE1BF2C005A571D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB3799EB2BE1BF2C005A571D /* GoogleService-Info.plist */; };
 		CB490E102A326FDA00276780 /* RoutineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */; };
 		CB490E132A32736100276780 /* NewRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E122A32736100276780 /* NewRoutineViewController.swift */; };
 		CB490E152A329B3000276780 /* SelectPomodoroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E142A329B3000276780 /* SelectPomodoroViewController.swift */; };
@@ -25,6 +26,8 @@
 		CB490E192A329F3100276780 /* SelectAppsToBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E182A329F3100276780 /* SelectAppsToBlockViewController.swift */; };
 		CB490E1B2A32A36E00276780 /* SoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E1A2A32A36E00276780 /* SoundCell.swift */; };
 		CB490E1D2A32B02900276780 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E1C2A32B02900276780 /* AppCell.swift */; };
+		CB4F3B262BE3D1380011D5BF /* OnboardingRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F3B252BE3D1380011D5BF /* OnboardingRankingViewController.swift */; };
+		CB4F3B292BE3D6880011D5BF /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F3B282BE3D6880011D5BF /* HelpViewController.swift */; };
 		CB510DCE2A336C390092147D /* TextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB510DCD2A336C390092147D /* TextField+Extensions.swift */; };
 		CBA86EA42BD73EFA0069B024 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EA32BD73EFA0069B024 /* ProfileViewController.swift */; };
 		CBA86EA62BD73F180069B024 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EA52BD73F180069B024 /* AppCoordinator.swift */; };
@@ -81,6 +84,7 @@
 		CB178C0D2A16F5DF0079A20F /* StudyBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB178C112A16F5DF0079A20F /* StudyBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyBuddyUITests.swift; sourceTree = "<group>"; };
 		CB178C132A16F5DF0079A20F /* StudyBuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyBuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CB3799EB2BE1BF2C005A571D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailsViewController.swift; sourceTree = "<group>"; };
 		CB490E122A32736100276780 /* NewRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewController.swift; sourceTree = "<group>"; };
 		CB490E142A329B3000276780 /* SelectPomodoroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPomodoroViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 		CB490E182A329F3100276780 /* SelectAppsToBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAppsToBlockViewController.swift; sourceTree = "<group>"; };
 		CB490E1A2A32A36E00276780 /* SoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCell.swift; sourceTree = "<group>"; };
 		CB490E1C2A32B02900276780 /* AppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
+		CB4F3B252BE3D1380011D5BF /* OnboardingRankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRankingViewController.swift; sourceTree = "<group>"; };
+		CB4F3B282BE3D6880011D5BF /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		CB510DCD2A336C390092147D /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
 		CBA86EA32BD73EFA0069B024 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CBA86EA52BD73F180069B024 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -185,6 +191,7 @@
 		CB178BEF2A16F5DE0079A20F /* StudyBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				CB3799EB2BE1BF2C005A571D /* GoogleService-Info.plist */,
 				CB178BFE2A16F5DF0079A20F /* Info.plist */,
 				CBA86EB42BD7ED1F0069B024 /* Common */,
 				CBA86EB32BD7EC890069B024 /* Application */,
@@ -228,6 +235,22 @@
 			path = Routine;
 			sourceTree = "<group>";
 		};
+		CB4F3B222BE3D0FD0011D5BF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CB4F3B252BE3D1380011D5BF /* OnboardingRankingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CB4F3B272BE3D6590011D5BF /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				CB4F3B282BE3D6880011D5BF /* HelpViewController.swift */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
 		CBA86EA12BD73ED30069B024 /* Routines */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +282,8 @@
 		CBA86EB22BD7EC680069B024 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CB4F3B272BE3D6590011D5BF /* Help */,
+				CB4F3B222BE3D0FD0011D5BF /* Onboarding */,
 				CBB30A752BD9CA7900239FAC /* NewUser */,
 				CBA86EB92BD81A0D0069B024 /* Ranking */,
 				CBA86EA22BD73EE00069B024 /* Profile */,
@@ -434,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB178BFD2A16F5DF0079A20F /* LaunchScreen.storyboard in Resources */,
+				CB3799EC2BE1BF2C005A571D /* GoogleService-Info.plist in Resources */,
 				CBA86EB82BD7EEE40069B024 /* TestViewController.xib in Resources */,
 				CB178BFA2A16F5DF0079A20F /* Assets.xcassets in Resources */,
 			);
@@ -570,6 +596,8 @@
 				CB490E132A32736100276780 /* NewRoutineViewController.swift in Sources */,
 				CB490E172A329E1900276780 /* SelectBackgroundSoundViewController.swift in Sources */,
 				CB178BF52A16F5DE0079A20F /* MainViewController.swift in Sources */,
+				CB4F3B292BE3D6880011D5BF /* HelpViewController.swift in Sources */,
+				CB4F3B262BE3D1380011D5BF /* OnboardingRankingViewController.swift in Sources */,
 				CBA86EB72BD7EEE40069B024 /* TestViewController.swift in Sources */,
 				CBA86EA42BD73EFA0069B024 /* ProfileViewController.swift in Sources */,
 				CB178BF12A16F5DE0079A20F /* AppDelegate.swift in Sources */,
@@ -758,7 +786,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DZA2L753SZ;
+				DEVELOPMENT_TEAM = G7V7K8FW7V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StudyBuddy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -786,7 +814,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DZA2L753SZ;
+				DEVELOPMENT_TEAM = G7V7K8FW7V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StudyBuddy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

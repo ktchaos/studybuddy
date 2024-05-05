@@ -15,7 +15,7 @@ class NewRoutineViewController: UIViewController {
         let label = UILabel()
         label.text = "Título da rotina"
         label.numberOfLines = 0
-        label.font = UIFont(name: "Courier New", size: 22)
+        label.font = UIFont.systemFont(ofSize: 22)//UIFont(name: "Courier New", size: 22)
         label.textColor = .black
         label.addGestureRecognizer(.init(target: self, action: #selector(self.onViewTouch)))
         return label
@@ -24,7 +24,7 @@ class NewRoutineViewController: UIViewController {
     private lazy var titleTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
-        textField.font = UIFont(name: "Courier New", size: 18)
+        textField.font = UIFont.systemFont(ofSize: 18)//UIFont(name: "Courier New", size: 18)
         textField.layer.borderWidth = 1
         textField.addPadding(.left(6))
         textField.delegate = self
@@ -34,7 +34,7 @@ class NewRoutineViewController: UIViewController {
         let label = UILabel()
         label.text = "Descreva um pouco sobre o que é essa rotina:"
         label.numberOfLines = 0
-        label.font = UIFont(name: "Courier New", size: 15)
+        label.font = UIFont.systemFont(ofSize: 15)//UIFont(name: "Courier New", size: 15)
         label.textColor = .black
         return label
     }()
@@ -42,7 +42,7 @@ class NewRoutineViewController: UIViewController {
     private lazy var descriptionTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
-        textField.font = UIFont(name: "Courier New", size: 15)
+        textField.font = UIFont.systemFont(ofSize: 15)//UIFont(name: "Courier New", size: 15)
         textField.layer.borderWidth = 1
         textField.addPadding(.left(6))
         textField.delegate = self
@@ -52,7 +52,7 @@ class NewRoutineViewController: UIViewController {
     private lazy var selectTimeTitle: UILabel = {
         let label = UILabel()
         label.text = "Selecione a duração da rotina:"
-        label.font = UIFont(name: "Courier New", size: 15)
+        label.font = UIFont.systemFont(ofSize: 15)//UIFont(name: "Courier New", size: 15)
         label.textColor = .black
         return label
     }()
@@ -68,7 +68,7 @@ class NewRoutineViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Continuar", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Courier New", size: 20)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)//UIFont(name: "Courier New", size: 20)
         button.backgroundColor = .black
         button.addTarget(self, action: #selector(self.onNextTap), for: .touchUpInside)
         return button

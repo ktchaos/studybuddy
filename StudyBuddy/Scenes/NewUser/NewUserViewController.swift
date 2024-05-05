@@ -10,6 +10,11 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
+struct UserDefaultKeys {
+    let isLoggedKey: String
+    let usernameKey: String
+}
+
 class NewUserViewController: UIViewController {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -29,14 +34,24 @@ class NewUserViewController: UIViewController {
 
     private lazy var usernameTextField: UITextField = {
         let label = UITextField()
-        label.placeholder = "Insira um nome de usuário"
+        label.placeholder = "insira um nome de usuário"
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.textAlignment = .center
         label.layer.cornerRadius = 7
         label.layer.borderWidth = 2
-        label.layer.borderColor = UIColor.systemGray6.cgColor
+        label.layer.borderColor = UIColor.systemGray2.cgColor
+        label.autocapitalizationType = .none
+        return label
+    }()
 
+    private lazy var tipsUsernameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "seu nome pode conter números e símbolos"
+        label.textColor = .darkGray
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
 
@@ -52,6 +67,15 @@ class NewUserViewController: UIViewController {
         return button
     }()
 
+    private lazy var copyrightLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Desenvolvido por NeuroTech ©"
+        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        label.textAlignment = .center
+        label.textColor = .systemGray2
+        return label
+    }()
+
     let userDefaults = UserDefaults.standard
     let isLoggedKey: String = "isLogged"
 
@@ -59,6 +83,18 @@ class NewUserViewController: UIViewController {
         super.viewDidLoad()
 
         setupViews()
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     func setupViews() {
@@ -67,6 +103,8 @@ class NewUserViewController: UIViewController {
         view.addSubview(iconImageView)
         view.addSubview(usernameTextField)
         view.addSubview(startButton)
+        view.addSubview(copyrightLabel)
+        view.addSubview(tipsUsernameLabel)
 
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(100)
@@ -89,10 +127,22 @@ class NewUserViewController: UIViewController {
         }
 
         startButton.snp.makeConstraints {
-            $0.top.equalTo(usernameTextField.snp.bottom).offset(64)
+            $0.top.equalTo(usernameTextField.snp.bottom).offset(82)
             $0.leading.equalToSuperview().offset(24)
             $0.trailing.equalToSuperview().inset(24)
             $0.height.equalTo(42)
+        }
+
+        tipsUsernameLabel.snp.makeConstraints {
+            $0.top.equalTo(usernameTextField.snp.bottom).offset(12)
+            $0.leading.equalToSuperview().offset(24)
+            $0.trailing.equalToSuperview().inset(24)
+        }
+
+        copyrightLabel.snp.makeConstraints {
+            $0.bottom.equalToSuperview().inset(24)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().inset(16)
         }
     }
 
@@ -105,11 +155,10 @@ class NewUserViewController: UIViewController {
             present(alert, animated: true)
         } else {
             userDefaults.set(true, forKey: isLoggedKey)
-            let coordinator = MainCoordinator(tabBarScenes: StudyBuddyTabBarScene.allCases)
-            coordinator.start()
-            self.navigationController?.modalPresentationStyle = .fullScreen
-            self.navigationController?.present(coordinator.rootViewController, animated: true)
-//            self.navigationController.
+            let onboardingVC = OnboardingRankingViewController()
+            guard let name = usernameTextField.text else { return }
+            onboardingVC.titleLabel.text = "Olá, \(name)"
+            self.navigationController?.pushViewController(onboardingVC, animated: true)
         }
     }
 }

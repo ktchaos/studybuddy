@@ -24,7 +24,7 @@ class RoutineDetailsViewController: UIViewController {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont(name: "Courier New", size: 20)
+        label.font = UIFont.systemFont(ofSize: 20)//UIFont(name: "Courier New", size: 20)
         label.textColor = .black
         return label
     }()
@@ -33,7 +33,7 @@ class RoutineDetailsViewController: UIViewController {
         label.textColor = .black
         label.text = "  Pomodoro"
         label.numberOfLines = 0
-        label.font = UIFont(name: "Courier New", size: 17)
+        label.font = UIFont.systemFont(ofSize: 17)//UIFont(name: "Courier New", size: 17)
         return label
     }()
     private lazy var pomodoroToggle: UISwitch = {
@@ -70,7 +70,7 @@ class RoutineDetailsViewController: UIViewController {
         label.textColor = .black
         label.text = "  Som em background"
         label.numberOfLines = 0
-        label.font = UIFont(name: "Courier New", size: 17)
+        label.font = UIFont.systemFont(ofSize: 17)//UIFont(name: "Courier New", size: 17)
         return label
     }()
     private lazy var soundToggle: UISwitch = {
@@ -108,7 +108,7 @@ class RoutineDetailsViewController: UIViewController {
         let label = UILabel()
         label.numberOfLines = 0
         label.text = "Os aplicativos a seguir estarão bloqueados durante 2 horas"
-        label.font = UIFont(name: "Courier New", size: 17)
+        label.font = UIFont.systemFont(ofSize: 17)//UIFont(name: "Courier New", size: 17)
         label.textColor = .black
         return label
     }()

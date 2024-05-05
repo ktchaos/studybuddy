@@ -25,7 +25,7 @@ final class SoundCell: UICollectionViewCell, Identifiable {
         label.textColor = .black
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.font = UIFont(name: "Courier New", size: 15)
+        label.font = UIFont.systemFont(ofSize: 15)//UIFont(name: "Courier New", size: 15)
         return label
     }()
     private lazy var hStack: UIStackView = {

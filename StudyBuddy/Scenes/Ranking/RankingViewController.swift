@@ -21,7 +21,9 @@ class RankingViewController: UIViewController {
 
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = ""
+        label.text = "Colocação geral dos usuários do Study Buddy"
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        label.textColor = .gray
         return label
     }()
 
@@ -54,6 +56,7 @@ class RankingViewController: UIViewController {
     func setupViews() {
         view.backgroundColor = .white
         view.addSubview(titleLabel)
+        view.addSubview(descriptionLabel)
         view.addSubview(tableView)
 
         titleLabel.snp.makeConstraints {
@@ -64,10 +67,11 @@ class RankingViewController: UIViewController {
         descriptionLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(12)
             $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().inset(16)
         }
 
         tableView.snp.makeConstraints {
-            $0.top.equalTo(descriptionLabel.snp.bottom).offset(54)
+            $0.top.equalTo(descriptionLabel.snp.bottom).offset(44)
             $0.bottom.equalToSuperview().inset(16)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)

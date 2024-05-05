@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+import FamilyControls
+import ManagedSettings
 
 class MainViewController: UIViewController {
     private lazy var titleLabel: UILabel = {
@@ -54,6 +56,9 @@ class MainViewController: UIViewController {
         self.navigationController?.tabBarController?.tabBar.isHidden = false
     }
 
+    var discouragedSelections = FamilyActivitySelection()
+    let store = ManagedSettingsStore()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,6 +66,34 @@ class MainViewController: UIViewController {
         setupViews()
         setupTableView()
         setupNavigation()
+
+        shieldActivities()
+
+//        let task = Task {
+//            await self.askForAuthorization()
+//        }
+    }
+
+    func shieldActivities() {
+        // Clear to reset previous settings
+        store.clearAllSettings()
+
+        let applications = discouragedSelections.applicationTokens
+        let categories = discouragedSelections.categoryTokens
+        print("APLICATIONS -> ", applications)
+        print("CATEGORIAS -> ", categories)
+
+        store.shield.applications = applications.isEmpty ? nil : applications
+        store.shield.applicationCategories = categories.isEmpty ? nil : .specific(categories)
+        store.shield.webDomainCategories = categories.isEmpty ? nil : .specific(categories)
+    }
+
+    func askForAuthorization() async {
+        do {
+            try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
+        } catch {
+            print("Failed to get authorization: \(error)")
+        }
     }
 
     func setupUI() {
