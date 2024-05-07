@@ -17,16 +17,20 @@ class NewUserCoordinator: NavigationCoordinator {
         self.rootViewController = UINavigationController()
     }
 
-    func start() {
-        let newUserViewController = NewUserViewController()
-        self.rootViewController.viewControllers = [newUserViewController]
+    func start() {}
+
+    func start(viewController: NewUserViewController) {
+        self.rootViewController.viewControllers = [viewController]
     }
 
     func showMainRoute() {
         let coordinator = MainCoordinator(tabBarScenes: StudyBuddyTabBarScene.allCases)
         self.rootViewController.present(coordinator.rootViewController, animated: true)
-//        self.start(coordinator: coordinator)
-//        self.rootViewController = coordinator.rootViewController.
-//        self.window.makeKeyAndVisible()
+    }
+
+    func presentOnboardingScreen(with name: String) {
+        let viewController = OnboardingRankingViewController()
+        viewController.titleLabel.text = "Olá, \(name)"
+        self.rootViewController.pushViewController(viewController, animated: true)
     }
 }

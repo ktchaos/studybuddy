@@ -10,7 +10,11 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class ProfileViewController: UIViewController {
+protocol ProfileViewControlling {
+    
+}
+
+class ProfileViewController: UIViewController, ProfileViewControlling {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Meu Perfil"
@@ -74,6 +78,8 @@ class ProfileViewController: UIViewController {
         return button
     }()
 
+    var interactor: ProfileInteracting?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -130,12 +136,14 @@ class ProfileViewController: UIViewController {
     }
 
     @objc func onRankingTap() {
-        let rankingViewController = RankingViewController()
-        self.navigationController?.pushViewController(rankingViewController, animated: true)
+        interactor?.onRankingTap()
+//        let rankingViewController = RankingViewController()
+//        self.navigationController?.pushViewController(rankingViewController, animated: true)
     }
 
     @objc func onHelpTap() {
-        let helpViewController = HelpViewController()
-        self.navigationController?.pushViewController(helpViewController, animated: true)
+        interactor?.onHelpTap()
+//        let helpViewController = HelpViewController()
+//        self.navigationController?.pushViewController(helpViewController, animated: true)
     }
 }

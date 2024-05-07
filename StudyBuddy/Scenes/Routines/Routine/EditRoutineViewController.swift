@@ -169,7 +169,7 @@ class EditRoutineViewController: UIViewController {
     }
 
     func setupUI() {
-        title = routine?.titleOfRoutine
+        title = routine?.title
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
         titleTextField.text = "Novo título..."

@@ -42,9 +42,9 @@ enum StudyBuddyTabBarScene: Int, CaseIterable, TabBarScene {
     var coordinator: NavigationCoordinator {
         switch self {
         case .routines:
-            return RoutinesCoordinator()
+            return MainFactory.make()
         case .profile:
-            return ProfileCoordinator()
+            return ProfileFactory.make()
         }
     }
 }
@@ -78,8 +78,7 @@ class AppCoordinator: Coordinator {
     }
 
     func showNewUserRoute() {
-        let coordinator = NewUserCoordinator()
-        self.start(coordinator: coordinator)
+        let (_, coordinator) = NewUserFactory.make()
         self.window.rootViewController = coordinator.rootViewController
         self.window.makeKeyAndVisible()
     }

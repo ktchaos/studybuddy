@@ -13,7 +13,6 @@ import RxCocoa
 class OnboardingRankingViewController: UIViewController {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-//        label.text = "Study Buddy"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         return label
@@ -66,8 +65,8 @@ class OnboardingRankingViewController: UIViewController {
         return button
     }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
         setupViews()
     }
@@ -118,10 +117,8 @@ class OnboardingRankingViewController: UIViewController {
     }
 
     @objc func onRankingTap() {
-        let coordinator = MainCoordinator(tabBarScenes: StudyBuddyTabBarScene.allCases)
-        coordinator.start()
+        let coordinator = MainFactory.make()
         self.navigationController?.modalPresentationStyle = .fullScreen
         self.navigationController?.present(coordinator.rootViewController, animated: true)
     }
 }
-

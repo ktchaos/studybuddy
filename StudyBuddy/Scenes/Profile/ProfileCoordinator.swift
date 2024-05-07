@@ -17,8 +17,22 @@ class ProfileCoordinator: NavigationCoordinator {
         self.rootViewController = UINavigationController()
     }
 
+    func start(viewController: UIViewController) {
+        self.rootViewController.viewControllers = [viewController]
+    }
+
     func start() {
-        let profileViewController = ProfileViewController()
-        self.rootViewController.viewControllers = [profileViewController]
+//        let profileViewController = ProfileViewController()
+//        self.rootViewController.viewControllers = [profileViewController]
+    }
+
+    func presentRankingScreen() {
+        let viewController = RankingViewController()
+        self.rootViewController.pushViewController(viewController, animated: true)
+    }
+
+    func presentHelpScreen() {
+        let viewController = HelpViewController()
+        self.rootViewController.pushViewController(viewController, animated: true)
     }
 }

@@ -121,7 +121,7 @@ class SelectAppsToBlockViewController: UIViewController {
                 return
             }
 
-            mainViewController.createLastRoutine()
+//            mainViewController.createLastRoutine()
             self.navigationController?.popToViewController(mainViewController, animated: true)
             newRoutineViewController.dismiss(animated: true)
         }

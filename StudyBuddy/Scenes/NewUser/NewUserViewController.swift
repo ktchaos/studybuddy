@@ -15,7 +15,11 @@ struct UserDefaultKeys {
     let usernameKey: String
 }
 
-class NewUserViewController: UIViewController {
+protocol NewUserViewControlling {
+    func displayError(with message: String)
+}
+
+class NewUserViewController: UIViewController, NewUserViewControlling {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Bem vindo ao Study Buddy"
@@ -76,28 +80,34 @@ class NewUserViewController: UIViewController {
         return label
     }()
 
-    let userDefaults = UserDefaults.standard
-    let isLoggedKey: String = "isLogged"
+//    private let database = Firestore.firestore()
+//    private let userDefaults = UserDefaults.standard
+//    private let isLoggedKey: String = "isLogged"
+    
+    var interactor: NewUserInteracting?
 
+//    init(interactor: NewUserInteracting) {
+//        self.interactor = interactor
+//        super.init()
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()
-
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-
-        view.addGestureRecognizer(tap)
     }
 
     @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
 
     func setupViews() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         view.backgroundColor = .white
         view.addSubview(titleLabel)
         view.addSubview(iconImageView)
@@ -146,19 +156,15 @@ class NewUserViewController: UIViewController {
         }
     }
 
+    func displayError(with message: String) {
+        usernameTextField.layer.borderColor = UIColor.red.cgColor
+        let alert = UIAlertController(title: "Erro", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .cancel)
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
+
     @objc func onStartButtonTap() {
-        if usernameTextField.text?.isEmpty ?? false {
-            usernameTextField.layer.borderColor = UIColor.red.cgColor
-            let alert = UIAlertController(title: "Insira um nome válido!", message: "O nome não pode ser vazio", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Ok", style: .cancel)
-            alert.addAction(action)
-            present(alert, animated: true)
-        } else {
-            userDefaults.set(true, forKey: isLoggedKey)
-            let onboardingVC = OnboardingRankingViewController()
-            guard let name = usernameTextField.text else { return }
-            onboardingVC.titleLabel.text = "Olá, \(name)"
-            self.navigationController?.pushViewController(onboardingVC, animated: true)
-        }
+        interactor?.createUser(with: usernameTextField.text)
     }
 }
