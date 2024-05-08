@@ -89,10 +89,10 @@ final class UserOnRankingCell: UITableViewCell, Identifiable {
         }
     }
 
-    func setupCell(with userOnRanking: UserOnRanking) {
+    func setupCell(with user: User, position: Int) {
         self.addShadow()
-        positionLabel.text = userOnRanking.position + "."
-        usernameLabel.text = userOnRanking.username
+        positionLabel.text = "\(position) ."
+        usernameLabel.text = user.username
     }
 
     fileprivate func addShadow(shadowColor: CGColor = UIColor.black.cgColor, shadowOffset: CGSize = .zero, shadowOpacity: Float = 0.2, shadowRadius: CGFloat = 3.0) {

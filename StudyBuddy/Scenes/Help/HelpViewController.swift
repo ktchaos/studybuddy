@@ -22,7 +22,7 @@ class HelpViewController: UIViewController {
 
     private lazy var tipOneLabel: UILabel = {
         let label = UILabel()
-        label.text = "O Study Buddy é um aplicativo móvel criado pelo grupo NeuroTech para gerenciar e bloquear certos aplicativos durante um determinado período de tempo. Além de uma espécie de pomodoro baseado em sessões que irá auxilia em momentos em que são necessários total foco e concentração. Você pode criar e utilizar rotinas para acumular pontos, esses pontos são calculados internamente, então não se preocupe com isso. Aproveite a aplicação e bons estudos!"
+        label.text = "O Study Buddy é um aplicativo móvel criado pela desenvolvedora Catarina Serrano para gerenciar e bloquear aplicativos durante um determinado período de tempo. Além de uma espécie de pomodoro baseado em sessões que irá auxilia em momentos em que são necessários total foco e concentração. Você pode criar e utilizar rotinas para acumular pontos, esses pontos são calculados internamente, então não se preocupe com isso. Aproveite o Study Buddy e bons estudos!"
         label.textColor = .gray
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)

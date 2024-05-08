@@ -7,10 +7,10 @@
 
 import UIKit
 import SnapKit
-import RxSwift
-import RxCocoa
 
-class RankingViewController: UIViewController {
+protocol RankingViewControlling {}
+
+class RankingViewController: UIViewController, RankingViewControlling {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Ranking geral SB"
@@ -39,18 +39,16 @@ class RankingViewController: UIViewController {
         return tableView
     }()
 
-    var dataSource: [UserOnRankingCell] = []
+    var interactor: RankingInteracting?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()
-        setupTableView()
+        interactor?.loadRanking { [weak self] in
+            self?.tableView.reloadData()
+        }
         self.navigationController?.navigationBar.tintColor = .black
-    }
-
-    func setupTableView() {
-        self.dataSource = setupCells()
     }
 
     func setupViews() {
@@ -79,42 +77,15 @@ class RankingViewController: UIViewController {
     }
 }
 
-extension RankingViewController {
-    private func setupCells() -> [UserOnRankingCell] {
-        let user1 = UserOnRanking(username: "@dummyUser03", userPicture: "", position: "1")
-        let user2 = UserOnRanking(username: "@smartUserR24", userPicture: "", position: "2")
-        let user3 = UserOnRanking(username: "@janedoe_", userPicture: "", position: "3")
-        let user4 = UserOnRanking(username: "@john-silva", userPicture: "", position: "4")
-        let user5 = UserOnRanking(username: "@thebuddymaster33", userPicture: "", position: "5")
-
-        let user1Cell = UserOnRankingCell()
-        user1Cell.userOnRanking = user1
-
-        let user2Cell = UserOnRankingCell()
-        user2Cell.userOnRanking = user2
-
-        let user3Cell = UserOnRankingCell()
-        user3Cell.userOnRanking = user3
-
-        let user4Cell = UserOnRankingCell()
-        user4Cell.userOnRanking = user4
-
-        let user5Cell = UserOnRankingCell()
-        user5Cell.userOnRanking = user5
-
-
-        return [user1Cell, user2Cell, user3Cell, user4Cell, user5Cell]
-    }
-}
-
 extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataSource.count
+        return interactor?.getDataSourceCount() ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let userOnRanking = self.dataSource[indexPath.row].userOnRanking, let cell = tableView.dequeueReusableCell(withIdentifier: UserOnRankingCell.identifier, for: indexPath) as? UserOnRankingCell {
-            cell.setupCell(with: userOnRanking)
+        if let userOnRanking = self.interactor?.getUser(at: indexPath.row),
+           let cell = tableView.dequeueReusableCell(withIdentifier: UserOnRankingCell.identifier, for: indexPath) as? UserOnRankingCell {
+            cell.setupCell(with: userOnRanking, position: (indexPath.row + 1))
             return cell
         }
 

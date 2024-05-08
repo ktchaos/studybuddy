@@ -24,7 +24,7 @@ class ProfileCoordinator: NavigationCoordinator {
     func start() {}
 
     func presentRankingScreen() {
-        let viewController = RankingViewController()
+        let viewController = RankingFactory.make()
         self.rootViewController.pushViewController(viewController, animated: true)
     }
 

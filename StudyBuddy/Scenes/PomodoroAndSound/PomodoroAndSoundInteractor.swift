@@ -25,13 +25,12 @@ final class PomodoroAndSoundInteractor: PomodoroAndSoundInteracting {
     private let usernameKey: String = "username"
     private let pointsKey: String = "points"
     private let database = Firestore.firestore()
-//    private let currentUsername: String
 
     private var pomodoroTimer: Timer = Timer()
     private var breakTimer: Timer = Timer()
 
-    private var currentPomodoroTime = 150//3000
-    private var currentBreakTime = 30//600
+    private var currentPomodoroTime = 3000
+    private var currentBreakTime = 600
     private var sessionsDone = 0
 
     private var player: AVAudioPlayer?
@@ -39,17 +38,7 @@ final class PomodoroAndSoundInteractor: PomodoroAndSoundInteracting {
     init(presenter: PomodoroAndSoundPresenting, routine: Routine) {
         self.presenter = presenter
         self.routine = routine
-//        self.currentUsername = userDefaults.string(forKey: usernameKey) ?? ""
     }
-
-//    deinit {
-//
-//    }
-
-//    private func saveUserPointsRemotly() {
-//        database.
-//        database.document("users/\()")
-//    }
 
     func savePoints(points: Double) {
         Firestore.firestore().collection("users").getDocuments { [weak self] (snapshot, error) in
@@ -130,13 +119,13 @@ extension PomodoroAndSoundInteractor {
             // Stop break timer and restart session timer
             self.presenter.updateBreakLabel(hours: "00", minutes: "00", seconds: "00")
             self.breakTimer.invalidate()
-            self.currentPomodoroTime = 150//3000
-            self.currentBreakTime = 30//600
+            self.currentPomodoroTime = 3000
+            self.currentBreakTime = 600
             self.presenter.enableSessionLabel()
             self.sessionsDone += 1
             let currentPoints = userDefaults.double(forKey: pointsKey)
-            var newPoints = (Double(self.sessionsDone) * 10.0) + currentPoints
-            
+            let newPoints = (Double(self.sessionsDone) * 10.0) + currentPoints
+            // Save points local and remote
             self.userDefaults.setValue(newPoints, forKey: pointsKey)
             self.savePoints(points: newPoints)
             

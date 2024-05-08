@@ -54,6 +54,9 @@
 		CB1FE76D2BEBB05E00AD0E2D /* EditRoutineInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE76C2BEBB05E00AD0E2D /* EditRoutineInteractor.swift */; };
 		CB1FE76F2BEBB06E00AD0E2D /* EditRoutinePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE76E2BEBB06E00AD0E2D /* EditRoutinePresenter.swift */; };
 		CB1FE7732BEBB08A00AD0E2D /* EditRoutineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7722BEBB08A00AD0E2D /* EditRoutineFactory.swift */; };
+		CB1FE7752BEC007700AD0E2D /* RankingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7742BEC007700AD0E2D /* RankingInteractor.swift */; };
+		CB1FE7772BEC008100AD0E2D /* RankingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7762BEC008100AD0E2D /* RankingPresenter.swift */; };
+		CB1FE7792BEC00A400AD0E2D /* RankingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7782BEC00A400AD0E2D /* RankingFactory.swift */; };
 		CB3799EC2BE1BF2C005A571D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB3799EB2BE1BF2C005A571D /* GoogleService-Info.plist */; };
 		CB490E102A326FDA00276780 /* RoutineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */; };
 		CB490E132A32736100276780 /* NewRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E122A32736100276780 /* NewRoutineViewController.swift */; };
@@ -156,6 +159,9 @@
 		CB1FE76C2BEBB05E00AD0E2D /* EditRoutineInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoutineInteractor.swift; sourceTree = "<group>"; };
 		CB1FE76E2BEBB06E00AD0E2D /* EditRoutinePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoutinePresenter.swift; sourceTree = "<group>"; };
 		CB1FE7722BEBB08A00AD0E2D /* EditRoutineFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoutineFactory.swift; sourceTree = "<group>"; };
+		CB1FE7742BEC007700AD0E2D /* RankingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingInteractor.swift; sourceTree = "<group>"; };
+		CB1FE7762BEC008100AD0E2D /* RankingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingPresenter.swift; sourceTree = "<group>"; };
+		CB1FE7782BEC00A400AD0E2D /* RankingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFactory.swift; sourceTree = "<group>"; };
 		CB3799EB2BE1BF2C005A571D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailsViewController.swift; sourceTree = "<group>"; };
 		CB490E122A32736100276780 /* NewRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewController.swift; sourceTree = "<group>"; };
@@ -384,6 +390,14 @@
 			path = SelectApps;
 			sourceTree = "<group>";
 		};
+		CB1FE77A2BEC00BB00AD0E2D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CBA86EBC2BD81F3A0069B024 /* UserOnRankingCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		CB490E112A32735000276780 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,8 +500,11 @@
 		CBA86EB92BD81A0D0069B024 /* Ranking */ = {
 			isa = PBXGroup;
 			children = (
+				CB1FE77A2BEC00BB00AD0E2D /* Cell */,
 				CBA86EBA2BD81A1B0069B024 /* RankingViewController.swift */,
-				CBA86EBC2BD81F3A0069B024 /* UserOnRankingCell.swift */,
+				CB1FE7742BEC007700AD0E2D /* RankingInteractor.swift */,
+				CB1FE7762BEC008100AD0E2D /* RankingPresenter.swift */,
+				CB1FE7782BEC00A400AD0E2D /* RankingFactory.swift */,
 			);
 			path = Ranking;
 			sourceTree = "<group>";
@@ -780,6 +797,7 @@
 				CB1FE7242BE843E100AD0E2D /* MainFactory.swift in Sources */,
 				CB1FE72E2BE84F1300AD0E2D /* ProfileFactory.swift in Sources */,
 				CB4F3B262BE3D1380011D5BF /* OnboardingRankingViewController.swift in Sources */,
+				CB1FE7772BEC008100AD0E2D /* RankingPresenter.swift in Sources */,
 				CB1FE7562BEAF8EB00AD0E2D /* NewRoutineInteractor.swift in Sources */,
 				CB1FE71B2BE817A900AD0E2D /* NewUserInteractor.swift in Sources */,
 				CBA86EB72BD7EEE40069B024 /* TestViewController.swift in Sources */,
@@ -797,6 +815,7 @@
 				CB490E102A326FDA00276780 /* RoutineDetailsViewController.swift in Sources */,
 				CB1FE7282BE8473D00AD0E2D /* MainPresenter.swift in Sources */,
 				CB1FE7542BEAF8E200AD0E2D /* NewRoutineFactory.swift in Sources */,
+				CB1FE7792BEC00A400AD0E2D /* RankingFactory.swift in Sources */,
 				CBA86EAF2BD7EAB20069B024 /* ProfileCoordinator.swift in Sources */,
 				CBB30A742BD9A43400239FAC /* EditRoutineViewController.swift in Sources */,
 				CB1FE7342BE8809700AD0E2D /* RoutineDetailsInteractor.swift in Sources */,
@@ -822,6 +841,7 @@
 				CB1FE7732BEBB08A00AD0E2D /* EditRoutineFactory.swift in Sources */,
 				CB178BF32A16F5DE0079A20F /* SceneDelegate.swift in Sources */,
 				CB490E152A329B3000276780 /* SelectPomodoroViewController.swift in Sources */,
+				CB1FE7752BEC007700AD0E2D /* RankingInteractor.swift in Sources */,
 				CB1FE7622BEB1CB400AD0E2D /* SelectBackgroundSoundInteractor.swift in Sources */,
 				CB1FE7302BE8797900AD0E2D /* RoutineModel.swift in Sources */,
 				CBA86EBB2BD81A1B0069B024 /* RankingViewController.swift in Sources */,
