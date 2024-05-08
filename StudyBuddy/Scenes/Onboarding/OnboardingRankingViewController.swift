@@ -71,6 +71,8 @@ class OnboardingRankingViewController: UIViewController {
         setupViews()
     }
 
+    var delegate: AppCoordinatorDelegate?
+
     func setupViews() {
         view.backgroundColor = .white
         view.addSubview(titleLabel)
@@ -117,8 +119,6 @@ class OnboardingRankingViewController: UIViewController {
     }
 
     @objc func onRankingTap() {
-        let coordinator = MainFactory.make()
-        self.navigationController?.modalPresentationStyle = .fullScreen
-        self.navigationController?.present(coordinator.rootViewController, animated: true)
+        delegate?.showMainRoute()
     }
 }

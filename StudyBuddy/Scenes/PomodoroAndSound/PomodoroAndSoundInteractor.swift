@@ -5,6 +5,8 @@
 //  Created by Catarina Serrano on 06/05/24.
 //
 
+import FirebaseCore
+import FirebaseFirestore
 import Foundation
 import AVFAudio
 
@@ -19,12 +21,17 @@ protocol PomodoroAndSoundInteracting {
 final class PomodoroAndSoundInteractor: PomodoroAndSoundInteracting {
     private let presenter: PomodoroAndSoundPresenting
     private let routine: Routine
+    private let userDefaults = UserDefaults.standard
+    private let usernameKey: String = "username"
+    private let pointsKey: String = "points"
+    private let database = Firestore.firestore()
+//    private let currentUsername: String
 
     private var pomodoroTimer: Timer = Timer()
     private var breakTimer: Timer = Timer()
 
-    private var currentPomodoroTime = 3000
-    private var currentBreakTime = 600
+    private var currentPomodoroTime = 150//3000
+    private var currentBreakTime = 30//600
     private var sessionsDone = 0
 
     private var player: AVAudioPlayer?
@@ -32,6 +39,34 @@ final class PomodoroAndSoundInteractor: PomodoroAndSoundInteracting {
     init(presenter: PomodoroAndSoundPresenting, routine: Routine) {
         self.presenter = presenter
         self.routine = routine
+//        self.currentUsername = userDefaults.string(forKey: usernameKey) ?? ""
+    }
+
+//    deinit {
+//
+//    }
+
+//    private func saveUserPointsRemotly() {
+//        database.
+//        database.document("users/\()")
+//    }
+
+    func savePoints(points: Double) {
+        Firestore.firestore().collection("users").getDocuments { [weak self] (snapshot, error) in
+            snapshot?.documents.forEach({ queryDocument in
+                let data = queryDocument.data()
+                let username = data["username"] as? String
+
+                if username == UserDefaults.standard.string(forKey: "username") {
+                    // Save the points remotly
+                    self?.savePointsForUser(id: queryDocument.documentID, points: points)
+                }
+            })
+        }
+    }
+
+    func savePointsForUser(id: String, points: Double) {
+        Firestore.firestore().collection("users").document(id).updateData(["points": points])
     }
 }
 
@@ -95,10 +130,16 @@ extension PomodoroAndSoundInteractor {
             // Stop break timer and restart session timer
             self.presenter.updateBreakLabel(hours: "00", minutes: "00", seconds: "00")
             self.breakTimer.invalidate()
-            self.currentPomodoroTime = 3000
-            self.currentBreakTime = 600
+            self.currentPomodoroTime = 150//3000
+            self.currentBreakTime = 30//600
             self.presenter.enableSessionLabel()
             self.sessionsDone += 1
+            let currentPoints = userDefaults.double(forKey: pointsKey)
+            var newPoints = (Double(self.sessionsDone) * 10.0) + currentPoints
+            
+            self.userDefaults.setValue(newPoints, forKey: pointsKey)
+            self.savePoints(points: newPoints)
+            
             self.startPomodoro()
             return
         }

@@ -10,6 +10,7 @@ protocol ProfilePresenting {
 
     func goToRankingScreen()
     func goToHelpScreen()
+    func displayTotalSBPoints(with totalPoints: Double)
 }
 
 final class ProfilePresenter: ProfilePresenting {
@@ -28,5 +29,10 @@ extension ProfilePresenter {
 
     func goToHelpScreen() {
         coordinator.presentHelpScreen()
+    }
+
+    func displayTotalSBPoints(with totalPoints: Double) {
+        let totalPointsText = "\(totalPoints) SB Points"
+        viewController?.updateTotalPointsLabel(with: totalPointsText)
     }
 }

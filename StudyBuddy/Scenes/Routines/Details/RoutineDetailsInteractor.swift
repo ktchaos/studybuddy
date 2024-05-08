@@ -9,6 +9,9 @@ protocol RoutineDetailsInteracting {
     func getTitle() -> String
     func getDescription() -> String
     func onStartButtonTap()
+    func didTapEditButton()
+    func getNumberOfSessions() -> String
+    func getSoundType() -> String
 }
 
 final class RoutineDetailsInteractor: RoutineDetailsInteracting {
@@ -32,5 +35,17 @@ extension RoutineDetailsInteractor {
 
     func onStartButtonTap() {
         presenter.goToPomodoroAndSoundScreen(model: model)
+    }
+
+    func didTapEditButton() {
+        presenter.goToEditRoutineScreen(routine: model)
+    }
+
+    func getNumberOfSessions() -> String {
+        return model.rangeTime
+    }
+
+    func getSoundType() -> String {
+        return model.audio.type
     }
 }

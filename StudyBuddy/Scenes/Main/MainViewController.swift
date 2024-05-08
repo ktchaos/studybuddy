@@ -63,6 +63,13 @@ class MainViewController: UIViewController, MainViewControlling {
     var discouragedSelections = FamilyActivitySelection()
     let store = ManagedSettingsStore()
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        interactor?.viewDidAppear()
+        routineTableView.reloadData()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -137,11 +144,8 @@ class MainViewController: UIViewController, MainViewControlling {
     }
 
     // MARK: Actions
-
     @objc func onAddTap() {
-        // TODO: Mover isso para interactor
-        let newRoutineViewController = NewRoutineViewController()
-        self.navigationController?.pushViewController(newRoutineViewController, animated: true)
+        interactor?.didTapCreateRoutine()
     }
 }
 

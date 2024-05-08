@@ -11,12 +11,23 @@ import UIKit
 protocol RoutinesCoordinatorDelegate {
     func presentPomodoroAndSoundScreen(model: Routine)
     func dismissPomodoroAndSoundScreen()
+    func presentNewRoutineScreen()
+    func presentPomodoroSessionsScreen(title: String, description: String)
+    func presentSelectAudioScreen(with numberOfSessions: Int)
+    func presentSelectAppsToBlockScreen(with audioPath: String, type: String)
+    func finishRoutineCreation()
+    func presentEditRoutineScreen(routine: Routine)
 }
 
 class RoutinesCoordinator: NavigationCoordinator {
     var isCompleted: (() -> Void)?
     var rootViewController: UINavigationController
     var childCoordinators = [Coordinator]()
+
+    var routine = Routine()
+    var currentRoutines: [Routine] = []
+    let userDefaults = UserDefaults.standard
+    let userRoutines: String = "userRoutines"
 
     init() {
         self.rootViewController = UINavigationController()
@@ -40,7 +51,68 @@ extension RoutinesCoordinator: RoutinesCoordinatorDelegate {
         self.rootViewController.pushViewController(viewController, animated: true)
     }
 
+    func presentEditRoutineScreen(routine: Routine) {
+        let viewController = EditRoutineFactory.make(delegate: self, routine: routine)
+        self.rootViewController.pushViewController(viewController, animated: true)
+    }
+
     func dismissPomodoroAndSoundScreen() {
         self.rootViewController.popViewController(animated: true)
+    }
+
+    func presentNewRoutineScreen() {
+        let viewController = NewRoutineFactory.make(delegate: self)
+        self.rootViewController.pushViewController(viewController, animated: true)
+    }
+
+    func presentPomodoroSessionsScreen(title: String, description: String) {
+        routine.title = title
+        routine.description = description
+
+        let viewController = SelectPomodoroFactory.make(delegate: self)
+        self.rootViewController.pushViewController(viewController, animated: true)
+    }
+
+    func presentSelectAudioScreen(with numberOfSessions: Int) {
+        routine.numberOfSessions = numberOfSessions
+        routine.rangeTime = "\(numberOfSessions) sessões"
+        let viewController = SelectBackgroundSoundFactory.make(delegate: self)
+        self.rootViewController.pushViewController(viewController, animated: true)
+    }
+
+    func presentSelectAppsToBlockScreen(with audioPath: String, type: String) {
+        routine.audio = Audio(path: audioPath, type: type)
+        finishRoutineCreation()
+        // TODO: Open select apps to block screen
+//        let viewController = SelectAppsToBlockViewController()
+//        self.rootViewController.pushViewController(viewController, animated: true)
+    }
+
+    func finishRoutineCreation() {
+        fetchRoutines()
+
+        do {
+            self.currentRoutines.append(self.routine)
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(self.currentRoutines)
+            UserDefaults.standard.set(data, forKey: userRoutines)
+            print(#function, "rotinas -> ", self.currentRoutines)
+            self.rootViewController.popToRootViewController(animated: true)
+        } catch {
+            print(#function, "DISGRAMA DEU RUIM")
+        }
+    }
+
+    func fetchRoutines() {
+        guard let data = UserDefaults.standard.data(forKey: userRoutines) else {
+            return
+        } 
+        do {
+            let decoder = JSONDecoder()
+            let currentRoutines = try decoder.decode([Routine].self, from: data)
+            self.currentRoutines = currentRoutines
+        } catch {
+            print(#function, "DISGRAMA DEU RUIM affff....")
+        }
     }
 }

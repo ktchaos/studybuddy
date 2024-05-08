@@ -9,6 +9,7 @@ protocol MainPreseting {
     var viewController: MainViewControlling? { get set }
 
     func openRoutineDetails(with model: Routine)
+    func openNewRoutineScreen()
 }
 
 final class MainPresenter: MainPreseting {
@@ -23,5 +24,9 @@ final class MainPresenter: MainPreseting {
 extension MainPresenter {
     func openRoutineDetails(with model: Routine) {
         coordinator.presentRoutineDetails(model: model)
+    }
+
+    func openNewRoutineScreen() {
+        coordinator.presentNewRoutineScreen()
     }
 }

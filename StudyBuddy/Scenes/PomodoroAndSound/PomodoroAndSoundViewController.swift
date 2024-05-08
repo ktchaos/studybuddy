@@ -149,6 +149,7 @@ final class PomodoroAndSoundViewController: UIViewController, PomodoroAndSoundVi
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.isNavigationBarHidden = false
+        self.interactor = nil
     }
 
     override func viewDidLoad() {

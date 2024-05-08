@@ -25,7 +25,6 @@ final class RoutineDetailsViewController: UIViewController, RoutineDetailsViewCo
         button.addTarget(self, action: #selector(self.didTapEditButton), for: .touchUpInside)
         return button
     }()
-
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -33,7 +32,6 @@ final class RoutineDetailsViewController: UIViewController, RoutineDetailsViewCo
         label.textColor = .black
         return label
     }()
-
     private lazy var startButton: UIButton = {
         let button = UIButton()
         button.setTitle(" Começar rotina ", for: .normal)
@@ -44,8 +42,6 @@ final class RoutineDetailsViewController: UIViewController, RoutineDetailsViewCo
         button.addTarget(self, action: #selector(self.didTapStartButton), for: .touchUpInside)
         return button
     }()
-
-
     private lazy var pomodoroLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -54,33 +50,18 @@ final class RoutineDetailsViewController: UIViewController, RoutineDetailsViewCo
         label.font = UIFont.systemFont(ofSize: 17)
         return label
     }()
-    private lazy var pomodoroToggle: UISwitch = {
-        let toggle = UISwitch()
-        toggle.isOn = false
-        toggle.isEnabled = false
+    private lazy var pomodoroToggle: UILabel = {
+        let toggle = UILabel()
+        toggle.font = UIFont.systemFont(ofSize: 14)
         return toggle
     }()
-    private lazy var helperView1: UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
-        return view
-    }()
-    private lazy var helperView3: UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
-        return view
-    }()
-    private lazy var v1Stack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [helperView1, pomodoroToggle])
-        stack.axis = .vertical
-        return stack
-    }()
     private lazy var pomodoroStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [pomodoroLabel, v1Stack, helperView3])
+        let stack = UIStackView(arrangedSubviews: [pomodoroLabel, pomodoroToggle])
         stack.axis = .horizontal
         stack.layer.borderWidth = 0.1
         stack.layer.cornerRadius = 8
         stack.backgroundColor = .systemGray6
+        stack.distribution = .fillEqually
         return stack
     }()
     private lazy var soundLabel: UILabel = {
@@ -91,37 +72,20 @@ final class RoutineDetailsViewController: UIViewController, RoutineDetailsViewCo
         label.font = UIFont.systemFont(ofSize: 17)
         return label
     }()
-    private lazy var soundToggle: UISwitch = {
-        let toggle = UISwitch()
-        toggle.isOn = false
-        toggle.isEnabled = false
+    private lazy var soundToggle: UILabel = {
+        let toggle = UILabel()
+        toggle.font = UIFont.systemFont(ofSize: 14)
         return toggle
     }()
-    private lazy var helperView2: UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
-        return view
-    }()
-    private lazy var helperView4: UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
-        return view
-    }()
-    private lazy var v2Stack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [helperView2, soundToggle])
-        stack.axis = .vertical
-        return stack
-    }()
-
     private lazy var soundStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [soundLabel, v2Stack, helperView4])
+        let stack = UIStackView(arrangedSubviews: [soundLabel, soundToggle])
         stack.axis = .horizontal
         stack.layer.borderWidth = 0.1
         stack.layer.cornerRadius = 8
         stack.backgroundColor = .systemGray6
+        stack.distribution = .fillEqually
         return stack
     }()
-
     private lazy var blockedAppsLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -172,6 +136,8 @@ final class RoutineDetailsViewController: UIViewController, RoutineDetailsViewCo
 
     func setupUI() {
         title = interactor?.getTitle()
+        pomodoroToggle.text = interactor?.getNumberOfSessions()
+        soundToggle.text = interactor?.getSoundType()
         descriptionLabel.text = interactor?.getDescription()
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
@@ -187,21 +153,7 @@ final class RoutineDetailsViewController: UIViewController, RoutineDetailsViewCo
         view.addSubview(startButton)
 
         view.bringSubviewToFront(editButton)
-        helperView1.snp.makeConstraints {
-            $0.height.equalTo(6)
-        }
 
-        helperView2.snp.makeConstraints {
-            $0.height.equalTo(6)
-        }
-
-        helperView3.snp.makeConstraints {
-            $0.width.equalTo(6)
-        }
-
-        helperView4.snp.makeConstraints {
-            $0.width.equalTo(6)
-        }
 
         descriptionLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(150)
@@ -275,8 +227,7 @@ extension RoutineDetailsViewController: UITableViewDelegate, UITableViewDataSour
 
 extension RoutineDetailsViewController {
     @objc func didTapEditButton() {
-        let editRoutineViewController = EditRoutineViewController()
-        self.navigationController?.pushViewController(editRoutineViewController, animated: true)
+        interactor?.didTapEditButton()
     }
 
     @objc func didTapStartButton() {

@@ -49,7 +49,11 @@ enum StudyBuddyTabBarScene: Int, CaseIterable, TabBarScene {
     }
 }
 
-class AppCoordinator: Coordinator {
+protocol AppCoordinatorDelegate {
+    func showMainRoute()
+}
+
+class AppCoordinator: Coordinator, AppCoordinatorDelegate {
     var isCompleted: (() -> Void)?
     var childCoordinators = [Coordinator]()
 
@@ -78,7 +82,7 @@ class AppCoordinator: Coordinator {
     }
 
     func showNewUserRoute() {
-        let (_, coordinator) = NewUserFactory.make()
+        let (_, coordinator) = NewUserFactory.make(delegate: self)
         self.window.rootViewController = coordinator.rootViewController
         self.window.makeKeyAndVisible()
     }

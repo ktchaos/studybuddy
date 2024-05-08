@@ -26,4 +26,8 @@ class RoutinesDetailsCoordinator: NavigationCoordinator {
     func presentPomodoroAndSoundScreen(model: Routine) {
         delegate?.presentPomodoroAndSoundScreen(model: model)
     }
+
+    func presentEditRoutineScreen(routine: Routine) {
+        delegate?.presentEditRoutineScreen(routine: routine)
+    }
 }

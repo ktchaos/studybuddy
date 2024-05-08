@@ -42,6 +42,18 @@
 		CB1FE74E2BEACEA700AD0E2D /* lo-fi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB1FE74A2BEACEA700AD0E2D /* lo-fi.mp3 */; };
 		CB1FE74F2BEACEA700AD0E2D /* nature.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB1FE74B2BEACEA700AD0E2D /* nature.mp3 */; };
 		CB1FE7502BEACEA700AD0E2D /* jazz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB1FE74C2BEACEA700AD0E2D /* jazz.mp3 */; };
+		CB1FE7542BEAF8E200AD0E2D /* NewRoutineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7532BEAF8E200AD0E2D /* NewRoutineFactory.swift */; };
+		CB1FE7562BEAF8EB00AD0E2D /* NewRoutineInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7552BEAF8EB00AD0E2D /* NewRoutineInteractor.swift */; };
+		CB1FE7582BEAF8F700AD0E2D /* NewRoutinePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7572BEAF8F700AD0E2D /* NewRoutinePresenter.swift */; };
+		CB1FE75B2BEB0CB500AD0E2D /* SelectPomodoroInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE75A2BEB0CB500AD0E2D /* SelectPomodoroInteractor.swift */; };
+		CB1FE75D2BEB0CC200AD0E2D /* SelectPomodoroPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE75C2BEB0CC200AD0E2D /* SelectPomodoroPresenter.swift */; };
+		CB1FE75F2BEB0CD300AD0E2D /* SelectPomodoroFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE75E2BEB0CD300AD0E2D /* SelectPomodoroFactory.swift */; };
+		CB1FE7622BEB1CB400AD0E2D /* SelectBackgroundSoundInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7612BEB1CB400AD0E2D /* SelectBackgroundSoundInteractor.swift */; };
+		CB1FE7642BEB1CBE00AD0E2D /* SelectBackgroundSoundPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7632BEB1CBE00AD0E2D /* SelectBackgroundSoundPresenter.swift */; };
+		CB1FE7662BEB1CC700AD0E2D /* SelectBackgroundSoundFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7652BEB1CC700AD0E2D /* SelectBackgroundSoundFactory.swift */; };
+		CB1FE76D2BEBB05E00AD0E2D /* EditRoutineInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE76C2BEBB05E00AD0E2D /* EditRoutineInteractor.swift */; };
+		CB1FE76F2BEBB06E00AD0E2D /* EditRoutinePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE76E2BEBB06E00AD0E2D /* EditRoutinePresenter.swift */; };
+		CB1FE7732BEBB08A00AD0E2D /* EditRoutineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7722BEBB08A00AD0E2D /* EditRoutineFactory.swift */; };
 		CB3799EC2BE1BF2C005A571D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB3799EB2BE1BF2C005A571D /* GoogleService-Info.plist */; };
 		CB490E102A326FDA00276780 /* RoutineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */; };
 		CB490E132A32736100276780 /* NewRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E122A32736100276780 /* NewRoutineViewController.swift */; };
@@ -132,6 +144,18 @@
 		CB1FE74A2BEACEA700AD0E2D /* lo-fi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "lo-fi.mp3"; sourceTree = "<group>"; };
 		CB1FE74B2BEACEA700AD0E2D /* nature.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nature.mp3; sourceTree = "<group>"; };
 		CB1FE74C2BEACEA700AD0E2D /* jazz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jazz.mp3; sourceTree = "<group>"; };
+		CB1FE7532BEAF8E200AD0E2D /* NewRoutineFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineFactory.swift; sourceTree = "<group>"; };
+		CB1FE7552BEAF8EB00AD0E2D /* NewRoutineInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineInteractor.swift; sourceTree = "<group>"; };
+		CB1FE7572BEAF8F700AD0E2D /* NewRoutinePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutinePresenter.swift; sourceTree = "<group>"; };
+		CB1FE75A2BEB0CB500AD0E2D /* SelectPomodoroInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPomodoroInteractor.swift; sourceTree = "<group>"; };
+		CB1FE75C2BEB0CC200AD0E2D /* SelectPomodoroPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPomodoroPresenter.swift; sourceTree = "<group>"; };
+		CB1FE75E2BEB0CD300AD0E2D /* SelectPomodoroFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPomodoroFactory.swift; sourceTree = "<group>"; };
+		CB1FE7612BEB1CB400AD0E2D /* SelectBackgroundSoundInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBackgroundSoundInteractor.swift; sourceTree = "<group>"; };
+		CB1FE7632BEB1CBE00AD0E2D /* SelectBackgroundSoundPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBackgroundSoundPresenter.swift; sourceTree = "<group>"; };
+		CB1FE7652BEB1CC700AD0E2D /* SelectBackgroundSoundFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBackgroundSoundFactory.swift; sourceTree = "<group>"; };
+		CB1FE76C2BEBB05E00AD0E2D /* EditRoutineInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoutineInteractor.swift; sourceTree = "<group>"; };
+		CB1FE76E2BEBB06E00AD0E2D /* EditRoutinePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoutinePresenter.swift; sourceTree = "<group>"; };
+		CB1FE7722BEBB08A00AD0E2D /* EditRoutineFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoutineFactory.swift; sourceTree = "<group>"; };
 		CB3799EB2BE1BF2C005A571D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailsViewController.swift; sourceTree = "<group>"; };
 		CB490E122A32736100276780 /* NewRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +294,7 @@
 		CB1FE7222BE843C400AD0E2D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				CBEFAABA2A325C1F00DA24CB /* RoutineCell */,
 				CB1FE72F2BE8797900AD0E2D /* RoutineModel.swift */,
 				CBA86EB02BD7EAC30069B024 /* RoutinesCoordinator.swift */,
 				CB178BF42A16F5DE0079A20F /* MainViewController.swift */,
@@ -280,7 +305,7 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		CB1FE7392BE890E200AD0E2D /* Pomodoro */ = {
+		CB1FE7392BE890E200AD0E2D /* PomodoroAndSound */ = {
 			isa = PBXGroup;
 			children = (
 				CB1FE73A2BE8910D00AD0E2D /* PomodoroAndSoundViewController.swift */,
@@ -290,7 +315,7 @@
 				CB1FE7422BE8917C00AD0E2D /* PomodoroAndSoundCoordinator.swift */,
 				CB1FE7462BEA8C6300AD0E2D /* AudioButtonState.swift */,
 			);
-			path = Pomodoro;
+			path = PomodoroAndSound;
 			sourceTree = "<group>";
 		};
 		CB1FE7482BEACE9A00AD0E2D /* Audio */ = {
@@ -304,18 +329,70 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
-		CB490E112A32735000276780 /* Routine */ = {
+		CB1FE7512BEAF87C00AD0E2D /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				CB1FE7372BE880B600AD0E2D /* RoutineDetailsCoordinator.swift */,
+				CB1FE7352BE880A800AD0E2D /* RoutineDetailsPresenter.swift */,
+				CB1FE7332BE8809700AD0E2D /* RoutineDetailsInteractor.swift */,
+				CB1FE7312BE8808700AD0E2D /* RoutineDetailsFactory.swift */,
+				CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		CB1FE7522BEAF8A100AD0E2D /* New */ = {
 			isa = PBXGroup;
 			children = (
 				CB490E122A32736100276780 /* NewRoutineViewController.swift */,
-				CB490E142A329B3000276780 /* SelectPomodoroViewController.swift */,
-				CB490E162A329E1900276780 /* SelectBackgroundSoundViewController.swift */,
-				CB490E182A329F3100276780 /* SelectAppsToBlockViewController.swift */,
-				CB490E1A2A32A36E00276780 /* SoundCell.swift */,
-				CB490E1C2A32B02900276780 /* AppCell.swift */,
-				CBB30A732BD9A43400239FAC /* EditRoutineViewController.swift */,
+				CB1FE7532BEAF8E200AD0E2D /* NewRoutineFactory.swift */,
+				CB1FE7552BEAF8EB00AD0E2D /* NewRoutineInteractor.swift */,
+				CB1FE7572BEAF8F700AD0E2D /* NewRoutinePresenter.swift */,
 			);
-			path = Routine;
+			path = New;
+			sourceTree = "<group>";
+		};
+		CB1FE7592BEB0C6500AD0E2D /* SelectPomodoro */ = {
+			isa = PBXGroup;
+			children = (
+				CB490E142A329B3000276780 /* SelectPomodoroViewController.swift */,
+				CB1FE75A2BEB0CB500AD0E2D /* SelectPomodoroInteractor.swift */,
+				CB1FE75C2BEB0CC200AD0E2D /* SelectPomodoroPresenter.swift */,
+				CB1FE75E2BEB0CD300AD0E2D /* SelectPomodoroFactory.swift */,
+			);
+			path = SelectPomodoro;
+			sourceTree = "<group>";
+		};
+		CB1FE7602BEB1C1100AD0E2D /* SelectAudio */ = {
+			isa = PBXGroup;
+			children = (
+				CB490E1A2A32A36E00276780 /* SoundCell.swift */,
+				CB490E162A329E1900276780 /* SelectBackgroundSoundViewController.swift */,
+				CB1FE7612BEB1CB400AD0E2D /* SelectBackgroundSoundInteractor.swift */,
+				CB1FE7632BEB1CBE00AD0E2D /* SelectBackgroundSoundPresenter.swift */,
+				CB1FE7652BEB1CC700AD0E2D /* SelectBackgroundSoundFactory.swift */,
+			);
+			path = SelectAudio;
+			sourceTree = "<group>";
+		};
+		CB1FE76B2BEB36F400AD0E2D /* SelectApps */ = {
+			isa = PBXGroup;
+			children = (
+				CB490E1C2A32B02900276780 /* AppCell.swift */,
+				CB490E182A329F3100276780 /* SelectAppsToBlockViewController.swift */,
+			);
+			path = SelectApps;
+			sourceTree = "<group>";
+		};
+		CB490E112A32735000276780 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				CBB30A732BD9A43400239FAC /* EditRoutineViewController.swift */,
+				CB1FE76C2BEBB05E00AD0E2D /* EditRoutineInteractor.swift */,
+				CB1FE76E2BEBB06E00AD0E2D /* EditRoutinePresenter.swift */,
+				CB1FE7722BEBB08A00AD0E2D /* EditRoutineFactory.swift */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 		CB4F3B222BE3D0FD0011D5BF /* Onboarding */ = {
@@ -337,13 +414,12 @@
 		CBA86EA12BD73ED30069B024 /* Routines */ = {
 			isa = PBXGroup;
 			children = (
-				CBEFAABA2A325C1F00DA24CB /* RoutineCell */,
-				CB1FE7372BE880B600AD0E2D /* RoutineDetailsCoordinator.swift */,
-				CB1FE7352BE880A800AD0E2D /* RoutineDetailsPresenter.swift */,
-				CB1FE7332BE8809700AD0E2D /* RoutineDetailsInteractor.swift */,
-				CB1FE7312BE8808700AD0E2D /* RoutineDetailsFactory.swift */,
-				CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */,
-				CB490E112A32735000276780 /* Routine */,
+				CB1FE76B2BEB36F400AD0E2D /* SelectApps */,
+				CB1FE7602BEB1C1100AD0E2D /* SelectAudio */,
+				CB1FE7592BEB0C6500AD0E2D /* SelectPomodoro */,
+				CB1FE7522BEAF8A100AD0E2D /* New */,
+				CB1FE7512BEAF87C00AD0E2D /* Details */,
+				CB490E112A32735000276780 /* Edit */,
 			);
 			path = Routines;
 			sourceTree = "<group>";
@@ -373,7 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				CBA86EA92BD7E8DD0069B024 /* MainCoordinator.swift */,
-				CB1FE7392BE890E200AD0E2D /* Pomodoro */,
+				CB1FE7392BE890E200AD0E2D /* PomodoroAndSound */,
 				CB1FE7222BE843C400AD0E2D /* Main */,
 				CB4F3B272BE3D6590011D5BF /* Help */,
 				CB4F3B222BE3D0FD0011D5BF /* Onboarding */,
@@ -695,6 +771,7 @@
 				CBA86EA82BD73FEC0069B024 /* Coordinator.swift in Sources */,
 				CBA86EAD2BD7E9190069B024 /* TabBarScene.swift in Sources */,
 				CB490E1B2A32A36E00276780 /* SoundCell.swift in Sources */,
+				CB1FE75D2BEB0CC200AD0E2D /* SelectPomodoroPresenter.swift in Sources */,
 				CB1FE7212BE8186600AD0E2D /* NewUserFactory.swift in Sources */,
 				CB490E132A32736100276780 /* NewRoutineViewController.swift in Sources */,
 				CB490E172A329E1900276780 /* SelectBackgroundSoundViewController.swift in Sources */,
@@ -703,25 +780,33 @@
 				CB1FE7242BE843E100AD0E2D /* MainFactory.swift in Sources */,
 				CB1FE72E2BE84F1300AD0E2D /* ProfileFactory.swift in Sources */,
 				CB4F3B262BE3D1380011D5BF /* OnboardingRankingViewController.swift in Sources */,
+				CB1FE7562BEAF8EB00AD0E2D /* NewRoutineInteractor.swift in Sources */,
 				CB1FE71B2BE817A900AD0E2D /* NewUserInteractor.swift in Sources */,
 				CBA86EB72BD7EEE40069B024 /* TestViewController.swift in Sources */,
 				CBA86EA42BD73EFA0069B024 /* ProfileViewController.swift in Sources */,
+				CB1FE75F2BEB0CD300AD0E2D /* SelectPomodoroFactory.swift in Sources */,
 				CB1FE72C2BE84DCD00AD0E2D /* ProfilePresenter.swift in Sources */,
+				CB1FE75B2BEB0CB500AD0E2D /* SelectPomodoroInteractor.swift in Sources */,
 				CB1FE73B2BE8910D00AD0E2D /* PomodoroAndSoundViewController.swift in Sources */,
+				CB1FE76D2BEBB05E00AD0E2D /* EditRoutineInteractor.swift in Sources */,
 				CB178BF12A16F5DE0079A20F /* AppDelegate.swift in Sources */,
+				CB1FE7642BEB1CBE00AD0E2D /* SelectBackgroundSoundPresenter.swift in Sources */,
 				CBA86EB12BD7EAC30069B024 /* RoutinesCoordinator.swift in Sources */,
 				CB1FE71D2BE817B600AD0E2D /* NewUserPresenter.swift in Sources */,
 				CB1FE7262BE8473300AD0E2D /* MainInteractor.swift in Sources */,
 				CB490E102A326FDA00276780 /* RoutineDetailsViewController.swift in Sources */,
 				CB1FE7282BE8473D00AD0E2D /* MainPresenter.swift in Sources */,
+				CB1FE7542BEAF8E200AD0E2D /* NewRoutineFactory.swift in Sources */,
 				CBA86EAF2BD7EAB20069B024 /* ProfileCoordinator.swift in Sources */,
 				CBB30A742BD9A43400239FAC /* EditRoutineViewController.swift in Sources */,
 				CB1FE7342BE8809700AD0E2D /* RoutineDetailsInteractor.swift in Sources */,
+				CB1FE7662BEB1CC700AD0E2D /* SelectBackgroundSoundFactory.swift in Sources */,
 				CBB30A792BD9CBCE00239FAC /* NewUserViewController.swift in Sources */,
 				CB1FE73D2BE8911D00AD0E2D /* PomodoroAndSoundFactory.swift in Sources */,
 				CB1FE7412BE8917200AD0E2D /* PomodoroAndSoundPresenter.swift in Sources */,
 				CB510DCE2A336C390092147D /* TextField+Extensions.swift in Sources */,
 				CBA86EBD2BD81F3A0069B024 /* UserOnRankingCell.swift in Sources */,
+				CB1FE7582BEAF8F700AD0E2D /* NewRoutinePresenter.swift in Sources */,
 				CBEFAAC32A325D6E00DA24CB /* Cell+Extensions.swift in Sources */,
 				CBEFAABC2A325C5D00DA24CB /* RoutineCell.swift in Sources */,
 				CB1FE72A2BE84DBF00AD0E2D /* ProfileInteractor.swift in Sources */,
@@ -733,8 +818,11 @@
 				CBB30A772BD9CA8400239FAC /* NewUserCoordinator.swift in Sources */,
 				CBA86EA62BD73F180069B024 /* AppCoordinator.swift in Sources */,
 				CB1FE7322BE8808700AD0E2D /* RoutineDetailsFactory.swift in Sources */,
+				CB1FE76F2BEBB06E00AD0E2D /* EditRoutinePresenter.swift in Sources */,
+				CB1FE7732BEBB08A00AD0E2D /* EditRoutineFactory.swift in Sources */,
 				CB178BF32A16F5DE0079A20F /* SceneDelegate.swift in Sources */,
 				CB490E152A329B3000276780 /* SelectPomodoroViewController.swift in Sources */,
+				CB1FE7622BEB1CB400AD0E2D /* SelectBackgroundSoundInteractor.swift in Sources */,
 				CB1FE7302BE8797900AD0E2D /* RoutineModel.swift in Sources */,
 				CBA86EBB2BD81A1B0069B024 /* RankingViewController.swift in Sources */,
 			);

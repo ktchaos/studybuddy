@@ -7,14 +7,13 @@
 
 import UIKit
 
-struct Sound {
+struct SoundConfig {
     var image: UIImage
     var name: String
+    var path: String
 }
 
 final class SoundCell: UICollectionViewCell, Identifiable {
-    // MARK: Properties
-
     private lazy var icon: UIImageView = {
         let imageView = UIImageView()
         imageView.tintColor = .black
@@ -25,7 +24,7 @@ final class SoundCell: UICollectionViewCell, Identifiable {
         label.textColor = .black
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 15)//UIFont(name: "Courier New", size: 15)
+        label.font = UIFont.systemFont(ofSize: 15)
         return label
     }()
     private lazy var hStack: UIStackView = {
@@ -35,7 +34,17 @@ final class SoundCell: UICollectionViewCell, Identifiable {
         return stack
     }()
 
-    var routine: Sound?
+    override var isSelected: Bool{
+        didSet {
+            if self.isSelected {
+                self.backgroundColor = .systemGray4
+            } else {
+                self.backgroundColor = .systemGray6
+            }
+        }
+    }
+
+    var soundConfig: SoundConfig?
 
     // MARK: Init
     override init(frame: CGRect) {
@@ -51,7 +60,6 @@ final class SoundCell: UICollectionViewCell, Identifiable {
     }
 
     // MARK: Setup
-
     func setupSubviews() {
         addSubview(hStack)
     }
@@ -68,9 +76,10 @@ final class SoundCell: UICollectionViewCell, Identifiable {
         }
     }
 
-    func setupCell(with sound: Sound) {
+    func setupCell(with sound: SoundConfig) {
         self.addShadow()
         icon.image = sound.image
+        icon.tintColor = .black
         nameLabel.text = sound.name
         self.backgroundColor = .systemGray6
     }

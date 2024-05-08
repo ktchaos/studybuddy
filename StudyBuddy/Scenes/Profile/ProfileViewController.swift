@@ -7,11 +7,9 @@
 
 import UIKit
 import SnapKit
-import RxSwift
-import RxCocoa
 
 protocol ProfileViewControlling {
-    
+    func updateTotalPointsLabel(with totalPointsText: String)
 }
 
 class ProfileViewController: UIViewController, ProfileViewControlling {
@@ -50,7 +48,6 @@ class ProfileViewController: UIViewController, ProfileViewControlling {
 
     private lazy var totalScoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "200 SB points"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         return label
@@ -84,6 +81,11 @@ class ProfileViewController: UIViewController, ProfileViewControlling {
         super.viewDidLoad()
 
         setupViews()
+        setupUI()
+    }
+
+    func setupUI() {
+        usernameLabel.text = interactor?.getUsernameAndLoadPoints()
     }
 
     func setupViews() {
@@ -145,5 +147,11 @@ class ProfileViewController: UIViewController, ProfileViewControlling {
         interactor?.onHelpTap()
 //        let helpViewController = HelpViewController()
 //        self.navigationController?.pushViewController(helpViewController, animated: true)
+    }
+}
+
+extension ProfileViewController {
+    func updateTotalPointsLabel(with totalPointsText: String) {
+        totalScoreLabel.text = totalPointsText
     }
 }

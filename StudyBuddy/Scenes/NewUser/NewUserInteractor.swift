@@ -18,6 +18,7 @@ class NewUserInteractor: NewUserInteracting {
     private let database = Firestore.firestore()
     private let userDefaults = UserDefaults.standard
     private let isLoggedKey: String = "isLogged"
+    private let username: String = "username"
 
     init(presenter: NewUserPresenting) {
         self.presenter = presenter
@@ -43,12 +44,11 @@ extension NewUserInteractor {
     private func createUser(with username: String) {
         // MARK: Save on UserDefaults and to the Firestore database
         userDefaults.set(true, forKey: isLoggedKey)
+        userDefaults.set(username, forKey: self.username)
         database.collection("users").addDocument(data: ["username": username]) { [weak self] error in
             if error != nil {
-                print("#DEBUG: 1 ", error)
                 self?.presenter.displayError(with: "Um erro inesperado ocorreu, tente novamente")
             } else {
-                print("#DEBUG: 2 ", username)
                 self?.presenter.goToOnboardingScreen(with: username)
             }
         }

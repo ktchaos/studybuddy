@@ -8,7 +8,7 @@
 import UIKit
 
 enum NewUserFactory {
-    static func make() -> (UIViewController, NavigationCoordinator) {
+    static func make(delegate: AppCoordinatorDelegate) -> (UIViewController, NavigationCoordinator) {
         let coordinator = NewUserCoordinator()
         let presenter = NewUserPresenter(coordinator: coordinator)
         let interactor = NewUserInteractor(presenter: presenter)
@@ -16,7 +16,7 @@ enum NewUserFactory {
 
         viewController.interactor = interactor
         presenter.viewController = viewController
-
+        presenter.delegate = delegate
         coordinator.start(viewController: viewController)
         return (viewController, coordinator)
     }

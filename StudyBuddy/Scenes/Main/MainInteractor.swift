@@ -5,19 +5,39 @@
 //  Created by Catarina Serrano on 05/05/24.
 //
 
+import Foundation
+
 protocol MainInteracting {
     func getDataSourceCount() -> Int
     func getTitleAndDuration(for row: Int) -> (title: String, duration: String)
     func didSelectCell(at row: Int)
+    func didTapCreateRoutine()
+    func viewDidAppear()
 }
 
 final class MainInteractor: MainInteracting {
     private let presenter: MainPreseting
-    private let dataSource: [Routine]
+    private var dataSource: [Routine] = []
+
+    let userDefaults = UserDefaults.standard
+    let userRoutines: String = "userRoutines"
 
     init(presenter: MainPreseting) {
         self.presenter = presenter
-        self.dataSource = [Routine(title: "Teste title", description: "name of routine", rangeTime: "lalala", numberOfSessions: 3, audio: .init(path: "frequency"))]
+        fetchRoutines()
+    }
+
+    private func fetchRoutines() {
+        guard let data = UserDefaults.standard.data(forKey: userRoutines) else {
+            return
+        }
+        do {
+            let decoder = JSONDecoder()
+            let currentRoutines = try decoder.decode([Routine].self, from: data)
+            self.dataSource = currentRoutines
+        } catch {
+            // Fallback
+        }
     }
 }
 
@@ -34,5 +54,13 @@ extension MainInteractor {
     func didSelectCell(at row: Int) {
         let routine = dataSource[row]
         presenter.openRoutineDetails(with: routine)
+    }
+
+    func didTapCreateRoutine() {
+        presenter.openNewRoutineScreen()
+    }
+
+    func viewDidAppear() {
+        fetchRoutines()
     }
 }

@@ -9,6 +9,7 @@ protocol RoutineDetailsPresenting {
     var viewController: RoutineDetailsViewControlling? { get set }
 
     func goToPomodoroAndSoundScreen(model: Routine)
+    func goToEditRoutineScreen(routine: Routine)
 }
 
 final class RoutineDetailsPresenter: RoutineDetailsPresenting {
@@ -23,5 +24,9 @@ final class RoutineDetailsPresenter: RoutineDetailsPresenting {
 extension RoutineDetailsPresenter {
     func goToPomodoroAndSoundScreen(model: Routine) {
         coordinator.presentPomodoroAndSoundScreen(model: model)
+    }
+
+    func goToEditRoutineScreen(routine: Routine) {
+        coordinator.presentEditRoutineScreen(routine: routine)
     }
 }

@@ -73,7 +73,7 @@ class NewUserViewController: UIViewController, NewUserViewControlling {
 
     private lazy var copyrightLabel: UILabel = {
         let label = UILabel()
-        label.text = "Desenvolvido por NeuroTech ©"
+        label.text = "Desenvolvido por Catarina Serrano ©"
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         label.textAlignment = .center
         label.textColor = .systemGray2

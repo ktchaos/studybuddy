@@ -7,78 +7,74 @@
 
 import UIKit
 import SnapKit
-import RxSwift
-import RxCocoa
 
-class NewRoutineViewController: UIViewController {
+protocol NewRoutineViewControlling {
+    func displayErrorOnTitle(message: String)
+    func displayErrorOnDescription(message: String)
+}
+
+final class NewRoutineViewController: UIViewController, NewRoutineViewControlling {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Título da rotina"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 22)//UIFont(name: "Courier New", size: 22)
+        label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         label.textColor = .black
-        label.addGestureRecognizer(.init(target: self, action: #selector(self.onViewTouch)))
         return label
     }()
-
     private lazy var titleTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
-        textField.font = UIFont.systemFont(ofSize: 18)//UIFont(name: "Courier New", size: 18)
+        textField.font = UIFont.systemFont(ofSize: 20)
         textField.layer.borderWidth = 1
         textField.addPadding(.left(6))
         textField.delegate = self
         return textField
+    }()
+    private lazy var titleErrorLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Erro ao num sei que num sei que la"
+        label.isHidden = true
+        label.textColor = .systemRed
+        label.font = UIFont.systemFont(ofSize: 14)
+        return label
     }()
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Descreva um pouco sobre o que é essa rotina:"
+        label.text = "Descreva brevemente o objetivo dessa rotina:"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 15)//UIFont(name: "Courier New", size: 15)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.textColor = .black
         return label
     }()
-
     private lazy var descriptionTextField: UITextField = {
         let textField = UITextField()
         textField.textColor = .black
-        textField.font = UIFont.systemFont(ofSize: 15)//UIFont(name: "Courier New", size: 15)
+        textField.font = UIFont.systemFont(ofSize: 16)
         textField.layer.borderWidth = 1
         textField.addPadding(.left(6))
         textField.delegate = self
         return textField
     }()
-
-    private lazy var selectTimeTitle: UILabel = {
+    private lazy var descriptionErrorLabel: UILabel = {
         let label = UILabel()
-        label.text = "Selecione a duração da rotina:"
-        label.font = UIFont.systemFont(ofSize: 15)//UIFont(name: "Courier New", size: 15)
-        label.textColor = .black
+        label.text = "Erro ao num sei que num sei que la"
+        label.isHidden = true
+        label.textColor = .systemRed
+        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
-
-    private lazy var timePickerView: UIPickerView = {
-        let pickerView = UIPickerView()
-        pickerView.dataSource = self
-        pickerView.delegate = self
-        return pickerView
-    }()
-
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.setTitle("Continuar", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)//UIFont(name: "Courier New", size: 20)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.backgroundColor = .black
         button.addTarget(self, action: #selector(self.onNextTap), for: .touchUpInside)
         return button
     }()
 
-    let minutes: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"]
-    let hours: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "22", "23"]
-
-    var pickerData: [[String]] = [[]]
-    var routine: Routine?
+    var interactor: NewRoutineInteracting?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -89,8 +85,6 @@ class NewRoutineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        pickerData = [hours, minutes]
-
         setupUI()
         setupViews()
     }
@@ -99,20 +93,18 @@ class NewRoutineViewController: UIViewController {
         title = "Nova rotina"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
-        view.addGestureRecognizer(.init(target: self, action: #selector(self.onViewTouch)))
     }
 
     func setupViews() {
         addShadow(view: titleTextField)
         addShadow(view: descriptionTextField)
-        addShadow(view: timePickerView, shadowOpacity: 0.2)
         addShadow(view: nextButton)
         view.addSubview(titleTextField)
         view.addSubview(titleLabel)
+        view.addSubview(titleErrorLabel)
         view.addSubview(descriptionTextField)
         view.addSubview(descriptionLabel)
-        view.addSubview(selectTimeTitle)
-        view.addSubview(timePickerView)
+        view.addSubview(descriptionErrorLabel)
         view.addSubview(nextButton)
 
         titleLabel.snp.makeConstraints {
@@ -129,11 +121,17 @@ class NewRoutineViewController: UIViewController {
             $0.top.equalTo(titleLabel.snp.bottom)
         }
 
+        titleErrorLabel.snp.makeConstraints {
+            $0.top.equalTo(titleTextField.snp.bottom).offset(6)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().inset(16)
+        }
+
         descriptionLabel.snp.makeConstraints {
             $0.height.equalTo(48)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(titleTextField.snp.bottom).offset(16)
+            $0.top.equalTo(titleErrorLabel.snp.bottom).offset(26)
         }
 
         descriptionTextField.snp.makeConstraints {
@@ -143,25 +141,17 @@ class NewRoutineViewController: UIViewController {
             $0.top.equalTo(descriptionLabel.snp.bottom)
         }
 
-        selectTimeTitle.snp.makeConstraints {
-            $0.height.equalTo(48)
+        descriptionErrorLabel.snp.makeConstraints {
+            $0.top.equalTo(descriptionTextField.snp.bottom).offset(6)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(descriptionTextField.snp.bottom).offset(12)
-        }
-
-        timePickerView.snp.makeConstraints {
-            $0.height.equalTo(100)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(selectTimeTitle.snp.bottom)
         }
 
         nextButton.snp.makeConstraints {
             $0.height.equalTo(52)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
-            $0.bottom.equalToSuperview().inset(42)
+            $0.bottom.equalToSuperview().inset(62)
         }
     }
 
@@ -177,57 +167,7 @@ class NewRoutineViewController: UIViewController {
     // MARK: Actions
 
     @objc func onNextTap() {
-        let selectPomodoroViewController = SelectPomodoroViewController()
-        self.navigationController?.pushViewController(selectPomodoroViewController, animated: true)
-    }
-}
-
-extension NewRoutineViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 4
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        switch component {
-        case 0:
-            return 24
-        case 1:
-            return 1
-        case 2:
-            return 60
-        case 3:
-            return 1
-        default:
-            return 1
-        }
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch component {
-        case 0, 2:
-            return "\(row)"
-        case 1:
-            return "horas"
-        case 3:
-            return "minutos"
-        default:
-            return ""
-        }
-    }
-
-    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        switch component {
-        case 0:
-            return 54
-        case 1:
-            return 100
-        case 2:
-            return 54
-        case 3:
-            return 100
-        default:
-            return 1
-        }
+        interactor?.didTapContinueButton(title: titleTextField.text, description: descriptionTextField.text)
     }
 }
 
@@ -236,10 +176,33 @@ extension NewRoutineViewController: UITextFieldDelegate {
         view.endEditing(true)
         return false
     }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        titleErrorLabel.isHidden = true
+        titleErrorLabel.layer.borderColor = UIColor.black.cgColor
+        descriptionErrorLabel.isHidden = true
+        descriptionTextField.layer.borderColor = UIColor.black.cgColor
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        titleErrorLabel.isHidden = true
+        titleErrorLabel.layer.borderColor = UIColor.black.cgColor
+        descriptionErrorLabel.isHidden = true
+        descriptionTextField.layer.borderColor = UIColor.black.cgColor
+        return true
+    }
 }
 
 extension NewRoutineViewController {
-    @objc func onViewTouch() {
-        view.endEditing(true)
+    func displayErrorOnTitle(message: String) {
+        titleErrorLabel.text = message
+        titleErrorLabel.isHidden = false
+        titleErrorLabel.layer.borderColor = UIColor.systemRed.cgColor
+    }
+
+    func displayErrorOnDescription(message: String) {
+        descriptionErrorLabel.text = message
+        descriptionErrorLabel.isHidden = false
+        descriptionTextField.layer.borderColor = UIColor.systemRed.cgColor
     }
 }

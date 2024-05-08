@@ -28,8 +28,9 @@ class NewUserCoordinator: NavigationCoordinator {
         self.rootViewController.present(coordinator.rootViewController, animated: true)
     }
 
-    func presentOnboardingScreen(with name: String) {
+    func presentOnboardingScreen(with name: String, delegate: AppCoordinatorDelegate) {
         let viewController = OnboardingRankingViewController()
+        viewController.delegate = delegate
         viewController.titleLabel.text = "Olá, \(name)"
         self.rootViewController.pushViewController(viewController, animated: true)
     }

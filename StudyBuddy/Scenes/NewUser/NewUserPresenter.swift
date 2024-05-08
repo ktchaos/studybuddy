@@ -7,6 +7,7 @@
 
 protocol NewUserPresenting {
     var viewController: NewUserViewControlling? { get set }
+    var delegate: AppCoordinatorDelegate? { get set }
 
     func displayError(with message: String)
     func goToOnboardingScreen(with username: String)
@@ -14,6 +15,7 @@ protocol NewUserPresenting {
 
 class NewUserPresenter: NewUserPresenting {
     var viewController: NewUserViewControlling?
+    var delegate: AppCoordinatorDelegate?
     private let coordinator: NewUserCoordinator
 
     init(coordinator: NewUserCoordinator) {
@@ -27,6 +29,7 @@ extension NewUserPresenter {
     }
 
     func goToOnboardingScreen(with username: String) {
-        coordinator.presentOnboardingScreen(with: username)
+        guard let delegate else { return }
+        coordinator.presentOnboardingScreen(with: username, delegate: delegate)
     }
 }
