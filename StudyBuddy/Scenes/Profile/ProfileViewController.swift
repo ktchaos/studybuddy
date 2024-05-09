@@ -10,9 +10,14 @@ import SnapKit
 
 protocol ProfileViewControlling {
     func updateTotalPointsLabel(with totalPointsText: String)
+    func updateProfilePicture(with image: UIImage)
 }
 
-class ProfileViewController: UIViewController, ProfileViewControlling {
+protocol PictureSelectionDelegate {
+    func getSelectedImage(profilePicture: ProfilePicture)
+}
+
+class ProfileViewController: UIViewController, ProfileViewControlling, PictureSelectionDelegate {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Meu Perfil"
@@ -27,12 +32,14 @@ class ProfileViewController: UIViewController, ProfileViewControlling {
         imageView.tintColor = .darkGray
         imageView.layer.cornerRadius = 5
         imageView.layer.borderWidth = 1.5
+        imageView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.didTapOnProfileImage))
+        imageView.addGestureRecognizer(tap)
         return imageView
     }()
 
     private lazy var usernameLabel: UILabel = {
         let label = UILabel()
-        label.text = "@username01"
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         return label
@@ -139,19 +146,30 @@ class ProfileViewController: UIViewController, ProfileViewControlling {
 
     @objc func onRankingTap() {
         interactor?.onRankingTap()
-//        let rankingViewController = RankingViewController()
-//        self.navigationController?.pushViewController(rankingViewController, animated: true)
     }
 
     @objc func onHelpTap() {
         interactor?.onHelpTap()
-//        let helpViewController = HelpViewController()
-//        self.navigationController?.pushViewController(helpViewController, animated: true)
+    }
+
+    @objc func didTapOnProfileImage() {
+        let viewController = ProfilePictureSelectionViewController()
+        viewController.delegate = self
+        self.navigationController?.present(viewController, animated: true)
+    }
+
+    func getSelectedImage(profilePicture: ProfilePicture) {
+        profileIconImageView.image = profilePicture.image
+        interactor?.saveUserImage(profilePicture)
     }
 }
 
 extension ProfileViewController {
     func updateTotalPointsLabel(with totalPointsText: String) {
         totalScoreLabel.text = totalPointsText
+    }
+
+    func updateProfilePicture(with image: UIImage) {
+        profileIconImageView.image = image
     }
 }

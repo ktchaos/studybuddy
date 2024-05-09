@@ -33,6 +33,12 @@ struct Routine: Codable {
     }
 }
 
+extension Routine: Equatable {
+    static func == (lhs: Routine, rhs: Routine) -> Bool {
+        return (lhs.title == rhs.title && lhs.description == rhs.description)
+    }
+}
+
 struct Audio: Codable {
     let path: String
     let type: String

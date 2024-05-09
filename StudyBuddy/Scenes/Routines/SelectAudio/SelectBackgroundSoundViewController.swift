@@ -8,9 +8,7 @@
 import UIKit
 import SnapKit
 
-protocol SelectBackgroundSoundViewControlling {
-
-}
+protocol SelectBackgroundSoundViewControlling {}
 
 class SelectBackgroundSoundViewController: UIViewController, SelectBackgroundSoundViewControlling {
     private lazy var descriptionLabel: UILabel = {

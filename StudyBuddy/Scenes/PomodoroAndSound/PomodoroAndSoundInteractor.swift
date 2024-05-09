@@ -40,6 +40,10 @@ final class PomodoroAndSoundInteractor: PomodoroAndSoundInteracting {
         self.routine = routine
     }
 
+    deinit {
+        print(#function)
+    }
+
     func savePoints(points: Double) {
         Firestore.firestore().collection("users").getDocuments { [weak self] (snapshot, error) in
             snapshot?.documents.forEach({ queryDocument in
@@ -67,8 +71,7 @@ extension PomodoroAndSoundInteractor {
 
     func startPomodoro() {
         if sessionsDone == self.routine.numberOfSessions {
-
-            print("ACABOU NE")
+            presenter.dismissScreen()
         } else {
             self.pomodoroTimer = Timer.scheduledTimer(
                 timeInterval: 1,
@@ -83,6 +86,7 @@ extension PomodoroAndSoundInteractor {
     func didTapResetPomodoro() {
         pomodoroTimer.invalidate()
         breakTimer.invalidate()
+        player?.stop()
     }
 
     func didTapFinishRoutine() {
@@ -159,7 +163,7 @@ extension PomodoroAndSoundInteractor {
             player.play()
 
         } catch {
-            print("ERror alksdjlakdjslkasd")
+            // Fallback for audio
         }
     }
 

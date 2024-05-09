@@ -62,6 +62,8 @@ class SelectAppsToBlockViewController: UIViewController {
         App(icon: UIImage(named: "notion") ?? UIImage(), applicationName: "Notion"),
     ]
 
+    var delegate: RoutinesCoordinatorDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -115,16 +117,15 @@ class SelectAppsToBlockViewController: UIViewController {
     // MARK: Actions
 
     @objc func onNextTap() {
-        let newRoutineViewController = UIAlertController(title: "Rotina criada!", message: "Sua rotina foi adicionada na lista", preferredStyle: .alert)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            guard let mainViewController = self.navigationController?.viewControllers.first as? MainViewController else {
-                return
-            }
-
-            self.navigationController?.popToViewController(mainViewController, animated: true)
-            newRoutineViewController.dismiss(animated: true)
-        }
-        present(newRoutineViewController, animated: true)
+        delegate?.finishRoutineCreation()
+        let alert = UIAlertController(
+            title: "Rotina criada!",
+            message: "Sua rotina foi adicionada na lista",
+            preferredStyle: .alert
+        )
+        let action = UIAlertAction(title: "Ok", style: .cancel)
+        alert.addAction(action)
+        present(alert, animated: true)
     }
 }
 

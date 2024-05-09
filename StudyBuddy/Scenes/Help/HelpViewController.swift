@@ -7,8 +7,6 @@
 
 import UIKit
 import SnapKit
-import RxSwift
-import RxCocoa
 
 class HelpViewController: UIViewController {
     lazy var titleLabel: UILabel = {

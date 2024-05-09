@@ -17,6 +17,7 @@ protocol RoutinesCoordinatorDelegate {
     func presentSelectAppsToBlockScreen(with audioPath: String, type: String)
     func finishRoutineCreation()
     func presentEditRoutineScreen(routine: Routine)
+    func onRoutineDeletion()
 }
 
 class RoutinesCoordinator: NavigationCoordinator {
@@ -82,10 +83,13 @@ extension RoutinesCoordinator: RoutinesCoordinatorDelegate {
 
     func presentSelectAppsToBlockScreen(with audioPath: String, type: String) {
         routine.audio = Audio(path: audioPath, type: type)
-        finishRoutineCreation()
-        // TODO: Open select apps to block screen
-//        let viewController = SelectAppsToBlockViewController()
-//        self.rootViewController.pushViewController(viewController, animated: true)
+        let viewController = SelectAppsToBlockViewController()
+        viewController.delegate = self
+        self.rootViewController.pushViewController(viewController, animated: true)
+    }
+
+    func onRoutineDeletion() {
+        self.rootViewController.popToRootViewController(animated: true)
     }
 
     func finishRoutineCreation() {
@@ -99,7 +103,7 @@ extension RoutinesCoordinator: RoutinesCoordinatorDelegate {
             print(#function, "rotinas -> ", self.currentRoutines)
             self.rootViewController.popToRootViewController(animated: true)
         } catch {
-            print(#function, "DISGRAMA DEU RUIM")
+            // Catch error
         }
     }
 
@@ -112,7 +116,7 @@ extension RoutinesCoordinator: RoutinesCoordinatorDelegate {
             let currentRoutines = try decoder.decode([Routine].self, from: data)
             self.currentRoutines = currentRoutines
         } catch {
-            print(#function, "DISGRAMA DEU RUIM affff....")
+            // Catch error
         }
     }
 }

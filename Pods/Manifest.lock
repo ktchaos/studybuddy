@@ -1147,20 +1147,12 @@ PODS:
   - nanopb/encode (2.30909.1)
   - PromisesObjC (2.4.0)
   - RecaptchaInterop (100.0.0)
-  - RxCocoa (6.5.0):
-    - RxRelay (= 6.5.0)
-    - RxSwift (= 6.5.0)
-  - RxRelay (6.5.0):
-    - RxSwift (= 6.5.0)
-  - RxSwift (6.5.0)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
   - FirebaseAnalytics
   - FirebaseAuth
   - FirebaseFirestore
-  - RxCocoa (= 6.5.0)
-  - RxSwift (= 6.5.0)
   - SnapKit (~> 5.6.0)
 
 SPEC REPOS:
@@ -1186,9 +1178,6 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - RecaptchaInterop
-    - RxCocoa
-    - RxRelay
-    - RxSwift
     - SnapKit
 
 SPEC CHECKSUMS:
@@ -1213,11 +1202,8 @@ SPEC CHECKSUMS:
   nanopb: d4d75c12cd1316f4a64e3c6963f879ecd4b5e0d5
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
-  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
-  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
-  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 72aae9055728a9ad3ee9a4ea0443388df93637ac
+PODFILE CHECKSUM: 58d509c19f75646b29a55e3f87396e4706399746
 
 COCOAPODS: 1.15.2

@@ -7,8 +7,6 @@
 
 import UIKit
 import SnapKit
-import RxSwift
-import RxCocoa
 
 class OnboardingRankingViewController: UIViewController {
     lazy var titleLabel: UILabel = {

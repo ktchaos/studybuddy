@@ -23,7 +23,7 @@ class EditRoutineViewController: UIViewController, EditRoutineViewControlling {
     private lazy var descriptionTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
-        textField.font = UIFont.systemFont(ofSize: 20)
+        textField.font = UIFont.systemFont(ofSize: 16)
         textField.textColor = .black
         return textField
     }()
@@ -188,8 +188,7 @@ class EditRoutineViewController: UIViewController, EditRoutineViewControlling {
 
 extension EditRoutineViewController {
     @objc func didTapSaveButton() {
-        // TODO: Add logic to save
-        print(#function)
+        interactor?.onSaveButtonTap()
     }
 
     @objc func didTapDeleteButton() {
@@ -197,23 +196,14 @@ extension EditRoutineViewController {
     }
 
     @objc func didTapEditSound() {
-        print(#function)
-//        let soundVC = SelectBackgroundSoundViewController()
-//        soundVC.nextButton.isHidden = true
-//        navigationController?.pushViewController(soundVC, animated: true)
+        interactor?.onEditButtonTap()
     }
 
     @objc func didTapEditPomodoro() {
-        print(#function)
-//        let pomodoroVC = SelectPomodoroViewController()
-//        pomodoroVC.nextButton.isHidden = true
-//        navigationController?.pushViewController(pomodoroVC, animated: true)
+        interactor?.onEditPomodoroTap()
     }
 
     @objc func didTapEditAppsButton() {
-        print(#function)
-//        let selectAppsVC = SelectAppsToBlockViewController()
-//        selectAppsVC.finishButton.setTitle("Salvar", for: .normal)
-//        navigationController?.pushViewController(selectAppsVC, animated: true)
+        interactor?.onEditAppsButtonTap()
     }
 }

@@ -6,10 +6,16 @@
 //
 
 import Foundation
+import UIKit
 
 struct User {
     var username: String
     var points: Double
+}
+
+struct ProfilePicture {
+    let systemName: String
+    let image: UIImage?
 }
 
 protocol ProfileInteracting {
@@ -18,15 +24,17 @@ protocol ProfileInteracting {
 
     func getUsernameAndLoadPoints() -> String
     func loadTotalSBPoints()
+    func saveUserImage(_ profilePicture: ProfilePicture)
 }
 
 final class ProfileInteractor: ProfileInteracting {
     private let presenter: ProfilePresenting
+    private let user: User
 
     let userDefaults = UserDefaults.standard
     private let usernameKey: String = "username"
     private let pointsKey: String = "points"
-    private let user: User
+    private let profileImageKey: String = "profilepicture"
 
     init(presenter: ProfilePresenting) {
         self.presenter = presenter
@@ -48,6 +56,7 @@ extension ProfileInteractor {
 
     func getUsernameAndLoadPoints() -> String {
         loadTotalSBPoints()
+        loadProfilePicture()
         guard let name = userDefaults.string(forKey: usernameKey) else { return "" }
         return "@\(name)"
     }
@@ -55,5 +64,15 @@ extension ProfileInteractor {
     func loadTotalSBPoints() {
         let totalPoints = userDefaults.double(forKey: pointsKey)
         presenter.displayTotalSBPoints(with: totalPoints)
+    }
+
+    func loadProfilePicture() {
+        if let path = userDefaults.string(forKey: profileImageKey) {
+            presenter.displayProfilePicture(with: UIImage(systemName: path) ?? UIImage())
+        }
+    }
+
+    func saveUserImage(_ profilePicture: ProfilePicture) {
+        userDefaults.set(profilePicture.systemName, forKey: profileImageKey)
     }
 }

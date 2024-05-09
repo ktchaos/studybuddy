@@ -5,12 +5,15 @@
 //  Created by Catarina Serrano on 05/05/24.
 //
 
+import UIKit
+
 protocol ProfilePresenting {
     var viewController: ProfileViewControlling? { get set }
 
     func goToRankingScreen()
     func goToHelpScreen()
     func displayTotalSBPoints(with totalPoints: Double)
+    func displayProfilePicture(with picture: UIImage)
 }
 
 final class ProfilePresenter: ProfilePresenting {
@@ -34,5 +37,9 @@ extension ProfilePresenter {
     func displayTotalSBPoints(with totalPoints: Double) {
         let totalPointsText = "\(totalPoints) SB Points"
         viewController?.updateTotalPointsLabel(with: totalPointsText)
+    }
+
+    func displayProfilePicture(with picture: UIImage) {
+        viewController?.updateProfilePicture(with: picture)
     }
 }

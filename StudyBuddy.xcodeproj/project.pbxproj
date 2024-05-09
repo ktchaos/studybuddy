@@ -58,6 +58,10 @@
 		CB1FE7772BEC008100AD0E2D /* RankingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7762BEC008100AD0E2D /* RankingPresenter.swift */; };
 		CB1FE7792BEC00A400AD0E2D /* RankingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FE7782BEC00A400AD0E2D /* RankingFactory.swift */; };
 		CB3799EC2BE1BF2C005A571D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB3799EB2BE1BF2C005A571D /* GoogleService-Info.plist */; };
+		CB3865392BEC698E00C0830A /* ProfilePictureSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3865382BEC698E00C0830A /* ProfilePictureSelectionViewController.swift */; };
+		CB38653B2BEC6C2700C0830A /* ProfilePictureSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38653A2BEC6C2700C0830A /* ProfilePictureSelectionCell.swift */; };
+		CB38653F2BEC6F6B00C0830A /* RockyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38653D2BEC6F6B00C0830A /* RockyViewController.swift */; };
+		CB3865402BEC6F6B00C0830A /* RockyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB38653E2BEC6F6B00C0830A /* RockyViewController.xib */; };
 		CB490E102A326FDA00276780 /* RoutineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */; };
 		CB490E132A32736100276780 /* NewRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E122A32736100276780 /* NewRoutineViewController.swift */; };
 		CB490E152A329B3000276780 /* SelectPomodoroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E142A329B3000276780 /* SelectPomodoroViewController.swift */; };
@@ -75,8 +79,6 @@
 		CBA86EAD2BD7E9190069B024 /* TabBarScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EAC2BD7E9190069B024 /* TabBarScene.swift */; };
 		CBA86EAF2BD7EAB20069B024 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EAE2BD7EAB20069B024 /* ProfileCoordinator.swift */; };
 		CBA86EB12BD7EAC30069B024 /* RoutinesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EB02BD7EAC30069B024 /* RoutinesCoordinator.swift */; };
-		CBA86EB72BD7EEE40069B024 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EB52BD7EEE40069B024 /* TestViewController.swift */; };
-		CBA86EB82BD7EEE40069B024 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA86EB62BD7EEE40069B024 /* TestViewController.xib */; };
 		CBA86EBB2BD81A1B0069B024 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EBA2BD81A1B0069B024 /* RankingViewController.swift */; };
 		CBA86EBD2BD81F3A0069B024 /* UserOnRankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EBC2BD81F3A0069B024 /* UserOnRankingCell.swift */; };
 		CBB30A742BD9A43400239FAC /* EditRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB30A732BD9A43400239FAC /* EditRoutineViewController.swift */; };
@@ -163,6 +165,10 @@
 		CB1FE7762BEC008100AD0E2D /* RankingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingPresenter.swift; sourceTree = "<group>"; };
 		CB1FE7782BEC00A400AD0E2D /* RankingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFactory.swift; sourceTree = "<group>"; };
 		CB3799EB2BE1BF2C005A571D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CB3865382BEC698E00C0830A /* ProfilePictureSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureSelectionViewController.swift; sourceTree = "<group>"; };
+		CB38653A2BEC6C2700C0830A /* ProfilePictureSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureSelectionCell.swift; sourceTree = "<group>"; };
+		CB38653D2BEC6F6B00C0830A /* RockyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockyViewController.swift; sourceTree = "<group>"; };
+		CB38653E2BEC6F6B00C0830A /* RockyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RockyViewController.xib; sourceTree = "<group>"; };
 		CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailsViewController.swift; sourceTree = "<group>"; };
 		CB490E122A32736100276780 /* NewRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewController.swift; sourceTree = "<group>"; };
 		CB490E142A329B3000276780 /* SelectPomodoroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPomodoroViewController.swift; sourceTree = "<group>"; };
@@ -180,8 +186,6 @@
 		CBA86EAC2BD7E9190069B024 /* TabBarScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarScene.swift; sourceTree = "<group>"; };
 		CBA86EAE2BD7EAB20069B024 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		CBA86EB02BD7EAC30069B024 /* RoutinesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesCoordinator.swift; sourceTree = "<group>"; };
-		CBA86EB52BD7EEE40069B024 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		CBA86EB62BD7EEE40069B024 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		CBA86EBA2BD81A1B0069B024 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		CBA86EBC2BD81F3A0069B024 /* UserOnRankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOnRankingCell.swift; sourceTree = "<group>"; };
 		CBB30A732BD9A43400239FAC /* EditRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoutineViewController.swift; sourceTree = "<group>"; };
@@ -398,6 +402,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		CB38653C2BEC6C2D00C0830A /* PictureSelection */ = {
+			isa = PBXGroup;
+			children = (
+				CB3865382BEC698E00C0830A /* ProfilePictureSelectionViewController.swift */,
+				CB38653A2BEC6C2700C0830A /* ProfilePictureSelectionCell.swift */,
+			);
+			path = PictureSelection;
+			sourceTree = "<group>";
+		};
 		CB490E112A32735000276780 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +454,7 @@
 		CBA86EA22BD73EE00069B024 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CB38653C2BEC6C2D00C0830A /* PictureSelection */,
 				CBA86EA32BD73EFA0069B024 /* ProfileViewController.swift */,
 				CBA86EAE2BD7EAB20069B024 /* ProfileCoordinator.swift */,
 				CB1FE7292BE84DBF00AD0E2D /* ProfileInteractor.swift */,
@@ -481,6 +495,8 @@
 				CB178BF02A16F5DE0079A20F /* AppDelegate.swift */,
 				CB178BF22A16F5DE0079A20F /* SceneDelegate.swift */,
 				CBA86EA52BD73F180069B024 /* AppCoordinator.swift */,
+				CB38653D2BEC6F6B00C0830A /* RockyViewController.swift */,
+				CB38653E2BEC6F6B00C0830A /* RockyViewController.xib */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -491,8 +507,6 @@
 				CB1FE7482BEACE9A00AD0E2D /* Audio */,
 				CB178BF92A16F5DF0079A20F /* Assets.xcassets */,
 				CB178BFB2A16F5DF0079A20F /* LaunchScreen.storyboard */,
-				CBA86EB52BD7EEE40069B024 /* TestViewController.swift */,
-				CBA86EB62BD7EEE40069B024 /* TestViewController.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -649,12 +663,12 @@
 			files = (
 				CB178BFD2A16F5DF0079A20F /* LaunchScreen.storyboard in Resources */,
 				CB3799EC2BE1BF2C005A571D /* GoogleService-Info.plist in Resources */,
-				CBA86EB82BD7EEE40069B024 /* TestViewController.xib in Resources */,
 				CB1FE74F2BEACEA700AD0E2D /* nature.mp3 in Resources */,
 				CB178BFA2A16F5DF0079A20F /* Assets.xcassets in Resources */,
 				CB1FE7502BEACEA700AD0E2D /* jazz.mp3 in Resources */,
 				CB1FE74E2BEACEA700AD0E2D /* lo-fi.mp3 in Resources */,
 				CB1FE74D2BEACEA700AD0E2D /* frequency.mp3 in Resources */,
+				CB3865402BEC6F6B00C0830A /* RockyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,7 +814,6 @@
 				CB1FE7772BEC008100AD0E2D /* RankingPresenter.swift in Sources */,
 				CB1FE7562BEAF8EB00AD0E2D /* NewRoutineInteractor.swift in Sources */,
 				CB1FE71B2BE817A900AD0E2D /* NewUserInteractor.swift in Sources */,
-				CBA86EB72BD7EEE40069B024 /* TestViewController.swift in Sources */,
 				CBA86EA42BD73EFA0069B024 /* ProfileViewController.swift in Sources */,
 				CB1FE75F2BEB0CD300AD0E2D /* SelectPomodoroFactory.swift in Sources */,
 				CB1FE72C2BE84DCD00AD0E2D /* ProfilePresenter.swift in Sources */,
@@ -826,7 +839,9 @@
 				CB510DCE2A336C390092147D /* TextField+Extensions.swift in Sources */,
 				CBA86EBD2BD81F3A0069B024 /* UserOnRankingCell.swift in Sources */,
 				CB1FE7582BEAF8F700AD0E2D /* NewRoutinePresenter.swift in Sources */,
+				CB3865392BEC698E00C0830A /* ProfilePictureSelectionViewController.swift in Sources */,
 				CBEFAAC32A325D6E00DA24CB /* Cell+Extensions.swift in Sources */,
+				CB38653B2BEC6C2700C0830A /* ProfilePictureSelectionCell.swift in Sources */,
 				CBEFAABC2A325C5D00DA24CB /* RoutineCell.swift in Sources */,
 				CB1FE72A2BE84DBF00AD0E2D /* ProfileInteractor.swift in Sources */,
 				CB1FE7472BEA8C6300AD0E2D /* AudioButtonState.swift in Sources */,
@@ -844,6 +859,7 @@
 				CB1FE7752BEC007700AD0E2D /* RankingInteractor.swift in Sources */,
 				CB1FE7622BEB1CB400AD0E2D /* SelectBackgroundSoundInteractor.swift in Sources */,
 				CB1FE7302BE8797900AD0E2D /* RoutineModel.swift in Sources */,
+				CB38653F2BEC6F6B00C0830A /* RockyViewController.swift in Sources */,
 				CBA86EBB2BD81A1B0069B024 /* RankingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

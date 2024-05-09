@@ -13,6 +13,7 @@ protocol PomodoroAndSoundPresenting {
     func enableSessionLabel()
     func enableBreakLabel()
     func dismissScreen()
+    func finishSession()
 }
 
 final class PomodoroAndSoundPresenter: PomodoroAndSoundPresenting {

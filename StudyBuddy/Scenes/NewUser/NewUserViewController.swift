@@ -7,8 +7,6 @@
 
 import UIKit
 import SnapKit
-import RxSwift
-import RxCocoa
 
 struct UserDefaultKeys {
     let isLoggedKey: String
@@ -79,21 +77,8 @@ class NewUserViewController: UIViewController, NewUserViewControlling {
         label.textColor = .systemGray2
         return label
     }()
-
-//    private let database = Firestore.firestore()
-//    private let userDefaults = UserDefaults.standard
-//    private let isLoggedKey: String = "isLogged"
     
     var interactor: NewUserInteracting?
-
-//    init(interactor: NewUserInteracting) {
-//        self.interactor = interactor
-//        super.init()
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
