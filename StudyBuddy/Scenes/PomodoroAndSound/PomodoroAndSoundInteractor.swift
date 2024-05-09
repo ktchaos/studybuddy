@@ -40,10 +40,6 @@ final class PomodoroAndSoundInteractor: PomodoroAndSoundInteracting {
         self.routine = routine
     }
 
-    deinit {
-        print(#function)
-    }
-
     func savePoints(points: Double) {
         Firestore.firestore().collection("users").getDocuments { [weak self] (snapshot, error) in
             snapshot?.documents.forEach({ queryDocument in

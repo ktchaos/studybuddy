@@ -60,8 +60,6 @@
 		CB3799EC2BE1BF2C005A571D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB3799EB2BE1BF2C005A571D /* GoogleService-Info.plist */; };
 		CB3865392BEC698E00C0830A /* ProfilePictureSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3865382BEC698E00C0830A /* ProfilePictureSelectionViewController.swift */; };
 		CB38653B2BEC6C2700C0830A /* ProfilePictureSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38653A2BEC6C2700C0830A /* ProfilePictureSelectionCell.swift */; };
-		CB38653F2BEC6F6B00C0830A /* RockyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38653D2BEC6F6B00C0830A /* RockyViewController.swift */; };
-		CB3865402BEC6F6B00C0830A /* RockyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB38653E2BEC6F6B00C0830A /* RockyViewController.xib */; };
 		CB490E102A326FDA00276780 /* RoutineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */; };
 		CB490E132A32736100276780 /* NewRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E122A32736100276780 /* NewRoutineViewController.swift */; };
 		CB490E152A329B3000276780 /* SelectPomodoroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E142A329B3000276780 /* SelectPomodoroViewController.swift */; };
@@ -167,8 +165,6 @@
 		CB3799EB2BE1BF2C005A571D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB3865382BEC698E00C0830A /* ProfilePictureSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureSelectionViewController.swift; sourceTree = "<group>"; };
 		CB38653A2BEC6C2700C0830A /* ProfilePictureSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureSelectionCell.swift; sourceTree = "<group>"; };
-		CB38653D2BEC6F6B00C0830A /* RockyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockyViewController.swift; sourceTree = "<group>"; };
-		CB38653E2BEC6F6B00C0830A /* RockyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RockyViewController.xib; sourceTree = "<group>"; };
 		CB490E0F2A326FDA00276780 /* RoutineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailsViewController.swift; sourceTree = "<group>"; };
 		CB490E122A32736100276780 /* NewRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoutineViewController.swift; sourceTree = "<group>"; };
 		CB490E142A329B3000276780 /* SelectPomodoroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPomodoroViewController.swift; sourceTree = "<group>"; };
@@ -495,8 +491,6 @@
 				CB178BF02A16F5DE0079A20F /* AppDelegate.swift */,
 				CB178BF22A16F5DE0079A20F /* SceneDelegate.swift */,
 				CBA86EA52BD73F180069B024 /* AppCoordinator.swift */,
-				CB38653D2BEC6F6B00C0830A /* RockyViewController.swift */,
-				CB38653E2BEC6F6B00C0830A /* RockyViewController.xib */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -668,7 +662,6 @@
 				CB1FE7502BEACEA700AD0E2D /* jazz.mp3 in Resources */,
 				CB1FE74E2BEACEA700AD0E2D /* lo-fi.mp3 in Resources */,
 				CB1FE74D2BEACEA700AD0E2D /* frequency.mp3 in Resources */,
-				CB3865402BEC6F6B00C0830A /* RockyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -859,7 +852,6 @@
 				CB1FE7752BEC007700AD0E2D /* RankingInteractor.swift in Sources */,
 				CB1FE7622BEB1CB400AD0E2D /* SelectBackgroundSoundInteractor.swift in Sources */,
 				CB1FE7302BE8797900AD0E2D /* RoutineModel.swift in Sources */,
-				CB38653F2BEC6F6B00C0830A /* RockyViewController.swift in Sources */,
 				CBA86EBB2BD81A1B0069B024 /* RankingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
