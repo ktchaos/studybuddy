@@ -106,6 +106,22 @@ class EditRoutineViewController: UIViewController, EditRoutineViewControlling {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.backItem?.backButtonTitle = " "
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationController?.navigationBar.backItem?.backButtonTitle = " "
+        }
+
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        self.navigationController?.navigationBar.backItem?.backButtonTitle = " "
     }
 
     override func viewDidLoad() {
@@ -113,13 +129,14 @@ class EditRoutineViewController: UIViewController, EditRoutineViewControlling {
 
         setupUI()
         setupViews()
-        
+        navigationController?.navigationBar.backItem?.backButtonTitle = " "
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: saveButton)
     }
 
     func setupUI() {
         title = interactor?.getRoutineTitle()
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.backItem?.backButtonTitle = " "
         view.backgroundColor = .white
         titleTextField.text = "Novo título..."
         descriptionTextField.text = "Nova descrição..."
@@ -188,7 +205,11 @@ class EditRoutineViewController: UIViewController, EditRoutineViewControlling {
 
 extension EditRoutineViewController {
     @objc func didTapSaveButton() {
-        interactor?.onSaveButtonTap()
+//        guard let title = self.titleTextField.text, let description = self.descriptionTextField.text else {
+//            return
+//        }
+//        interactor?.onSaveButtonTap(title: title, description: description)
+        self.dismiss(animated: true)
     }
 
     @objc func didTapDeleteButton() {
@@ -196,14 +217,60 @@ extension EditRoutineViewController {
     }
 
     @objc func didTapEditSound() {
-        interactor?.onEditButtonTap()
+        let viewController = SelectBackgroundSoundFactory.make(delegate: self)//SelectBackgroundSoundViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+//        interactor?.onEditButtonTap()
     }
 
     @objc func didTapEditPomodoro() {
-        interactor?.onEditPomodoroTap()
+        let viewController = SelectPomodoroViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+//        interactor?.onEditPomodoroTap()
     }
 
     @objc func didTapEditAppsButton() {
-        interactor?.onEditAppsButtonTap()
+        let viewController = SelectAppsToBlockViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+//        interactor?.onEditAppsButtonTap()
     }
+}
+
+extension EditRoutineViewController: RoutinesCoordinatorDelegate {
+    func presentPomodoroAndSoundScreen(model: Routine) {
+
+    }
+    
+    func dismissPomodoroAndSoundScreen() {
+
+    }
+    
+    func presentNewRoutineScreen() {
+
+    }
+    
+    func presentPomodoroSessionsScreen(title: String, description: String) {
+
+    }
+    
+    func presentSelectAudioScreen(with numberOfSessions: Int) {
+
+    }
+    
+    func presentSelectAppsToBlockScreen(with audioPath: String, type: String) {
+
+    }
+    
+    func finishRoutineCreation() {
+
+    }
+    
+    func presentEditRoutineScreen(routine: Routine) {
+
+    }
+    
+    func onRoutineDeletion() {
+
+    }
+    
+
 }

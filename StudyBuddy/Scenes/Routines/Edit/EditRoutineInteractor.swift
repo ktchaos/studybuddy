@@ -13,7 +13,7 @@ protocol EditRoutineInteracting {
     func onEditButtonTap()
     func onEditPomodoroTap()
     func onEditAppsButtonTap()
-    func onSaveButtonTap()
+    func onSaveButtonTap(title: String, description: String)
 }
 
 final class EditRoutineInteractor: EditRoutineInteracting {
@@ -40,7 +40,7 @@ extension EditRoutineInteractor {
     }
 
     func onEditButtonTap() {
-
+        
     }
 
     func onEditPomodoroTap() {
@@ -51,19 +51,41 @@ extension EditRoutineInteractor {
 
     }
 
-    func onSaveButtonTap() {
-
+    func onSaveButtonTap(title: String, description: String) {
+        saveRoutine(title: title, description: description)
     }
-
-//    var title: String
-//    var description: String
-//    var numberOfSessions: Int
-//    var audio: Audio
-//    var blockedApps: [BlockedApplication]
-//    var rangeTime: String
 }
 
 private extension EditRoutineInteractor {
+    func saveRoutine(title: String, description: String) {
+//        fetchRoutines()
+//
+//        do {
+//            var newRoutines: [Routine] = []
+//            self.currentRoutines.forEach {
+//                if $0 == self.routine {
+//                    let editedRoutine = Routine(
+//                        title: title,
+//                        description: description,
+//                        rangeTime: $0.rangeTime,
+//                        numberOfSessions: $0.numberOfSessions,
+//                        audio: $0.audio,
+//                        blockedApps: $0.blockedApps
+//                    )
+//                    newRoutines
+//                }
+//            }
+//
+//
+//            let encoder = JSONEncoder()
+//            let data = try encoder.encode(newRoutines)
+//            UserDefaults.standard.set(data, forKey: userRoutines)
+//            presenter.redirectToRoutines()
+//        } catch {
+//            // Catch error
+//        }
+    }
+
     func deleteCurrentRoutine() {
         fetchRoutines()
 

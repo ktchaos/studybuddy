@@ -129,7 +129,9 @@ final class RoutineDetailsViewController: UIViewController, RoutineDetailsViewCo
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        title = "Rotina editada"
+        descriptionLabel.text = "descrição editada"
+        navigationController?.navigationBar.backItem?.backButtonTitle = " "
     }
 
     func setupUI() {
@@ -151,7 +153,6 @@ final class RoutineDetailsViewController: UIViewController, RoutineDetailsViewCo
         view.addSubview(startButton)
 
         view.bringSubviewToFront(editButton)
-
 
         descriptionLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(150)

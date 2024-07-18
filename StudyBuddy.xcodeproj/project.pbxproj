@@ -82,6 +82,8 @@
 		CBB30A742BD9A43400239FAC /* EditRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB30A732BD9A43400239FAC /* EditRoutineViewController.swift */; };
 		CBB30A772BD9CA8400239FAC /* NewUserCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB30A762BD9CA8400239FAC /* NewUserCoordinator.swift */; };
 		CBB30A792BD9CBCE00239FAC /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB30A782BD9CBCE00239FAC /* NewUserViewController.swift */; };
+		CBD033E92C3F0FB70006CEEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD033E72C3F0FB70006CEEA /* ViewController.swift */; };
+		CBD033EA2C3F0FB70006CEEA /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD033E82C3F0FB70006CEEA /* ViewController.xib */; };
 		CBEFAABC2A325C5D00DA24CB /* RoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFAABB2A325C5D00DA24CB /* RoutineCell.swift */; };
 		CBEFAAC32A325D6E00DA24CB /* Cell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFAAC22A325D6E00DA24CB /* Cell+Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -187,6 +189,8 @@
 		CBB30A732BD9A43400239FAC /* EditRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoutineViewController.swift; sourceTree = "<group>"; };
 		CBB30A762BD9CA8400239FAC /* NewUserCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserCoordinator.swift; sourceTree = "<group>"; };
 		CBB30A782BD9CBCE00239FAC /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
+		CBD033E72C3F0FB70006CEEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CBD033E82C3F0FB70006CEEA /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		CBEFAABB2A325C5D00DA24CB /* RoutineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCell.swift; sourceTree = "<group>"; };
 		CBEFAAC22A325D6E00DA24CB /* Cell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Extensions.swift"; sourceTree = "<group>"; };
 		D9F7E1D2E159FAA28FCA95C6 /* Pods-StudyBuddyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddyTests.debug.xcconfig"; path = "Target Support Files/Pods-StudyBuddyTests/Pods-StudyBuddyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -491,6 +495,8 @@
 				CB178BF02A16F5DE0079A20F /* AppDelegate.swift */,
 				CB178BF22A16F5DE0079A20F /* SceneDelegate.swift */,
 				CBA86EA52BD73F180069B024 /* AppCoordinator.swift */,
+				CBD033E72C3F0FB70006CEEA /* ViewController.swift */,
+				CBD033E82C3F0FB70006CEEA /* ViewController.xib */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -657,6 +663,7 @@
 			files = (
 				CB178BFD2A16F5DF0079A20F /* LaunchScreen.storyboard in Resources */,
 				CB3799EC2BE1BF2C005A571D /* GoogleService-Info.plist in Resources */,
+				CBD033EA2C3F0FB70006CEEA /* ViewController.xib in Resources */,
 				CB1FE74F2BEACEA700AD0E2D /* nature.mp3 in Resources */,
 				CB178BFA2A16F5DF0079A20F /* Assets.xcassets in Resources */,
 				CB1FE7502BEACEA700AD0E2D /* jazz.mp3 in Resources */,
@@ -849,6 +856,7 @@
 				CB1FE7732BEBB08A00AD0E2D /* EditRoutineFactory.swift in Sources */,
 				CB178BF32A16F5DE0079A20F /* SceneDelegate.swift in Sources */,
 				CB490E152A329B3000276780 /* SelectPomodoroViewController.swift in Sources */,
+				CBD033E92C3F0FB70006CEEA /* ViewController.swift in Sources */,
 				CB1FE7752BEC007700AD0E2D /* RankingInteractor.swift in Sources */,
 				CB1FE7622BEB1CB400AD0E2D /* SelectBackgroundSoundInteractor.swift in Sources */,
 				CB1FE7302BE8797900AD0E2D /* RoutineModel.swift in Sources */,
