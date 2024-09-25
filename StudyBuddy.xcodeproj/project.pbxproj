@@ -125,6 +125,7 @@
 		CB178C0D2A16F5DF0079A20F /* StudyBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB178C112A16F5DF0079A20F /* StudyBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyBuddyUITests.swift; sourceTree = "<group>"; };
 		CB178C132A16F5DF0079A20F /* StudyBuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyBuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CB1F5E9F2CA4714400B170BC /* StudyBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StudyBuddy.entitlements; sourceTree = "<group>"; };
 		CB1FE71A2BE817A900AD0E2D /* NewUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserInteractor.swift; sourceTree = "<group>"; };
 		CB1FE71C2BE817B600AD0E2D /* NewUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserPresenter.swift; sourceTree = "<group>"; };
 		CB1FE7202BE8186600AD0E2D /* NewUserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserFactory.swift; sourceTree = "<group>"; };
@@ -273,6 +274,7 @@
 		CB178BEF2A16F5DE0079A20F /* StudyBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				CB1F5E9F2CA4714400B170BC /* StudyBuddy.entitlements */,
 				CB3799EB2BE1BF2C005A571D /* GoogleService-Info.plist */,
 				CB178BFE2A16F5DF0079A20F /* Info.plist */,
 				CBA86EB42BD7ED1F0069B024 /* Common */,
@@ -1028,6 +1030,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StudyBuddy/StudyBuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G7V7K8FW7V;
@@ -1044,6 +1047,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = chaos.StudyBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1056,6 +1062,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StudyBuddy/StudyBuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G7V7K8FW7V;
@@ -1072,6 +1079,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = chaos.StudyBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
