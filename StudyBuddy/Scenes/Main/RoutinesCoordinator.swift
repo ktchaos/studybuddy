@@ -84,7 +84,7 @@ extension RoutinesCoordinator: RoutinesCoordinatorDelegate {
     func presentSelectAppsToBlockScreen(with audioPath: String, type: String) {
         routine.audio = Audio(path: audioPath, type: type)
         let viewController = SelectAppsToBlockViewController()
-        viewController.delegate = self
+//        viewController.delegate = self
         self.rootViewController.pushViewController(viewController, animated: true)
     }
 

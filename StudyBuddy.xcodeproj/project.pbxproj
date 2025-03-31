@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -66,6 +66,14 @@
 		CB490E1D2A32B02900276780 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB490E1C2A32B02900276780 /* AppCell.swift */; };
 		CB4F3B262BE3D1380011D5BF /* OnboardingRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F3B252BE3D1380011D5BF /* OnboardingRankingViewController.swift */; };
 		CB4F3B292BE3D6880011D5BF /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F3B282BE3D6880011D5BF /* HelpViewController.swift */; };
+		CB63CE432D9B3EFF0073A20F /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63CE422D9B3EFF0073A20F /* DeviceActivity.framework */; };
+		CB63CE4B2D9B3EFF0073A20F /* StudyBuddyDeviceActivityMonitor.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB63CE412D9B3EFF0073A20F /* StudyBuddyDeviceActivityMonitor.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB63CE572D9B3F150073A20F /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63CE562D9B3F150073A20F /* ManagedSettings.framework */; };
+		CB63CE592D9B3F150073A20F /* ManagedSettingsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63CE582D9B3F150073A20F /* ManagedSettingsUI.framework */; };
+		CB63CE612D9B3F150073A20F /* StudyBuddyShieldConfiguration.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB63CE552D9B3F150073A20F /* StudyBuddyShieldConfiguration.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB63CE6B2D9B3F2A0073A20F /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63CE562D9B3F150073A20F /* ManagedSettings.framework */; };
+		CB63CE732D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB63CE6A2D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB63CE7A2D9B40F90073A20F /* ShieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE792D9B40F60073A20F /* ShieldManager.swift */; };
 		CBA86EA42BD73EFA0069B024 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EA32BD73EFA0069B024 /* ProfileViewController.swift */; };
 		CBA86EA62BD73F180069B024 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EA52BD73F180069B024 /* AppCoordinator.swift */; };
 		CBA86EA82BD73FEC0069B024 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EA72BD73FEC0069B024 /* Coordinator.swift */; };
@@ -102,9 +110,43 @@
 			remoteGlobalIDString = CB178BEC2A16F5DE0079A20F;
 			remoteInfo = StudyBuddy;
 		};
+		CB63CE492D9B3EFF0073A20F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB178BE52A16F5DE0079A20F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB63CE402D9B3EFF0073A20F;
+			remoteInfo = StudyBuddyDeviceActivityMonitor;
+		};
+		CB63CE5F2D9B3F150073A20F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB178BE52A16F5DE0079A20F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB63CE542D9B3F150073A20F;
+			remoteInfo = StudyBuddyShieldConfiguration;
+		};
+		CB63CE712D9B3F2A0073A20F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB178BE52A16F5DE0079A20F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB63CE692D9B3F2A0073A20F;
+			remoteInfo = StudyBuddyShieldActionExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		CB63CE502D9B3EFF0073A20F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CB63CE4B2D9B3EFF0073A20F /* StudyBuddyDeviceActivityMonitor.appex in Embed Foundation Extensions */,
+				CB63CE612D9B3F150073A20F /* StudyBuddyShieldConfiguration.appex in Embed Foundation Extensions */,
+				CB63CE732D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBD5F7FC2D9A152C007EEEC3 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,6 +225,13 @@
 		CB4F3B252BE3D1380011D5BF /* OnboardingRankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRankingViewController.swift; sourceTree = "<group>"; };
 		CB4F3B282BE3D6880011D5BF /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		CB510DCD2A336C390092147D /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
+		CB63CE412D9B3EFF0073A20F /* StudyBuddyDeviceActivityMonitor.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StudyBuddyDeviceActivityMonitor.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB63CE422D9B3EFF0073A20F /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
+		CB63CE552D9B3F150073A20F /* StudyBuddyShieldConfiguration.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StudyBuddyShieldConfiguration.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB63CE562D9B3F150073A20F /* ManagedSettings.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettings.framework; path = System/Library/Frameworks/ManagedSettings.framework; sourceTree = SDKROOT; };
+		CB63CE582D9B3F150073A20F /* ManagedSettingsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettingsUI.framework; path = System/Library/Frameworks/ManagedSettingsUI.framework; sourceTree = SDKROOT; };
+		CB63CE6A2D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StudyBuddyShieldActionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB63CE792D9B40F60073A20F /* ShieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldManager.swift; sourceTree = "<group>"; };
 		CBA86EA32BD73EFA0069B024 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CBA86EA52BD73F180069B024 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CBA86EA72BD73FEC0069B024 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -201,6 +250,36 @@
 		CBEFAAC22A325D6E00DA24CB /* Cell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		CB63CE4C2D9B3EFF0073A20F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CB63CE402D9B3EFF0073A20F /* StudyBuddyDeviceActivityMonitor */;
+		};
+		CB63CE622D9B3F150073A20F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CB63CE542D9B3F150073A20F /* StudyBuddyShieldConfiguration */;
+		};
+		CB63CE742D9B3F2A0073A20F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CB63CE692D9B3F2A0073A20F /* StudyBuddyShieldActionExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CB63CE442D9B3EFF0073A20F /* StudyBuddyDeviceActivityMonitor */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (CB63CE4C2D9B3EFF0073A20F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = StudyBuddyDeviceActivityMonitor; sourceTree = "<group>"; };
+		CB63CE5A2D9B3F150073A20F /* StudyBuddyShieldConfiguration */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (CB63CE622D9B3F150073A20F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = StudyBuddyShieldConfiguration; sourceTree = "<group>"; };
+		CB63CE6C2D9B3F2A0073A20F /* StudyBuddyShieldActionExtension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (CB63CE742D9B3F2A0073A20F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = StudyBuddyShieldActionExtension; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		CB178C002A16F5DF0079A20F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -213,6 +292,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB63CE3E2D9B3EFF0073A20F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB63CE432D9B3EFF0073A20F /* DeviceActivity.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB63CE522D9B3F150073A20F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB63CE572D9B3F150073A20F /* ManagedSettings.framework in Frameworks */,
+				CB63CE592D9B3F150073A20F /* ManagedSettingsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB63CE672D9B3F2A0073A20F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB63CE6B2D9B3F2A0073A20F /* ManagedSettings.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +339,9 @@
 				CB178BEF2A16F5DE0079A20F /* StudyBuddy */,
 				CB178C062A16F5DF0079A20F /* StudyBuddyTests */,
 				CB178C102A16F5DF0079A20F /* StudyBuddyUITests */,
+				CB63CE442D9B3EFF0073A20F /* StudyBuddyDeviceActivityMonitor */,
+				CB63CE5A2D9B3F150073A20F /* StudyBuddyShieldConfiguration */,
+				CB63CE6C2D9B3F2A0073A20F /* StudyBuddyShieldActionExtension */,
 				CBD5F7F72D9A152C007EEEC3 /* Frameworks */,
 				CB178BEE2A16F5DE0079A20F /* Products */,
 			);
@@ -246,6 +353,9 @@
 				CB178BED2A16F5DE0079A20F /* StudyBuddy.app */,
 				CB178C032A16F5DF0079A20F /* StudyBuddyTests.xctest */,
 				CB178C0D2A16F5DF0079A20F /* StudyBuddyUITests.xctest */,
+				CB63CE412D9B3EFF0073A20F /* StudyBuddyDeviceActivityMonitor.appex */,
+				CB63CE552D9B3F150073A20F /* StudyBuddyShieldConfiguration.appex */,
+				CB63CE6A2D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,6 +363,7 @@
 		CB178BEF2A16F5DE0079A20F /* StudyBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				CB63CE782D9B40EC0073A20F /* ScreenTimeAPI */,
 				CB1F5E9F2CA4714400B170BC /* StudyBuddy.entitlements */,
 				CB3799EB2BE1BF2C005A571D /* GoogleService-Info.plist */,
 				CB178BFE2A16F5DF0079A20F /* Info.plist */,
@@ -419,6 +530,14 @@
 			path = Help;
 			sourceTree = "<group>";
 		};
+		CB63CE782D9B40EC0073A20F /* ScreenTimeAPI */ = {
+			isa = PBXGroup;
+			children = (
+				CB63CE792D9B40F60073A20F /* ShieldManager.swift */,
+			);
+			path = ScreenTimeAPI;
+			sourceTree = "<group>";
+		};
 		CBA86EA12BD73ED30069B024 /* Routines */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +638,9 @@
 		CBD5F7F72D9A152C007EEEC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB63CE422D9B3EFF0073A20F /* DeviceActivity.framework */,
+				CB63CE562D9B3F150073A20F /* ManagedSettings.framework */,
+				CB63CE582D9B3F150073A20F /* ManagedSettingsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -551,10 +673,14 @@
 				CB178BEB2A16F5DE0079A20F /* Resources */,
 				CBD5F7FC2D9A152C007EEEC3 /* Embed Frameworks */,
 				CBEBAABA2D9B3BCE00C31550 /* Frameworks */,
+				CB63CE502D9B3EFF0073A20F /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CB63CE4A2D9B3EFF0073A20F /* PBXTargetDependency */,
+				CB63CE602D9B3F150073A20F /* PBXTargetDependency */,
+				CB63CE722D9B3F2A0073A20F /* PBXTargetDependency */,
 			);
 			name = StudyBuddy;
 			productName = StudyBuddy;
@@ -597,6 +723,72 @@
 			productReference = CB178C0D2A16F5DF0079A20F /* StudyBuddyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		CB63CE402D9B3EFF0073A20F /* StudyBuddyDeviceActivityMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB63CE4D2D9B3EFF0073A20F /* Build configuration list for PBXNativeTarget "StudyBuddyDeviceActivityMonitor" */;
+			buildPhases = (
+				CB63CE3D2D9B3EFF0073A20F /* Sources */,
+				CB63CE3E2D9B3EFF0073A20F /* Frameworks */,
+				CB63CE3F2D9B3EFF0073A20F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CB63CE442D9B3EFF0073A20F /* StudyBuddyDeviceActivityMonitor */,
+			);
+			name = StudyBuddyDeviceActivityMonitor;
+			packageProductDependencies = (
+			);
+			productName = StudyBuddyDeviceActivityMonitor;
+			productReference = CB63CE412D9B3EFF0073A20F /* StudyBuddyDeviceActivityMonitor.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		CB63CE542D9B3F150073A20F /* StudyBuddyShieldConfiguration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB63CE632D9B3F150073A20F /* Build configuration list for PBXNativeTarget "StudyBuddyShieldConfiguration" */;
+			buildPhases = (
+				CB63CE512D9B3F150073A20F /* Sources */,
+				CB63CE522D9B3F150073A20F /* Frameworks */,
+				CB63CE532D9B3F150073A20F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CB63CE5A2D9B3F150073A20F /* StudyBuddyShieldConfiguration */,
+			);
+			name = StudyBuddyShieldConfiguration;
+			packageProductDependencies = (
+			);
+			productName = StudyBuddyShieldConfiguration;
+			productReference = CB63CE552D9B3F150073A20F /* StudyBuddyShieldConfiguration.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		CB63CE692D9B3F2A0073A20F /* StudyBuddyShieldActionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB63CE752D9B3F2A0073A20F /* Build configuration list for PBXNativeTarget "StudyBuddyShieldActionExtension" */;
+			buildPhases = (
+				CB63CE662D9B3F2A0073A20F /* Sources */,
+				CB63CE672D9B3F2A0073A20F /* Frameworks */,
+				CB63CE682D9B3F2A0073A20F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CB63CE6C2D9B3F2A0073A20F /* StudyBuddyShieldActionExtension */,
+			);
+			name = StudyBuddyShieldActionExtension;
+			packageProductDependencies = (
+			);
+			productName = StudyBuddyShieldActionExtension;
+			productReference = CB63CE6A2D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -604,7 +796,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					CB178BEC2A16F5DE0079A20F = {
@@ -617,6 +809,15 @@
 					CB178C0C2A16F5DF0079A20F = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = CB178BEC2A16F5DE0079A20F;
+					};
+					CB63CE402D9B3EFF0073A20F = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					CB63CE542D9B3F150073A20F = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					CB63CE692D9B3F2A0073A20F = {
+						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
@@ -640,6 +841,9 @@
 				CB178BEC2A16F5DE0079A20F /* StudyBuddy */,
 				CB178C022A16F5DF0079A20F /* StudyBuddyTests */,
 				CB178C0C2A16F5DF0079A20F /* StudyBuddyUITests */,
+				CB63CE402D9B3EFF0073A20F /* StudyBuddyDeviceActivityMonitor */,
+				CB63CE542D9B3F150073A20F /* StudyBuddyShieldConfiguration */,
+				CB63CE692D9B3F2A0073A20F /* StudyBuddyShieldActionExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -668,6 +872,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CB178C0B2A16F5DF0079A20F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB63CE3F2D9B3EFF0073A20F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB63CE532D9B3F150073A20F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB63CE682D9B3F2A0073A20F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -733,6 +958,7 @@
 				CB1FE7382BE880B600AD0E2D /* RoutineDetailsCoordinator.swift in Sources */,
 				CB490E192A329F3100276780 /* SelectAppsToBlockViewController.swift in Sources */,
 				CB490E1D2A32B02900276780 /* AppCell.swift in Sources */,
+				CB63CE7A2D9B40F90073A20F /* ShieldManager.swift in Sources */,
 				CBB30A772BD9CA8400239FAC /* NewUserCoordinator.swift in Sources */,
 				CBA86EA62BD73F180069B024 /* AppCoordinator.swift in Sources */,
 				CB1FE7322BE8808700AD0E2D /* RoutineDetailsFactory.swift in Sources */,
@@ -765,6 +991,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB63CE3D2D9B3EFF0073A20F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB63CE512D9B3F150073A20F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB63CE662D9B3F2A0073A20F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -777,6 +1024,21 @@
 			isa = PBXTargetDependency;
 			target = CB178BEC2A16F5DE0079A20F /* StudyBuddy */;
 			targetProxy = CB178C0E2A16F5DF0079A20F /* PBXContainerItemProxy */;
+		};
+		CB63CE4A2D9B3EFF0073A20F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB63CE402D9B3EFF0073A20F /* StudyBuddyDeviceActivityMonitor */;
+			targetProxy = CB63CE492D9B3EFF0073A20F /* PBXContainerItemProxy */;
+		};
+		CB63CE602D9B3F150073A20F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB63CE542D9B3F150073A20F /* StudyBuddyShieldConfiguration */;
+			targetProxy = CB63CE5F2D9B3F150073A20F /* PBXContainerItemProxy */;
+		};
+		CB63CE722D9B3F2A0073A20F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB63CE692D9B3F2A0073A20F /* StudyBuddyShieldActionExtension */;
+			targetProxy = CB63CE712D9B3F2A0073A20F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1040,6 +1302,195 @@
 			};
 			name = Release;
 		};
+		CB63CE4E2D9B3EFF0073A20F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = StudyBuddyDeviceActivityMonitor/StudyBuddyDeviceActivityMonitor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G7V7K8FW7V;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StudyBuddyDeviceActivityMonitor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StudyBuddyDeviceActivityMonitor;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaos.StudyBuddy.StudyBuddyDeviceActivityMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB63CE4F2D9B3EFF0073A20F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = StudyBuddyDeviceActivityMonitor/StudyBuddyDeviceActivityMonitor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G7V7K8FW7V;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StudyBuddyDeviceActivityMonitor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StudyBuddyDeviceActivityMonitor;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaos.StudyBuddy.StudyBuddyDeviceActivityMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CB63CE642D9B3F150073A20F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = StudyBuddyShieldConfiguration/StudyBuddyShieldConfiguration.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G7V7K8FW7V;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StudyBuddyShieldConfiguration/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StudyBuddyShieldConfiguration;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaos.StudyBuddy.StudyBuddyShieldConfiguration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB63CE652D9B3F150073A20F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = StudyBuddyShieldConfiguration/StudyBuddyShieldConfiguration.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G7V7K8FW7V;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StudyBuddyShieldConfiguration/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StudyBuddyShieldConfiguration;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaos.StudyBuddy.StudyBuddyShieldConfiguration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CB63CE762D9B3F2A0073A20F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = StudyBuddyShieldActionExtension/StudyBuddyShieldActionExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G7V7K8FW7V;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StudyBuddyShieldActionExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StudyBuddyShieldActionExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaos.StudyBuddy.StudyBuddyShieldActionExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB63CE772D9B3F2A0073A20F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = StudyBuddyShieldActionExtension/StudyBuddyShieldActionExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G7V7K8FW7V;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StudyBuddyShieldActionExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StudyBuddyShieldActionExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaos.StudyBuddy.StudyBuddyShieldActionExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1075,6 +1526,33 @@
 			buildConfigurations = (
 				CB178C1E2A16F5DF0079A20F /* Debug */,
 				CB178C1F2A16F5DF0079A20F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB63CE4D2D9B3EFF0073A20F /* Build configuration list for PBXNativeTarget "StudyBuddyDeviceActivityMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB63CE4E2D9B3EFF0073A20F /* Debug */,
+				CB63CE4F2D9B3EFF0073A20F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB63CE632D9B3F150073A20F /* Build configuration list for PBXNativeTarget "StudyBuddyShieldConfiguration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB63CE642D9B3F150073A20F /* Debug */,
+				CB63CE652D9B3F150073A20F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB63CE752D9B3F2A0073A20F /* Build configuration list for PBXNativeTarget "StudyBuddyShieldActionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB63CE762D9B3F2A0073A20F /* Debug */,
+				CB63CE772D9B3F2A0073A20F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
