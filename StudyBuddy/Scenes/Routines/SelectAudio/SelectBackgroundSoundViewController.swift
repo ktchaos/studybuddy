@@ -10,7 +10,7 @@ import SnapKit
 
 protocol SelectBackgroundSoundViewControlling {}
 
-class SelectBackgroundSoundViewController: UIViewController, SelectBackgroundSoundViewControlling {
+final class SelectBackgroundSoundViewController: BaseViewController, SelectBackgroundSoundViewControlling {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = "Selecione um tipo de áudio para acompanhar sua rotina"

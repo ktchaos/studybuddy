@@ -12,7 +12,7 @@ protocol EditRoutineViewControlling {
 
 }
 
-class EditRoutineViewController: UIViewController, EditRoutineViewControlling {
+class EditRoutineViewController: BaseViewController, EditRoutineViewControlling {
     private lazy var titleTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProfilePictureSelectionViewController: UIViewController {
+final class ProfilePictureSelectionViewController: BaseViewController {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = "Selecione uma imagem para o seu perfil"

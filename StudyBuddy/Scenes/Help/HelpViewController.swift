@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class HelpViewController: UIViewController {
+class HelpViewController: BaseViewController {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Sobre a aplicação"

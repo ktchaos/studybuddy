@@ -14,7 +14,7 @@ protocol MainViewControlling {
     
 }
 
-class MainViewController: UIViewController, MainViewControlling {
+class MainViewController: BaseViewController, MainViewControlling {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Minhas rotinas"

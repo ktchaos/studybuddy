@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class OnboardingRankingViewController: UIViewController {
+class OnboardingRankingViewController: BaseViewController {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -117,6 +117,6 @@ class OnboardingRankingViewController: UIViewController {
     }
 
     @objc func onRankingTap() {
-        delegate?.showMainRoute()
+        delegate?.showMainRoute(window: view.window)
     }
 }

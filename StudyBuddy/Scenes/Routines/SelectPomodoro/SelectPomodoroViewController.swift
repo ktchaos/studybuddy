@@ -16,7 +16,7 @@ protocol SelectPomodoroViewControlling {
     func enablePlusButton()
 }
 
-class SelectPomodoroViewController: UIViewController, SelectPomodoroViewControlling {
+class SelectPomodoroViewController: BaseViewController, SelectPomodoroViewControlling {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = "Cada sessão é composta de 50 minutos de foco e 10 minutos de intervalo.\n\nSelecione a quantidade de sessões:"

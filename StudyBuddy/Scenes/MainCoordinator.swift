@@ -10,14 +10,16 @@ import UIKit
 
 class MainCoordinator: TabBarCoordinator {
     private var tabBarScenes: [TabBarScene]
+    private var window: UIWindow?
 
     var isCompleted: (() -> Void)?
     var rootViewController: UITabBarController
     var childCoordinators = [Coordinator]()
 
-    init(tabBarScenes: [TabBarScene]) {
+    init(tabBarScenes: [TabBarScene], window: UIWindow?) {
         self.rootViewController = UITabBarController()
         self.tabBarScenes = tabBarScenes
+        self.window = window
     }
 
     private func setupTabBar() {
@@ -25,6 +27,11 @@ class MainCoordinator: TabBarCoordinator {
         tabBar.tintColor = .black
         tabBar.barTintColor = .black
         tabBar.unselectedItemTintColor = .gray
+        
+        // Force light mode
+        if #available(iOS 13.0, *) {
+            window?.overrideUserInterfaceStyle = .light
+        }
     }
 
     private func setupTabBarScenes() {

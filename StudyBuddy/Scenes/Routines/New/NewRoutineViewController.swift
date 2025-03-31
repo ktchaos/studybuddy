@@ -13,7 +13,7 @@ protocol NewRoutineViewControlling {
     func displayErrorOnDescription(message: String)
 }
 
-final class NewRoutineViewController: UIViewController, NewRoutineViewControlling {
+final class NewRoutineViewController: BaseViewController, NewRoutineViewControlling {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Título da rotina"

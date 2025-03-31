@@ -74,6 +74,7 @@
 		CB63CE6B2D9B3F2A0073A20F /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63CE562D9B3F150073A20F /* ManagedSettings.framework */; };
 		CB63CE732D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB63CE6A2D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB63CE7A2D9B40F90073A20F /* ShieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE792D9B40F60073A20F /* ShieldManager.swift */; };
+		CB63CE7C2D9B42DA0073A20F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE7B2D9B42D70073A20F /* BaseViewController.swift */; };
 		CBA86EA42BD73EFA0069B024 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EA32BD73EFA0069B024 /* ProfileViewController.swift */; };
 		CBA86EA62BD73F180069B024 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EA52BD73F180069B024 /* AppCoordinator.swift */; };
 		CBA86EA82BD73FEC0069B024 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EA72BD73FEC0069B024 /* Coordinator.swift */; };
@@ -232,6 +233,7 @@
 		CB63CE582D9B3F150073A20F /* ManagedSettingsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettingsUI.framework; path = System/Library/Frameworks/ManagedSettingsUI.framework; sourceTree = SDKROOT; };
 		CB63CE6A2D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StudyBuddyShieldActionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB63CE792D9B40F60073A20F /* ShieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldManager.swift; sourceTree = "<group>"; };
+		CB63CE7B2D9B42D70073A20F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CBA86EA32BD73EFA0069B024 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CBA86EA52BD73F180069B024 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CBA86EA72BD73FEC0069B024 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -567,6 +569,7 @@
 		CBA86EAB2BD7E8FE0069B024 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CB63CE7B2D9B42D70073A20F /* BaseViewController.swift */,
 				CBA86EA72BD73FEC0069B024 /* Coordinator.swift */,
 				CBA86EAC2BD7E9190069B024 /* TabBarScene.swift */,
 			);
@@ -941,6 +944,7 @@
 				CB1FE7792BEC00A400AD0E2D /* RankingFactory.swift in Sources */,
 				CBA86EAF2BD7EAB20069B024 /* ProfileCoordinator.swift in Sources */,
 				CBB30A742BD9A43400239FAC /* EditRoutineViewController.swift in Sources */,
+				CB63CE7C2D9B42DA0073A20F /* BaseViewController.swift in Sources */,
 				CB1FE7342BE8809700AD0E2D /* RoutineDetailsInteractor.swift in Sources */,
 				CB1FE7662BEB1CC700AD0E2D /* SelectBackgroundSoundFactory.swift in Sources */,
 				CBB30A792BD9CBCE00239FAC /* NewUserViewController.swift in Sources */,

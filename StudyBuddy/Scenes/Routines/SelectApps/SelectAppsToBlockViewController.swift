@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import ManagedSettings
 
-class SelectAppsToBlockViewController: UIViewController {
+class SelectAppsToBlockViewController: BaseViewController {
     private let shieldManager = ShieldManager()
     private var selectedApps: Set<ApplicationToken> = []
     
