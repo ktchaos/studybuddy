@@ -27,7 +27,7 @@ final class NewRoutineViewController: UIViewController, NewRoutineViewControllin
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 20)
         textField.layer.borderWidth = 1
-        textField.addPadding(.left(6))
+//        textField.addPadding(.left(6))
         textField.delegate = self
         return textField
     }()
@@ -52,7 +52,7 @@ final class NewRoutineViewController: UIViewController, NewRoutineViewControllin
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.layer.borderWidth = 1
-        textField.addPadding(.left(6))
+//        textField.addPadding(.left(6))
         textField.delegate = self
         return textField
     }()
