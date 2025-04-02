@@ -13,7 +13,6 @@ import SwiftUI
 
 class SelectAppsToBlockViewController: BaseViewController {
     private var selection = FamilyActivitySelection()
-    private let store = ManagedSettingsStore()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -119,6 +118,7 @@ class SelectAppsToBlockViewController: BaseViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             present(alert, animated: true)
         } else {
+            ShieldManager.shared.discouragedSelections = selection
             delegate?.finishRoutineCreation(appSelection: selection)
         }
     }

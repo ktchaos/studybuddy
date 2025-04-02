@@ -56,9 +56,6 @@ class MainViewController: BaseViewController, MainViewControlling {
         self.navigationController?.tabBarController?.tabBar.isHidden = false
     }
 
-    var discouragedSelections = FamilyActivitySelection()
-    let store = ManagedSettingsStore()
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 

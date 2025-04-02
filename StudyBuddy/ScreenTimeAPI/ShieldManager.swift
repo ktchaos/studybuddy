@@ -8,7 +8,9 @@
 import FamilyControls
 import ManagedSettings
 
-class ShieldManager {
+final class ShieldManager {
+    static let shared = ShieldManager()
+    
     var discouragedSelections = FamilyActivitySelection()
     
     private let store = ManagedSettingsStore()
@@ -23,5 +25,9 @@ class ShieldManager {
         store.shield.applications = applications.isEmpty ? nil : applications
         store.shield.applicationCategories = categories.isEmpty ? nil : .specific(categories)
         store.shield.webDomainCategories = categories.isEmpty ? nil : .specific(categories)
+    }
+    
+    func unlockActivities() {
+        store.shield.applications?.removeAll()
     }
 }

@@ -26,7 +26,6 @@ final class PomodoroAndSoundInteractor: PomodoroAndSoundInteracting {
     private let usernameKey: String = "username"
     private let pointsKey: String = "points"
     private let database = Firestore.firestore()
-    private let shieldManager = ShieldManager()
 
     private var pomodoroTimer: Timer = Timer()
     private var breakTimer: Timer = Timer()
@@ -68,7 +67,7 @@ extension PomodoroAndSoundInteractor {
     }
 
     func startPomodoro() {
-        shieldManager.shieldActivities()
+        ShieldManager.shared.shieldActivities()
         
         if sessionsDone == self.routine.numberOfSessions {
             presenter.dismissScreen()
@@ -101,6 +100,7 @@ extension PomodoroAndSoundInteractor {
             // Stop pomodoro timer and
             // Start break timer
             // unblock apps
+            ShieldManager.shared.unlockActivities()
             self.presenter.updateSessionLabel(hours: "00", minutes: "00", seconds: "00")
             self.pomodoroTimer.invalidate()
             self.presenter.enableBreakLabel()

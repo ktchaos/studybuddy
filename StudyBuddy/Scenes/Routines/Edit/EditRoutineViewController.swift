@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import FamilyControls
 
 protocol EditRoutineViewControlling {
 
@@ -236,6 +237,10 @@ extension EditRoutineViewController {
 }
 
 extension EditRoutineViewController: RoutinesCoordinatorDelegate {
+    func finishRoutineCreation(appSelection: FamilyActivitySelection) {
+        
+    }
+    
     func presentPomodoroAndSoundScreen(model: Routine) {
 
     }
