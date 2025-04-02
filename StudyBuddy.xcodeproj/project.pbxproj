@@ -75,6 +75,13 @@
 		CB63CE732D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB63CE6A2D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB63CE7A2D9B40F90073A20F /* ShieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE792D9B40F60073A20F /* ShieldManager.swift */; };
 		CB63CE7C2D9B42DA0073A20F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE7B2D9B42D70073A20F /* BaseViewController.swift */; };
+		CB63CE7E2D9B4F010073A20F /* AppSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE7D2D9B4EFB0073A20F /* AppSelectionViewController.swift */; };
+		CB63CE802D9DBFF80073A20F /* ApplicationProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE7F2D9DBFF40073A20F /* ApplicationProfile.swift */; };
+		CB63CE822D9DC01A0073A20F /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE812D9DC0170073A20F /* DataBase.swift */; };
+		CB63CE832D9DC03D0073A20F /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE812D9DC0170073A20F /* DataBase.swift */; };
+		CB63CE842D9DC03D0073A20F /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE812D9DC0170073A20F /* DataBase.swift */; };
+		CB63CE852D9DC04B0073A20F /* ApplicationProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE7F2D9DBFF40073A20F /* ApplicationProfile.swift */; };
+		CB63CE862D9DC04B0073A20F /* ApplicationProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE7F2D9DBFF40073A20F /* ApplicationProfile.swift */; };
 		CBA86EA42BD73EFA0069B024 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EA32BD73EFA0069B024 /* ProfileViewController.swift */; };
 		CBA86EA62BD73F180069B024 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EA52BD73F180069B024 /* AppCoordinator.swift */; };
 		CBA86EA82BD73FEC0069B024 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA86EA72BD73FEC0069B024 /* Coordinator.swift */; };
@@ -234,6 +241,9 @@
 		CB63CE6A2D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StudyBuddyShieldActionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB63CE792D9B40F60073A20F /* ShieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldManager.swift; sourceTree = "<group>"; };
 		CB63CE7B2D9B42D70073A20F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CB63CE7D2D9B4EFB0073A20F /* AppSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSelectionViewController.swift; sourceTree = "<group>"; };
+		CB63CE7F2D9DBFF40073A20F /* ApplicationProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationProfile.swift; sourceTree = "<group>"; };
+		CB63CE812D9DC0170073A20F /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		CBA86EA32BD73EFA0069B024 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CBA86EA52BD73F180069B024 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CBA86EA72BD73FEC0069B024 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -535,6 +545,8 @@
 		CB63CE782D9B40EC0073A20F /* ScreenTimeAPI */ = {
 			isa = PBXGroup;
 			children = (
+				CB63CE812D9DC0170073A20F /* DataBase.swift */,
+				CB63CE7F2D9DBFF40073A20F /* ApplicationProfile.swift */,
 				CB63CE792D9B40F60073A20F /* ShieldManager.swift */,
 			);
 			path = ScreenTimeAPI;
@@ -569,6 +581,7 @@
 		CBA86EAB2BD7E8FE0069B024 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CB63CE7D2D9B4EFB0073A20F /* AppSelectionViewController.swift */,
 				CB63CE7B2D9B42D70073A20F /* BaseViewController.swift */,
 				CBA86EA72BD73FEC0069B024 /* Coordinator.swift */,
 				CBA86EAC2BD7E9190069B024 /* TabBarScene.swift */,
@@ -945,12 +958,14 @@
 				CBA86EAF2BD7EAB20069B024 /* ProfileCoordinator.swift in Sources */,
 				CBB30A742BD9A43400239FAC /* EditRoutineViewController.swift in Sources */,
 				CB63CE7C2D9B42DA0073A20F /* BaseViewController.swift in Sources */,
+				CB63CE7E2D9B4F010073A20F /* AppSelectionViewController.swift in Sources */,
 				CB1FE7342BE8809700AD0E2D /* RoutineDetailsInteractor.swift in Sources */,
 				CB1FE7662BEB1CC700AD0E2D /* SelectBackgroundSoundFactory.swift in Sources */,
 				CBB30A792BD9CBCE00239FAC /* NewUserViewController.swift in Sources */,
 				CB1FE73D2BE8911D00AD0E2D /* PomodoroAndSoundFactory.swift in Sources */,
 				CB1FE7412BE8917200AD0E2D /* PomodoroAndSoundPresenter.swift in Sources */,
 				CBA86EBD2BD81F3A0069B024 /* UserOnRankingCell.swift in Sources */,
+				CB63CE822D9DC01A0073A20F /* DataBase.swift in Sources */,
 				CB1FE7582BEAF8F700AD0E2D /* NewRoutinePresenter.swift in Sources */,
 				CB3865392BEC698E00C0830A /* ProfilePictureSelectionViewController.swift in Sources */,
 				CBEFAAC32A325D6E00DA24CB /* Cell+Extensions.swift in Sources */,
@@ -972,6 +987,7 @@
 				CB490E152A329B3000276780 /* SelectPomodoroViewController.swift in Sources */,
 				CBD033E92C3F0FB70006CEEA /* ViewController.swift in Sources */,
 				CB1FE7752BEC007700AD0E2D /* RankingInteractor.swift in Sources */,
+				CB63CE802D9DBFF80073A20F /* ApplicationProfile.swift in Sources */,
 				CB1FE7622BEB1CB400AD0E2D /* SelectBackgroundSoundInteractor.swift in Sources */,
 				CB1FE7302BE8797900AD0E2D /* RoutineModel.swift in Sources */,
 				CBA86EBB2BD81A1B0069B024 /* RankingViewController.swift in Sources */,
@@ -999,6 +1015,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB63CE852D9DC04B0073A20F /* ApplicationProfile.swift in Sources */,
+				CB63CE832D9DC03D0073A20F /* DataBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1013,6 +1031,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB63CE862D9DC04B0073A20F /* ApplicationProfile.swift in Sources */,
+				CB63CE842D9DC03D0073A20F /* DataBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

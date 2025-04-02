@@ -15,7 +15,14 @@ import UIKit
 class ShieldConfigurationExtension: ShieldConfigurationDataSource {
     override func configuration(shielding application: Application) -> ShieldConfiguration {
         // Customize the shield as needed for applications.
-        ShieldConfiguration()
+        ShieldConfiguration(
+            backgroundColor: .lightGray,
+            icon: UIImage(named: "sbclock"),
+            title: ShieldConfiguration.Label(text: "Opa! O Study Buddy bloqueou esse aplicativo", color: .label),
+            subtitle: ShieldConfiguration.Label(text: "Ele ficará disponível ao final da sua sessão.", color: .systemBrown),
+            primaryButtonLabel: ShieldConfiguration.Label(text: "Fechar", color: .white),
+            primaryButtonBackgroundColor: .black
+        )
     }
     
     override func configuration(shielding application: Application, in category: ActivityCategory) -> ShieldConfiguration {

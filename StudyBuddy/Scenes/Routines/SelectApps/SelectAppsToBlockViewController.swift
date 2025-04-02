@@ -8,14 +8,16 @@
 import UIKit
 import SnapKit
 import ManagedSettings
+import FamilyControls
+import SwiftUI
 
 class SelectAppsToBlockViewController: BaseViewController {
-    private let shieldManager = ShieldManager()
-    private var selectedApps: Set<ApplicationToken> = []
+    private var selection = FamilyActivitySelection()
+    private let store = ManagedSettingsStore()
     
-    private lazy var descriptionLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Selecione os aplicativos que deseja bloquear durante esta rotina"
+        label.text = "Escolha alguns aplicativos para serem bloqueados durante seu tempo de foco"
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 19)
         label.textColor = .black
@@ -25,11 +27,11 @@ class SelectAppsToBlockViewController: BaseViewController {
     private lazy var selectAppsButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Selecionar Aplicativos", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        button.backgroundColor = .black
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
+        button.backgroundColor = .gray
         button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 8
-//        button.addTarget(self, action: #selector(openActivityPicker), for: .touchUpInside)
+        button.layer.cornerRadius = 12
+        button.addTarget(self, action: #selector(openActivityPicker), for: .touchUpInside)
         return button
     }()
     
@@ -39,62 +41,76 @@ class SelectAppsToBlockViewController: BaseViewController {
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.backgroundColor = .black
-        button.layer.cornerRadius = 8
+        button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(self.onNextTap), for: .touchUpInside)
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupViews()
+        requestAuthorization()
     }
-
-    func setupUI() {
-        title = "Bloquear aplicativos"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        view.backgroundColor = .white
+    
+    private func setupUI() {
+        title = "Selecionar Aplicativos"
+        view.backgroundColor = .systemBackground
     }
-
-    func setupViews() {
-        view.addSubview(descriptionLabel)
+    
+    private func setupViews() {
+        view.addSubview(titleLabel)
         view.addSubview(selectAppsButton)
         view.addSubview(finishButton)
-
-        descriptionLabel.snp.makeConstraints {
+        
+        titleLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(16)
+            $0.height.equalTo(48)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
         }
-
+        
         selectAppsButton.snp.makeConstraints {
-            $0.height.equalTo(44)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(descriptionLabel.snp.bottom).offset(16)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(32)
+            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.height.equalTo(50)
         }
-
+        
         finishButton.snp.makeConstraints {
-            $0.height.equalTo(52)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().inset(16)
             $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(16)
+            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.height.equalTo(50)
         }
     }
-
     
+    private func requestAuthorization() {
+        Task {
+            do {
+                try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
+            } catch {
+                print("Failed to request authorization: \(error)")
+            }
+        }
+    }
+    
+    @objc private func openActivityPicker() {
+        let picker = FamilyActivityPicker(selection: Binding(get: { self.selection }, set: { self.selection = $0 }))
+        let hostingController = UIHostingController(rootView: picker)
+        hostingController.modalPresentationStyle = .fullScreen
+        
+        let navigationController = UINavigationController(rootViewController: hostingController)
+        hostingController.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissPicker))
+        present(navigationController, animated: true)
+    }
+    
+    @objc private func dismissPicker() {
+        dismiss(animated: true)
+    }
     
     @objc func onNextTap() {
-        // Create the routine with the selected apps
-        if !selectedApps.isEmpty {
-            // Here you would create the routine with the selected apps
-            // You might want to pass this data back to the previous screen
-            // or create the routine directly
-            navigationController?.popViewController(animated: true)
-        } else {
-            // Show an alert to select apps first
+        if selection.applicationTokens.isEmpty {
             let alert = UIAlertController(
-                title: "Selecione aplicativos",
+                title: "Atenção",
                 message: "Por favor, selecione pelo menos um aplicativo para bloquear.",
                 preferredStyle: .alert
             )
