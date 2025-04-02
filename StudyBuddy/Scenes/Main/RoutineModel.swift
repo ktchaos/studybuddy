@@ -7,13 +7,14 @@
 
 import Foundation
 import ManagedSettings
+import FamilyControls
 
 struct Routine: Codable {
     var title: String
     var description: String
     var numberOfSessions: Int
     var audio: Audio
-    var blockedApps: [BlockedApplication]
+    var blockedApps: FamilyActivitySelection
     var rangeTime: String
 
     init(
@@ -22,7 +23,7 @@ struct Routine: Codable {
         rangeTime: String = "",
         numberOfSessions: Int = 0,
         audio: Audio = Audio(path: "", type: ""),
-        blockedApps: [BlockedApplication] = []
+        blockedApps: FamilyActivitySelection = .init()
     ) {
         self.title = title
         self.description = description
@@ -42,9 +43,4 @@ extension Routine: Equatable {
 struct Audio: Codable {
     let path: String
     let type: String
-}
-
-struct BlockedApplication: Codable {
-    let token: String
-    let bundleId: String
 }

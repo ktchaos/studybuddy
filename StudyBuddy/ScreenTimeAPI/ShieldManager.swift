@@ -9,19 +9,19 @@ import FamilyControls
 import ManagedSettings
 
 class ShieldManager {
-//    @Published var discouragedSelections = FamilyActivitySelection()
+    var discouragedSelections = FamilyActivitySelection()
     
     private let store = ManagedSettingsStore()
     
-//    func shieldActivities() {
-//        // Clear to reset previous settings
-//        store.clearAllSettings()
-//                     
-//        let applications = discouragedSelections.applicationTokens
-//        let categories = discouragedSelections.categoryTokens
-//        
-//        store.shield.applications = applications.isEmpty ? nil : applications
-//        store.shield.applicationCategories = categories.isEmpty ? nil : .specific(categories)
-//        store.shield.webDomainCategories = categories.isEmpty ? nil : .specific(categories)
-//    }
+    func shieldActivities() {
+        // Clear to reset previous settings
+        store.clearAllSettings()
+                     
+        let applications = discouragedSelections.applicationTokens
+        let categories = discouragedSelections.categoryTokens
+        
+        store.shield.applications = applications.isEmpty ? nil : applications
+        store.shield.applicationCategories = categories.isEmpty ? nil : .specific(categories)
+        store.shield.webDomainCategories = categories.isEmpty ? nil : .specific(categories)
+    }
 }

@@ -46,6 +46,8 @@ class SelectAppsToBlockViewController: BaseViewController {
         return button
     }()
     
+    var delegate: RoutinesCoordinatorDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -116,6 +118,8 @@ class SelectAppsToBlockViewController: BaseViewController {
             )
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             present(alert, animated: true)
+        } else {
+            delegate?.finishRoutineCreation(appSelection: selection)
         }
     }
 }

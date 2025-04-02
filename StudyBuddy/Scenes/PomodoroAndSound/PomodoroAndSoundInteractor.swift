@@ -9,6 +9,7 @@ import FirebaseCore
 import FirebaseFirestore
 import Foundation
 import AVFAudio
+import StudyBuddyShieldActionExtension
 
 protocol PomodoroAndSoundInteracting {
     func didTapStartPomodoro()
@@ -25,6 +26,7 @@ final class PomodoroAndSoundInteractor: PomodoroAndSoundInteracting {
     private let usernameKey: String = "username"
     private let pointsKey: String = "points"
     private let database = Firestore.firestore()
+    private let shieldManager = ShieldManager()
 
     private var pomodoroTimer: Timer = Timer()
     private var breakTimer: Timer = Timer()
@@ -66,6 +68,8 @@ extension PomodoroAndSoundInteractor {
     }
 
     func startPomodoro() {
+        shieldManager.shieldActivities()
+        
         if sessionsDone == self.routine.numberOfSessions {
             presenter.dismissScreen()
         } else {
@@ -96,6 +100,7 @@ extension PomodoroAndSoundInteractor {
         if currentPomodoroTime == 0 {
             // Stop pomodoro timer and
             // Start break timer
+            // unblock apps
             self.presenter.updateSessionLabel(hours: "00", minutes: "00", seconds: "00")
             self.pomodoroTimer.invalidate()
             self.presenter.enableBreakLabel()
