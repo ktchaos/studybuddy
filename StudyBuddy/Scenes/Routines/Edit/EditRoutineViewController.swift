@@ -7,12 +7,13 @@
 
 import UIKit
 import SnapKit
+import FamilyControls
 
 protocol EditRoutineViewControlling {
 
 }
 
-class EditRoutineViewController: UIViewController, EditRoutineViewControlling {
+class EditRoutineViewController: BaseViewController, EditRoutineViewControlling {
     private lazy var titleTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
@@ -236,6 +237,10 @@ extension EditRoutineViewController {
 }
 
 extension EditRoutineViewController: RoutinesCoordinatorDelegate {
+    func finishRoutineCreation(appSelection: FamilyActivitySelection) {
+        
+    }
+    
     func presentPomodoroAndSoundScreen(model: Routine) {
 
     }

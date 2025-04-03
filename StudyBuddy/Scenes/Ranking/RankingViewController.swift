@@ -10,7 +10,7 @@ import SnapKit
 
 protocol RankingViewControlling {}
 
-class RankingViewController: UIViewController, RankingViewControlling {
+class RankingViewController: BaseViewController, RankingViewControlling {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Ranking geral SB"

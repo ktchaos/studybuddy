@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FamilyControls
 
 protocol RoutinesCoordinatorDelegate {
     func presentPomodoroAndSoundScreen(model: Routine)
@@ -15,7 +16,7 @@ protocol RoutinesCoordinatorDelegate {
     func presentPomodoroSessionsScreen(title: String, description: String)
     func presentSelectAudioScreen(with numberOfSessions: Int)
     func presentSelectAppsToBlockScreen(with audioPath: String, type: String)
-    func finishRoutineCreation()
+    func finishRoutineCreation(appSelection: FamilyActivitySelection)
     func presentEditRoutineScreen(routine: Routine)
     func onRoutineDeletion()
 }
@@ -92,7 +93,8 @@ extension RoutinesCoordinator: RoutinesCoordinatorDelegate {
         self.rootViewController.popToRootViewController(animated: true)
     }
 
-    func finishRoutineCreation() {
+    func finishRoutineCreation(appSelection: FamilyActivitySelection) {
+        routine.blockedApps = appSelection
         fetchRoutines()
 
         do {
@@ -100,11 +102,12 @@ extension RoutinesCoordinator: RoutinesCoordinatorDelegate {
             let encoder = JSONEncoder()
             let data = try encoder.encode(self.currentRoutines)
             UserDefaults.standard.set(data, forKey: userRoutines)
-            print(#function, "rotinas -> ", self.currentRoutines)
             self.rootViewController.popToRootViewController(animated: true)
         } catch {
             // Catch error
         }
+        
+        self.rootViewController.popToRootViewController(animated: true)
     }
 
     func fetchRoutines() {

@@ -50,7 +50,7 @@ enum StudyBuddyTabBarScene: Int, CaseIterable, TabBarScene {
 }
 
 protocol AppCoordinatorDelegate {
-    func showMainRoute()
+    func showMainRoute(window: UIWindow?)
 }
 
 class AppCoordinator: Coordinator, AppCoordinatorDelegate {
@@ -68,14 +68,14 @@ class AppCoordinator: Coordinator, AppCoordinatorDelegate {
 
     func start() {
         if userDefaults.bool(forKey: isLoggedKey) {
-            self.showMainRoute()
+            self.showMainRoute(window: self.window)
         } else {
             showNewUserRoute()
         }
     }
 
-    func showMainRoute() {
-        let coordinator = MainCoordinator(tabBarScenes: StudyBuddyTabBarScene.allCases)
+    func showMainRoute(window: UIWindow?) {
+        let coordinator = MainCoordinator(tabBarScenes: StudyBuddyTabBarScene.allCases, window: window)
         self.start(coordinator: coordinator)
         self.window.rootViewController = coordinator.rootViewController
         self.window.makeKeyAndVisible()

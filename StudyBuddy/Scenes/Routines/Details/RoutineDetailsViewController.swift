@@ -12,7 +12,7 @@ protocol RoutineDetailsViewControlling {
 
 }
 
-final class RoutineDetailsViewController: UIViewController, RoutineDetailsViewControlling {
+final class RoutineDetailsViewController: BaseViewController, RoutineDetailsViewControlling {
     private lazy var editButton: UIButton = {
         let button = UIButton()
         button.tintColor = .black

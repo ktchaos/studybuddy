@@ -17,7 +17,7 @@ protocol PictureSelectionDelegate {
     func getSelectedImage(profilePicture: ProfilePicture)
 }
 
-class ProfileViewController: UIViewController, ProfileViewControlling, PictureSelectionDelegate {
+class ProfileViewController: BaseViewController, ProfileViewControlling, PictureSelectionDelegate {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Meu Perfil"

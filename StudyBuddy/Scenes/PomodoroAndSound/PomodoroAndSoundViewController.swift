@@ -16,7 +16,7 @@ protocol PomodoroAndSoundViewControlling {
     func enablePomodoroLabel()
 }
 
-final class PomodoroAndSoundViewController: UIViewController, PomodoroAndSoundViewControlling {
+final class PomodoroAndSoundViewController: BaseViewController, PomodoroAndSoundViewControlling {
     // MARK: Pomodoro UI
 
     private lazy var breakTimeTitleLabel: UILabel = {

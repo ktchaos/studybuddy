@@ -17,7 +17,7 @@ protocol NewUserViewControlling {
     func displayError(with message: String)
 }
 
-class NewUserViewController: UIViewController, NewUserViewControlling {
+class NewUserViewController: BaseViewController, NewUserViewControlling {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Bem vindo ao Study Buddy"
@@ -30,7 +30,7 @@ class NewUserViewController: UIViewController, NewUserViewControlling {
 
     private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "AppIcon")
+        imageView.image = UIImage(named: "sbclock")
         return imageView
     }()
 

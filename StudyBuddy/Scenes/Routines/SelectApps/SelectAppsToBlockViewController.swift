@@ -7,140 +7,119 @@
 
 import UIKit
 import SnapKit
+import ManagedSettings
+import FamilyControls
+import SwiftUI
 
-class SelectAppsToBlockViewController: UIViewController {
-    private lazy var descriptionLabel: UILabel = {
+class SelectAppsToBlockViewController: BaseViewController {
+    private var selection = FamilyActivitySelection()
+    
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Selecione alguns aplicativos para bloquear temporariamente"
+        label.text = "Escolha alguns aplicativos para serem bloqueados durante seu tempo de foco"
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 19)
         label.textColor = .black
         return label
     }()
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(AppCell.self, forCellReuseIdentifier: AppCell.identifier)
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
-        tableView.allowsMultipleSelection = true
-        tableView.delegate = self
-        tableView.dataSource = self
-        return tableView
+    
+    private lazy var selectAppsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Selecionar Aplicativos", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
+        button.backgroundColor = .gray
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 12
+        button.addTarget(self, action: #selector(openActivityPicker), for: .touchUpInside)
+        return button
     }()
+    
     lazy var finishButton: UIButton = {
         let button = UIButton()
         button.setTitle("Criar rotina", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.backgroundColor = .black
+        button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(self.onNextTap), for: .touchUpInside)
         return button
     }()
-
-    let dataSource = [
-        App(icon: UIImage(named: "zap") ?? UIImage(), applicationName: "WhatsApp"),
-        App(icon: UIImage(named: "insta") ?? UIImage(), applicationName: "Instagram"),
-        App(icon: UIImage(named: "telegram") ?? UIImage(), applicationName: "Telegram"),
-        App(icon: UIImage(named: "linkedin") ?? UIImage(), applicationName: "LinkedIn"),
-        App(icon: UIImage(named: "chrome") ?? UIImage(), applicationName: "Google Chrome"),
-        App(icon: UIImage(named: "mail") ?? UIImage(), applicationName: "Mail"),
-        App(icon: UIImage(named: "drive") ?? UIImage(), applicationName: "Drive"),
-        App(icon: UIImage(named: "gmail") ?? UIImage(), applicationName: "Gmail"),
-        App(icon: UIImage(named: "facetime") ?? UIImage(), applicationName: "Facetime"),
-        App(icon: UIImage(named: "safari") ?? UIImage(), applicationName: "Safari"),
-        App(icon: UIImage(named: "calendar") ?? UIImage(), applicationName: "Google Calendar"),
-        App(icon: UIImage(named: "netflix") ?? UIImage(), applicationName: "Netflix"),
-        App(icon: UIImage(named: "spot") ?? UIImage(), applicationName: "Spotify"),
-        App(icon: UIImage(named: "youtube") ?? UIImage(), applicationName: "YouTube"),
-        App(icon: UIImage(named: "googlemaps") ?? UIImage(), applicationName: "Google Maps"),
-        App(icon: UIImage(named: "pod") ?? UIImage(), applicationName: "Podcasts"),
-        App(icon: UIImage(named: "ifood") ?? UIImage(), applicationName: "iFood"),
-        App(icon: UIImage(named: "hbo") ?? UIImage(), applicationName: "HBO Max"),
-        App(icon: UIImage(named: "ze") ?? UIImage(), applicationName: "Zé Delivery"),
-        App(icon: UIImage(named: "shopee") ?? UIImage(), applicationName: "Shopee"),
-        App(icon: UIImage(named: "notion") ?? UIImage(), applicationName: "Notion"),
-    ]
-
+    
     var delegate: RoutinesCoordinatorDelegate?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
         setupViews()
+        requestAuthorization()
     }
-
-    func setupUI() {
-        title = "Bloquear aplicativos"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        view.backgroundColor = .white
+    
+    private func setupUI() {
+        title = "Selecionar Aplicativos"
+        view.backgroundColor = .systemBackground
     }
-
-    func setupViews() {
-        addShadow(view: finishButton)
-        view.addSubview(descriptionLabel)
+    
+    private func setupViews() {
+        view.addSubview(titleLabel)
+        view.addSubview(selectAppsButton)
         view.addSubview(finishButton)
-        view.addSubview(tableView)
-
-        descriptionLabel.snp.makeConstraints {
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(16)
             $0.height.equalTo(48)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
-            $0.top.equalToSuperview().offset(150)
         }
-
+        
+        selectAppsButton.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(32)
+            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.height.equalTo(50)
+        }
+        
         finishButton.snp.makeConstraints {
-            $0.height.equalTo(52)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().inset(16)
-            $0.bottom.equalToSuperview().inset(42)
-        }
-
-        tableView.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(descriptionLabel.snp.bottom).offset(16)
-            $0.bottom.equalTo(finishButton.snp.top).offset(-16)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(16)
+            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.height.equalTo(50)
         }
     }
-
-    func addShadow(view: UIView, shadowColor: CGColor = UIColor.black.cgColor, shadowOffset: CGSize = .zero, shadowOpacity: Float = 0.5, shadowRadius: CGFloat = 5.0) {
-        view.layer.shadowColor = shadowColor
-        view.layer.shadowOffset = shadowOffset
-        view.layer.shadowOpacity = shadowOpacity
-        view.layer.shadowRadius = shadowRadius
-        view.layer.masksToBounds = false
-        view.layer.cornerRadius = 5
+    
+    private func requestAuthorization() {
+        Task {
+            do {
+                try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
+            } catch {
+                print("Failed to request authorization: \(error)")
+            }
+        }
     }
-
-    // MARK: Actions
-
+    
+    @objc private func openActivityPicker() {
+        let picker = FamilyActivityPicker(selection: Binding(get: { self.selection }, set: { self.selection = $0 }))
+        let hostingController = UIHostingController(rootView: picker)
+        hostingController.modalPresentationStyle = .fullScreen
+        
+        let navigationController = UINavigationController(rootViewController: hostingController)
+        hostingController.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissPicker))
+        present(navigationController, animated: true)
+    }
+    
+    @objc private func dismissPicker() {
+        dismiss(animated: true)
+    }
+    
     @objc func onNextTap() {
-        delegate?.finishRoutineCreation()
-        let alert = UIAlertController(
-            title: "Rotina criada!",
-            message: "Sua rotina foi adicionada na lista",
-            preferredStyle: .alert
-        )
-        let action = UIAlertAction(title: "Ok", style: .cancel)
-        alert.addAction(action)
-        present(alert, animated: true)
-    }
-}
-
-extension SelectAppsToBlockViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let app = self.dataSource[indexPath.row]
-        if let cell = tableView.dequeueReusableCell(withIdentifier: AppCell.identifier, for: indexPath) as? AppCell {
-            cell.setupCell(with: app)
-            return cell
+        if selection.applicationTokens.isEmpty {
+            let alert = UIAlertController(
+                title: "Atenção",
+                message: "Por favor, selecione pelo menos um aplicativo para bloquear.",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        } else {
+            ShieldManager.shared.discouragedSelections = selection
+            delegate?.finishRoutineCreation(appSelection: selection)
         }
-
-        return UITableViewCell()
     }
 }

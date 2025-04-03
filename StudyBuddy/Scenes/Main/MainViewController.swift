@@ -10,11 +10,9 @@ import SnapKit
 import FamilyControls
 import ManagedSettings
 
-protocol MainViewControlling {
-    
-}
+protocol MainViewControlling {}
 
-class MainViewController: UIViewController, MainViewControlling {
+class MainViewController: BaseViewController, MainViewControlling {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Minhas rotinas"
@@ -58,9 +56,6 @@ class MainViewController: UIViewController, MainViewControlling {
         self.navigationController?.tabBarController?.tabBar.isHidden = false
     }
 
-    var discouragedSelections = FamilyActivitySelection()
-    let store = ManagedSettingsStore()
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -74,27 +69,6 @@ class MainViewController: UIViewController, MainViewControlling {
         setupUI()
         setupViews()
         setupNavigation()
-
-        shieldActivities()
-
-//        let task = Task {
-//            await self.askForAuthorization()
-//        }
-    }
-
-    // TODO: Move this to interactor
-    func shieldActivities() {
-        // Clear to reset previous settings
-        store.clearAllSettings()
-
-        let applications = discouragedSelections.applicationTokens
-        let categories = discouragedSelections.categoryTokens
-        print("APLICATIONS -> ", applications)
-        print("CATEGORIAS -> ", categories)
-
-        store.shield.applications = applications.isEmpty ? nil : applications
-        store.shield.applicationCategories = categories.isEmpty ? nil : .specific(categories)
-        store.shield.webDomainCategories = categories.isEmpty ? nil : .specific(categories)
     }
 
     func askForAuthorization() async {

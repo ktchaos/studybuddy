@@ -13,7 +13,7 @@ protocol NewRoutineViewControlling {
     func displayErrorOnDescription(message: String)
 }
 
-final class NewRoutineViewController: UIViewController, NewRoutineViewControlling {
+final class NewRoutineViewController: BaseViewController, NewRoutineViewControlling {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Título da rotina"
@@ -27,7 +27,6 @@ final class NewRoutineViewController: UIViewController, NewRoutineViewControllin
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 20)
         textField.layer.borderWidth = 1
-        textField.addPadding(.left(6))
         textField.delegate = self
         return textField
     }()
@@ -52,7 +51,7 @@ final class NewRoutineViewController: UIViewController, NewRoutineViewControllin
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.layer.borderWidth = 1
-        textField.addPadding(.left(6))
+//        textField.addPadding(.left(6))
         textField.delegate = self
         return textField
     }()

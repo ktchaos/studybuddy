@@ -23,8 +23,8 @@ class NewUserCoordinator: NavigationCoordinator {
         self.rootViewController.viewControllers = [viewController]
     }
 
-    func showMainRoute() {
-        let coordinator = MainCoordinator(tabBarScenes: StudyBuddyTabBarScene.allCases)
+    func showMainRoute(window: UIWindow?) {
+        let coordinator = MainCoordinator(tabBarScenes: StudyBuddyTabBarScene.allCases, window: window)
         self.rootViewController.present(coordinator.rootViewController, animated: true)
     }
 
