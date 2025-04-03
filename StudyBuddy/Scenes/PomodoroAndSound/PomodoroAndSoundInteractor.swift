@@ -39,7 +39,35 @@ final class PomodoroAndSoundInteractor: PomodoroAndSoundInteracting {
     init(presenter: PomodoroAndSoundPresenting, routine: Routine) {
         self.presenter = presenter
         self.routine = routine
+//        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: Notification.Name("AppDidEnterBackground"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: Notification.Name("AppWillEnterForeground"), object: nil)
     }
+
+//    deinit {
+//        NotificationCenter.default.removeObserver(self)
+//    }
+
+//    @objc private func appDidEnterBackground() {
+//        // Save the current time and remaining time on the timer
+//        userDefaults.set(Date(), forKey: "backgroundEntryTime")
+//        userDefaults.set(currentPomodoroTime, forKey: "remainingPomodoroTime")
+//    }
+
+//    @objc private func appWillEnterForeground() {
+//        // Calculate the elapsed time and adjust the timer
+//        if let backgroundEntryTime = userDefaults.object(forKey: "backgroundEntryTime") as? Date {
+//            let elapsedTime = Date().timeIntervalSince(backgroundEntryTime)
+//            currentPomodoroTime -= Int(elapsedTime)
+//            if currentPomodoroTime < 0 {
+//                currentPomodoroTime = 0
+//            }
+//            presenter.updateSessionLabel(hours: "00", minutes: "00", seconds: "00")
+//            pomodoroTimer.invalidate()
+//            if currentPomodoroTime > 0 {
+//                startPomodoro()
+//            }
+//        }
+//    }
 
     func savePoints(points: Double) {
         Firestore.firestore().collection("users").getDocuments { [weak self] (snapshot, error) in

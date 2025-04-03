@@ -75,7 +75,6 @@
 		CB63CE732D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB63CE6A2D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB63CE7A2D9B40F90073A20F /* ShieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE792D9B40F60073A20F /* ShieldManager.swift */; };
 		CB63CE7C2D9B42DA0073A20F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE7B2D9B42D70073A20F /* BaseViewController.swift */; };
-		CB63CE7E2D9B4F010073A20F /* AppSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE7D2D9B4EFB0073A20F /* AppSelectionViewController.swift */; };
 		CB63CE802D9DBFF80073A20F /* ApplicationProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE7F2D9DBFF40073A20F /* ApplicationProfile.swift */; };
 		CB63CE822D9DC01A0073A20F /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE812D9DC0170073A20F /* DataBase.swift */; };
 		CB63CE832D9DC03D0073A20F /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63CE812D9DC0170073A20F /* DataBase.swift */; };
@@ -94,8 +93,6 @@
 		CBB30A742BD9A43400239FAC /* EditRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB30A732BD9A43400239FAC /* EditRoutineViewController.swift */; };
 		CBB30A772BD9CA8400239FAC /* NewUserCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB30A762BD9CA8400239FAC /* NewUserCoordinator.swift */; };
 		CBB30A792BD9CBCE00239FAC /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB30A782BD9CBCE00239FAC /* NewUserViewController.swift */; };
-		CBD033E92C3F0FB70006CEEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD033E72C3F0FB70006CEEA /* ViewController.swift */; };
-		CBD033EA2C3F0FB70006CEEA /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD033E82C3F0FB70006CEEA /* ViewController.xib */; };
 		CBEBAABC2D9B3BE400C31550 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = CBEBAABB2D9B3BE400C31550 /* FirebaseCore */; };
 		CBEBAABE2D9B3BF100C31550 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CBEBAABD2D9B3BF100C31550 /* FirebaseFirestore */; };
 		CBEBAAC02D9B3C4A00C31550 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CBEBAABF2D9B3C4A00C31550 /* SnapKit */; };
@@ -241,7 +238,6 @@
 		CB63CE6A2D9B3F2A0073A20F /* StudyBuddyShieldActionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StudyBuddyShieldActionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB63CE792D9B40F60073A20F /* ShieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldManager.swift; sourceTree = "<group>"; };
 		CB63CE7B2D9B42D70073A20F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		CB63CE7D2D9B4EFB0073A20F /* AppSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSelectionViewController.swift; sourceTree = "<group>"; };
 		CB63CE7F2D9DBFF40073A20F /* ApplicationProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationProfile.swift; sourceTree = "<group>"; };
 		CB63CE812D9DC0170073A20F /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		CBA86EA32BD73EFA0069B024 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -256,8 +252,6 @@
 		CBB30A732BD9A43400239FAC /* EditRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoutineViewController.swift; sourceTree = "<group>"; };
 		CBB30A762BD9CA8400239FAC /* NewUserCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserCoordinator.swift; sourceTree = "<group>"; };
 		CBB30A782BD9CBCE00239FAC /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
-		CBD033E72C3F0FB70006CEEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CBD033E82C3F0FB70006CEEA /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		CBEFAABB2A325C5D00DA24CB /* RoutineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCell.swift; sourceTree = "<group>"; };
 		CBEFAAC22A325D6E00DA24CB /* Cell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -581,7 +575,6 @@
 		CBA86EAB2BD7E8FE0069B024 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CB63CE7D2D9B4EFB0073A20F /* AppSelectionViewController.swift */,
 				CB63CE7B2D9B42D70073A20F /* BaseViewController.swift */,
 				CBA86EA72BD73FEC0069B024 /* Coordinator.swift */,
 				CBA86EAC2BD7E9190069B024 /* TabBarScene.swift */,
@@ -611,8 +604,6 @@
 				CB178BF02A16F5DE0079A20F /* AppDelegate.swift */,
 				CB178BF22A16F5DE0079A20F /* SceneDelegate.swift */,
 				CBA86EA52BD73F180069B024 /* AppCoordinator.swift */,
-				CBD033E72C3F0FB70006CEEA /* ViewController.swift */,
-				CBD033E82C3F0FB70006CEEA /* ViewController.xib */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -871,7 +862,6 @@
 			files = (
 				CB178BFD2A16F5DF0079A20F /* LaunchScreen.storyboard in Resources */,
 				CB3799EC2BE1BF2C005A571D /* GoogleService-Info.plist in Resources */,
-				CBD033EA2C3F0FB70006CEEA /* ViewController.xib in Resources */,
 				CB1FE74F2BEACEA700AD0E2D /* nature.mp3 in Resources */,
 				CB178BFA2A16F5DF0079A20F /* Assets.xcassets in Resources */,
 				CB1FE7502BEACEA700AD0E2D /* jazz.mp3 in Resources */,
@@ -958,7 +948,6 @@
 				CBA86EAF2BD7EAB20069B024 /* ProfileCoordinator.swift in Sources */,
 				CBB30A742BD9A43400239FAC /* EditRoutineViewController.swift in Sources */,
 				CB63CE7C2D9B42DA0073A20F /* BaseViewController.swift in Sources */,
-				CB63CE7E2D9B4F010073A20F /* AppSelectionViewController.swift in Sources */,
 				CB1FE7342BE8809700AD0E2D /* RoutineDetailsInteractor.swift in Sources */,
 				CB1FE7662BEB1CC700AD0E2D /* SelectBackgroundSoundFactory.swift in Sources */,
 				CBB30A792BD9CBCE00239FAC /* NewUserViewController.swift in Sources */,
@@ -985,7 +974,6 @@
 				CB1FE7732BEBB08A00AD0E2D /* EditRoutineFactory.swift in Sources */,
 				CB178BF32A16F5DE0079A20F /* SceneDelegate.swift in Sources */,
 				CB490E152A329B3000276780 /* SelectPomodoroViewController.swift in Sources */,
-				CBD033E92C3F0FB70006CEEA /* ViewController.swift in Sources */,
 				CB1FE7752BEC007700AD0E2D /* RankingInteractor.swift in Sources */,
 				CB63CE802D9DBFF80073A20F /* ApplicationProfile.swift in Sources */,
 				CB1FE7622BEB1CB400AD0E2D /* SelectBackgroundSoundInteractor.swift in Sources */,

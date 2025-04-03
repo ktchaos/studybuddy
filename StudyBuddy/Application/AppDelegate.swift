@@ -31,6 +31,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        // Save the current time and remaining time on the timer
+        NotificationCenter.default.post(name: Notification.Name("AppDidEnterBackground"), object: nil)
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        // Calculate the elapsed time and adjust the timer
+        NotificationCenter.default.post(name: Notification.Name("AppWillEnterForeground"), object: nil)
+    }
 
 }
 
