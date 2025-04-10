@@ -51,7 +51,6 @@ final class NewRoutineViewController: BaseViewController, NewRoutineViewControll
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.layer.borderWidth = 1
-//        textField.addPadding(.left(6))
         textField.delegate = self
         return textField
     }()
@@ -86,6 +85,9 @@ final class NewRoutineViewController: BaseViewController, NewRoutineViewControll
 
         setupUI()
         setupViews()
+        setupConstraints()
+        addPaddingToTextField(titleTextField)
+        addPaddingToTextField(descriptionTextField)
     }
 
     func setupUI() {
@@ -95,9 +97,6 @@ final class NewRoutineViewController: BaseViewController, NewRoutineViewControll
     }
 
     func setupViews() {
-        addShadow(view: titleTextField)
-        addShadow(view: descriptionTextField)
-        addShadow(view: nextButton)
         view.addSubview(titleTextField)
         view.addSubview(titleLabel)
         view.addSubview(titleErrorLabel)
@@ -105,12 +104,14 @@ final class NewRoutineViewController: BaseViewController, NewRoutineViewControll
         view.addSubview(descriptionLabel)
         view.addSubview(descriptionErrorLabel)
         view.addSubview(nextButton)
-
+    }
+    
+    func setupConstraints() {
         titleLabel.snp.makeConstraints {
             $0.height.equalTo(48)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
-            $0.top.equalToSuperview().offset(150)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(32)
         }
 
         titleTextField.snp.makeConstraints {
@@ -154,13 +155,12 @@ final class NewRoutineViewController: BaseViewController, NewRoutineViewControll
         }
     }
 
-    func addShadow(view: UIView, shadowColor: CGColor = UIColor.black.cgColor, shadowOffset: CGSize = .zero, shadowOpacity: Float = 0.5, shadowRadius: CGFloat = 5.0) {
-        view.layer.shadowColor = shadowColor
-        view.layer.shadowOffset = shadowOffset
-        view.layer.shadowOpacity = shadowOpacity
-        view.layer.shadowRadius = shadowRadius
-        view.layer.masksToBounds = false
-        view.layer.cornerRadius = 5
+    private func addPaddingToTextField(_ textField: UITextField) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftView = paddingView
+        textField.leftViewMode = .always
+        textField.rightView = paddingView
+        textField.rightViewMode = .always
     }
 
     // MARK: Actions

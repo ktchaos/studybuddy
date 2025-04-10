@@ -158,7 +158,7 @@ final class RoutineDetailsViewController: BaseViewController, RoutineDetailsView
             $0.top.equalToSuperview().offset(150)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
-            $0.height.width.equalTo(54)
+//            $0.height.width.equalTo(54)
         }
 
         startButton.snp.makeConstraints {
