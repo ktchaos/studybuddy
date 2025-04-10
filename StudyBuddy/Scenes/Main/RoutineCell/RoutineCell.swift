@@ -78,4 +78,3 @@ final class RoutineCell: UITableViewCell, Identifiable {
         layer.cornerRadius = 5
     }
 }
-

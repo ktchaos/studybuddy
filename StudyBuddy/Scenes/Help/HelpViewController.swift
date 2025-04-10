@@ -11,7 +11,7 @@ import SnapKit
 class HelpViewController: BaseViewController {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Sobre a aplicação"
+        label.text = "About Study Buddy"
         label.textAlignment = .center
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
@@ -20,7 +20,7 @@ class HelpViewController: BaseViewController {
 
     private lazy var tipOneLabel: UILabel = {
         let label = UILabel()
-        label.text = "O Study Buddy é um aplicativo móvel criado pela desenvolvedora Catarina Serrano para gerenciar e bloquear aplicativos durante um determinado período de tempo. Além de uma espécie de pomodoro baseado em sessões que irá auxilia em momentos em que são necessários total foco e concentração. Você pode criar e utilizar rotinas para acumular pontos, esses pontos são calculados internamente, então não se preocupe com isso. Aproveite o Study Buddy e bons estudos!"
+        label.text = "Study Buddy is an app developed by Catarina Serrano to help you stay focused on your studies. It allows you to block distracting apps during specific periods and is based on a technique similar to the Pomodoro method, breaking your time into focus sessions and breaks. You can create personalized routines and earn points as you follow them — don’t worry about keeping track, the app handles that for you. Enjoy Study Buddy and happy studying! 💪📚"
         label.textColor = .gray
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
@@ -29,7 +29,7 @@ class HelpViewController: BaseViewController {
 
     private lazy var gotItButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Entendi", for: .normal)
+        button.setTitle("Got it", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         button.layer.cornerRadius = 8

@@ -30,7 +30,7 @@ final class ProfilePictureSelectionViewController: BaseViewController {
 
     lazy var nextButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Salvar", for: .normal)
+        button.setTitle("Save", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.backgroundColor = .black

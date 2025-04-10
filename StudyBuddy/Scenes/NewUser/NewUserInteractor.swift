@@ -28,14 +28,14 @@ class NewUserInteractor: NewUserInteracting {
 extension NewUserInteractor {
     func createUser(with username: String?) {
         guard let name = username else {
-            presenter.displayError(with: "Erro ao criar usuário")
+            presenter.displayError(with: "Error creating user")
             return
         }
 
         if name.isEmpty {
-            presenter.displayError(with: "O nome de usuário não pode ser vazio")
+            presenter.displayError(with: "The username cannot be empty")
         } else if name.count < 6 {
-            presenter.displayError(with: "O nome de usuário precisa ter pelo menos 6 caracteres")
+            presenter.displayError(with: "The username must be at least 6 characters long")
         } else {
             createUser(with: name)
         }
@@ -47,7 +47,7 @@ extension NewUserInteractor {
         userDefaults.set(username, forKey: self.username)
         database.collection("users").addDocument(data: ["username": username]) { [weak self] error in
             if error != nil {
-                self?.presenter.displayError(with: "Um erro inesperado ocorreu, tente novamente")
+                self?.presenter.displayError(with: "An unexpected error occurred, please try again")
             } else {
                 self?.presenter.goToOnboardingScreen(with: username)
             }

@@ -24,11 +24,11 @@ extension NewRoutineInteractor {
         }
 
         if title.isEmpty {
-            presenter.displayErrorOnTitle(with: "O título não pode ser vazio")
+            presenter.displayErrorOnTitle(with: "The title can't be empty")
             return
         }
         if description.isEmpty {
-            presenter.displayErrorOnDescription(with: "A descrição não pode ser vazia")
+            presenter.displayErrorOnDescription(with: "The description can't be empty")
             return
         }
 

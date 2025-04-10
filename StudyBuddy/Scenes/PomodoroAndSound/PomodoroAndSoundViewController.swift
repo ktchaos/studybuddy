@@ -21,7 +21,7 @@ final class PomodoroAndSoundViewController: BaseViewController, PomodoroAndSound
 
     private lazy var breakTimeTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Intervalo"
+        label.text = "Break"
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18)
         label.isEnabled = false
@@ -44,7 +44,7 @@ final class PomodoroAndSoundViewController: BaseViewController, PomodoroAndSound
 
     private lazy var mainTimeTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Sessão"
+        label.text = "Session"
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18)
         label.isEnabled = false
@@ -66,7 +66,7 @@ final class PomodoroAndSoundViewController: BaseViewController, PomodoroAndSound
 
     private lazy var startButton: UIButton = {
         let button = UIButton()
-        button.setTitle("   Iniciar   ", for: .normal)
+        button.setTitle("   Start   ", for: .normal)
         button.layer.cornerRadius = 5
         button.layer.borderWidth = 2
         button.setTitleColor(.black, for: .normal)
@@ -77,7 +77,7 @@ final class PomodoroAndSoundViewController: BaseViewController, PomodoroAndSound
 
     private lazy var resetButton: UIButton = {
         let button = UIButton()
-        button.setTitle("   Pausar   ", for: .normal)
+        button.setTitle("   Pause   ", for: .normal)
         button.layer.cornerRadius = 5
         button.layer.borderWidth = 2
         button.setTitleColor(.black, for: .normal)
@@ -104,7 +104,7 @@ final class PomodoroAndSoundViewController: BaseViewController, PomodoroAndSound
 
     private lazy var audioLabel: UILabel = {
         let label = UILabel()
-        label.text = "Áudio: "
+        label.text = "Sound: "
         label.font = UIFont.systemFont(ofSize: 20)
         label.textColor = .darkGray
         return label
@@ -122,7 +122,7 @@ final class PomodoroAndSoundViewController: BaseViewController, PomodoroAndSound
 
     private lazy var finishRoutineButton: UIButton = {
         let button = UIButton()
-        button.setTitle("   Encerrar rotina   ", for: .normal)
+        button.setTitle("   Finish routine   ", for: .normal)
         button.layer.cornerRadius = 5
         button.layer.borderWidth = 2
         button.setTitleColor(.black, for: .normal)

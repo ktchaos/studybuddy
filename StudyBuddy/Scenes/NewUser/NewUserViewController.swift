@@ -20,7 +20,7 @@ protocol NewUserViewControlling {
 class NewUserViewController: BaseViewController, NewUserViewControlling {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Bem vindo ao Study Buddy"
+        label.text = "Welcome to Study Buddy"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         label.numberOfLines = 0
@@ -36,7 +36,7 @@ class NewUserViewController: BaseViewController, NewUserViewControlling {
 
     private lazy var usernameTextField: UITextField = {
         let label = UITextField()
-        label.placeholder = "insira um nome de usuário"
+        label.placeholder = "Enter a username"
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.textAlignment = .center
@@ -49,7 +49,7 @@ class NewUserViewController: BaseViewController, NewUserViewControlling {
 
     private lazy var tipsUsernameLabel: UILabel = {
         let label = UILabel()
-        label.text = "seu nome pode conter números e símbolos"
+        label.text = "Your username can contain numbers and symbols"
         label.textColor = .darkGray
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         label.numberOfLines = 0
@@ -59,7 +59,7 @@ class NewUserViewController: BaseViewController, NewUserViewControlling {
 
     private lazy var startButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Entrar", for: .normal)
+        button.setTitle("Sign In", for: .normal)
         button.tintColor = .black
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor.systemGray6
@@ -71,7 +71,7 @@ class NewUserViewController: BaseViewController, NewUserViewControlling {
 
     private lazy var copyrightLabel: UILabel = {
         let label = UILabel()
-        label.text = "Desenvolvido por Catarina Serrano ©"
+        label.text = "Chaos ©"
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         label.textAlignment = .center
         label.textColor = .systemGray2

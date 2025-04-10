@@ -15,7 +15,7 @@ protocol MainViewControlling {}
 class MainViewController: BaseViewController, MainViewControlling {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Minhas rotinas"
+        label.text = "My routines"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         return label
@@ -27,7 +27,7 @@ class MainViewController: BaseViewController, MainViewControlling {
         button.layer.borderWidth = 0.5
         button.layer.borderColor = UIColor.darkGray.cgColor
         button.tintColor = .black
-        button.setTitle(" Criar rotina", for: .normal)
+        button.setTitle(" New", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.setTitleColor(.black, for: .normal)
         button.setImage(UIImage(systemName: "plus"), for: .normal)

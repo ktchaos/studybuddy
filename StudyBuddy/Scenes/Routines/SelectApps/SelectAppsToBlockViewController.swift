@@ -16,7 +16,7 @@ class SelectAppsToBlockViewController: BaseViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Escolha alguns aplicativos para serem bloqueados durante seu tempo de foco"
+        label.text = "Choose some apps to be blocked during your focus time"
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 19)
         label.textColor = .black
@@ -25,7 +25,7 @@ class SelectAppsToBlockViewController: BaseViewController {
     
     private lazy var selectAppsButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Selecionar Aplicativos", for: .normal)
+        button.setTitle("Select Applications", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
         button.backgroundColor = .gray
         button.setTitleColor(.white, for: .normal)
@@ -36,7 +36,7 @@ class SelectAppsToBlockViewController: BaseViewController {
     
     lazy var finishButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Criar rotina", for: .normal)
+        button.setTitle("Create routine", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.backgroundColor = .black
@@ -55,7 +55,7 @@ class SelectAppsToBlockViewController: BaseViewController {
     }
     
     private func setupUI() {
-        title = "Selecionar Aplicativos"
+        title = "Select Apps to be blocked"
         view.backgroundColor = .systemBackground
     }
     
@@ -111,8 +111,8 @@ class SelectAppsToBlockViewController: BaseViewController {
     @objc func onNextTap() {
         if selection.applicationTokens.isEmpty {
             let alert = UIAlertController(
-                title: "Atenção",
-                message: "Por favor, selecione pelo menos um aplicativo para bloquear.",
+                title: "Attention!",
+                message: "Please select at least one app to block.",
                 preferredStyle: .alert
             )
             alert.addAction(UIAlertAction(title: "OK", style: .default))

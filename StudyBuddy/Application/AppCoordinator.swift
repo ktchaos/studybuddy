@@ -33,9 +33,9 @@ enum StudyBuddyTabBarScene: Int, CaseIterable, TabBarScene {
     var title: String {
         switch self {
         case .routines:
-            return "Rotinas"
+            return "Routines"
         case .profile:
-            return "Perfil"
+            return "Profile"
         }
     }
 

@@ -18,7 +18,7 @@ class OnboardingRankingViewController: BaseViewController {
 
     private lazy var tipOneLabel: UILabel = {
         let label = UILabel()
-        label.text = "- Crie rotinas para acompanhar seus momentos de foco."
+        label.text = "- Create routines to support your focus sessions."
         label.textColor = .gray
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
@@ -27,7 +27,7 @@ class OnboardingRankingViewController: BaseViewController {
 
     private lazy var tipTwoLabel: UILabel = {
         let label = UILabel()
-        label.text = "- Utilize pomodoro, sons em background e bloqueie aplicativos."
+        label.text = "- Use Pomodoro, background sounds, and block distracting apps."
         label.textColor = .gray
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
@@ -36,7 +36,7 @@ class OnboardingRankingViewController: BaseViewController {
 
     private lazy var tipThreeLabel: UILabel = {
         let label = UILabel()
-        label.text = "- Complete suas rotinas e acumule SB points."
+        label.text = "- Complete your routines and earn SB points."
         label.textColor = .gray
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
@@ -45,7 +45,7 @@ class OnboardingRankingViewController: BaseViewController {
 
     private lazy var tipFourLabel: UILabel = {
         let label = UILabel()
-        label.text = "- Com SB points, você participa automaticamente do ranking geral dos usuários."
+        label.text = "- With SB points, you automatically participate in the global user ranking."
         label.textColor = .gray
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
@@ -54,7 +54,7 @@ class OnboardingRankingViewController: BaseViewController {
 
     private lazy var continueButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Continuar", for: .normal)
+        button.setTitle("Continue", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         button.layer.cornerRadius = 8
