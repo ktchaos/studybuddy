@@ -20,7 +20,7 @@ class HelpViewController: BaseViewController {
 
     private lazy var tipOneLabel: UILabel = {
         let label = UILabel()
-        label.text = "Study Buddy is an app developed by Catarina Serrano to help you stay focused on your studies. It allows you to block distracting apps during specific periods and is based on a technique similar to the Pomodoro method, breaking your time into focus sessions and breaks. You can create personalized routines and earn points as you follow them — don’t worry about keeping track, the app handles that for you. Enjoy Study Buddy and happy studying! 💪📚"
+        label.text = "Study Buddy is an app developed to help you stay focused on your studies. It allows you to block distracting apps during specific periods and is based on a technique similar to the Pomodoro method, breaking your time into focus sessions and breaks. You can create personalized routines and earn points as you follow them — don’t worry about keeping track, the app handles that for you. Enjoy Study Buddy and happy studying! 💪📚"
         label.textColor = .gray
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
