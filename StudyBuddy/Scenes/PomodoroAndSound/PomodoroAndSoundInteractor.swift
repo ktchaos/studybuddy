@@ -31,8 +31,8 @@ final class PomodoroAndSoundInteractor: PomodoroAndSoundInteracting {
     private var pomodoroTimer: Timer = Timer()
     private var breakTimer: Timer = Timer()
 
-    private var currentPomodoroTime = 10//3000
-    private var currentBreakTime = 5//600
+    private var currentPomodoroTime = 3000
+    private var currentBreakTime = 600
     private var sessionsDone = 0
 
     private var player: AVAudioPlayer?
