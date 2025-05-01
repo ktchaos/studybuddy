@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseCore
 import BackgroundTasks
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,12 +17,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         registerBackgroundTasks()
+        requestNotificationAuthorization()
         return true
     }
 
     private func registerBackgroundTasks() {
         BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.chaos.StudyBuddy.pomodoroTask", using: nil) { task in
             self.handlePomodoroTask(task: task as! BGProcessingTask)
+        }
+    }
+
+    private func requestNotificationAuthorization() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if let error = error {
+                print("Failed to request authorization: \(error.localizedDescription)")
+            }
+            if granted {
+                print("Notification authorization granted.")
+            } else {
+                print("Notification authorization denied.")
+            }
         }
     }
 

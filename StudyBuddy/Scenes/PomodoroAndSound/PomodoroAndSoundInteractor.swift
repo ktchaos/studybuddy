@@ -10,6 +10,7 @@ import FirebaseFirestore
 import Foundation
 import AVFAudio
 import StudyBuddyShieldActionExtension
+import UserNotifications
 
 protocol PomodoroAndSoundInteracting {
     func didTapStartPomodoro()
@@ -30,8 +31,8 @@ final class PomodoroAndSoundInteractor: PomodoroAndSoundInteracting {
     private var pomodoroTimer: Timer = Timer()
     private var breakTimer: Timer = Timer()
 
-    private var currentPomodoroTime = 3000
-    private var currentBreakTime = 600
+    private var currentPomodoroTime = 10//3000
+    private var currentBreakTime = 5//600
     private var sessionsDone = 0
 
     private var player: AVAudioPlayer?
@@ -111,6 +112,7 @@ extension PomodoroAndSoundInteractor {
             self.presenter.updateSessionLabel(hours: "00", minutes: "00", seconds: "00")
             self.pomodoroTimer.invalidate()
             self.presenter.enableBreakLabel()
+            scheduleNotification(title: "hey buddy! the session ended", body: "Break time starts now! you have a few minutes to use the apps you've blocked.")
             self.breakTimer = Timer.scheduledTimer(
                 timeInterval: 1,
                 target: self,
@@ -140,7 +142,7 @@ extension PomodoroAndSoundInteractor {
             // Save points local and remote
             self.userDefaults.setValue(newPoints, forKey: pointsKey)
             self.savePoints(points: newPoints)
-            
+            scheduleNotification(title: "Break time it's over!", body: "it's time to back to work")
             self.startPomodoro()
             return
         }
@@ -158,6 +160,22 @@ extension PomodoroAndSoundInteractor {
             pomodoroTimer.invalidate()
             if currentPomodoroTime > 0 {
                 startPomodoro()
+            }
+        }
+    }
+
+    private func scheduleNotification(title: String, body: String) {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Failed to schedule notification: \(error.localizedDescription)")
             }
         }
     }
