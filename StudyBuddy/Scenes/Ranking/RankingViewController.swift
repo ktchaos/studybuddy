@@ -13,7 +13,7 @@ protocol RankingViewControlling {}
 class RankingViewController: BaseViewController, RankingViewControlling {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Ranking geral SB"
+        label.text = "SB Global Ranking"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         return label
@@ -21,7 +21,7 @@ class RankingViewController: BaseViewController, RankingViewControlling {
 
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Colocação geral dos usuários do Study Buddy"
+        label.text = "Overall ranking of Study Buddy users"
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         label.textColor = .gray
         return label

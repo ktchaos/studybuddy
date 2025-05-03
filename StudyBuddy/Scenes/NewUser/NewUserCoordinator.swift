@@ -31,13 +31,7 @@ class NewUserCoordinator: NavigationCoordinator {
     func presentOnboardingScreen(with name: String, delegate: AppCoordinatorDelegate) {
         let viewController = OnboardingRankingViewController()
         viewController.delegate = delegate
-        viewController.titleLabel.text = "Olá, \(name)"
-
-        if let view = self.rootViewController.topViewController?.view {
-            UIView.transition(with: view, duration: 2, options: .transitionCrossDissolve) {
-                viewController.view.alpha = 1.0
-                self.rootViewController.pushViewController(viewController, animated: true)
-            }
-        }
+        viewController.titleLabel.text = "Hello, \(name)"
+        self.rootViewController.pushViewController(viewController, animated: true)
     }
 }

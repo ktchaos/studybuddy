@@ -47,7 +47,7 @@ class ProfileViewController: BaseViewController, ProfileViewControlling, Picture
 
     private lazy var myScoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "Pontuação atual:"
+        label.text = "My score:"
         label.textColor = .darkGray
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         return label
@@ -62,7 +62,7 @@ class ProfileViewController: BaseViewController, ProfileViewControlling, Picture
 
     private lazy var rankingButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Ver ranking", for: .normal)
+        button.setTitle("See ranking", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         button.layer.cornerRadius = 8
@@ -73,7 +73,7 @@ class ProfileViewController: BaseViewController, ProfileViewControlling, Picture
 
     private lazy var helpButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Ajuda", for: .normal)
+        button.setTitle("Help", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         button.layer.cornerRadius = 8

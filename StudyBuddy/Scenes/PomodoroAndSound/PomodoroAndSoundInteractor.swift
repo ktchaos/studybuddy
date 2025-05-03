@@ -10,6 +10,7 @@ import FirebaseFirestore
 import Foundation
 import AVFAudio
 import StudyBuddyShieldActionExtension
+import UserNotifications
 
 protocol PomodoroAndSoundInteracting {
     func didTapStartPomodoro()
@@ -39,6 +40,8 @@ final class PomodoroAndSoundInteractor: PomodoroAndSoundInteracting {
     init(presenter: PomodoroAndSoundPresenting, routine: Routine) {
         self.presenter = presenter
         self.routine = routine
+
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePomodoroTimer(_:)), name: Notification.Name("UpdatePomodoroTimer"), object: nil)
     }
 
     func savePoints(points: Double) {
@@ -89,6 +92,11 @@ extension PomodoroAndSoundInteractor {
     }
 
     func didTapFinishRoutine() {
+        pomodoroTimer.invalidate()
+        breakTimer.invalidate()
+        player = nil
+        ShieldManager.shared.unlockActivities()
+        
         presenter.dismissScreen()
     }
 
@@ -104,6 +112,7 @@ extension PomodoroAndSoundInteractor {
             self.presenter.updateSessionLabel(hours: "00", minutes: "00", seconds: "00")
             self.pomodoroTimer.invalidate()
             self.presenter.enableBreakLabel()
+            scheduleNotification(title: "hey buddy! the session ended", body: "Break time starts now! you have a few minutes to use the apps you've blocked.")
             self.breakTimer = Timer.scheduledTimer(
                 timeInterval: 1,
                 target: self,
@@ -133,12 +142,42 @@ extension PomodoroAndSoundInteractor {
             // Save points local and remote
             self.userDefaults.setValue(newPoints, forKey: pointsKey)
             self.savePoints(points: newPoints)
-            
+            scheduleNotification(title: "Break time it's over!", body: "it's time to back to work")
             self.startPomodoro()
             return
         }
         let (hours, minutes, seconds) = secondsToHoursMinutesSeconds(currentBreakTime)
         presenter.updateBreakLabel(hours: "\(hours)", minutes: "\(minutes)", seconds: "\(seconds)")
+    }
+
+    @objc private func updatePomodoroTimer(_ notification: Notification) {
+        if let elapsedTime = notification.object as? TimeInterval {
+            currentPomodoroTime -= Int(elapsedTime)
+            if currentPomodoroTime < 0 {
+                currentPomodoroTime = 0
+            }
+            presenter.updateSessionLabel(hours: "00", minutes: "00", seconds: "00")
+            pomodoroTimer.invalidate()
+            if currentPomodoroTime > 0 {
+                startPomodoro()
+            }
+        }
+    }
+
+    private func scheduleNotification(title: String, body: String) {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Failed to schedule notification: \(error.localizedDescription)")
+            }
+        }
     }
 }
 

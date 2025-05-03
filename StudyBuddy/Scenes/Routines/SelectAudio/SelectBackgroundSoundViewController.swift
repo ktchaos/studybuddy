@@ -13,7 +13,7 @@ protocol SelectBackgroundSoundViewControlling {}
 final class SelectBackgroundSoundViewController: BaseViewController, SelectBackgroundSoundViewControlling {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Selecione um tipo de áudio para acompanhar sua rotina"
+        label.text = "Select an audio type to accompany your routine."
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 19)
         label.textColor = .black
@@ -33,21 +33,23 @@ final class SelectBackgroundSoundViewController: BaseViewController, SelectBackg
 
     private lazy var noButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Não vou usar som", for: .normal)
+        button.setTitle("I won't use sound.", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.backgroundColor = .white
         button.layer.borderWidth = 1
+        button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(self.onTapNotUsingButton), for: .touchUpInside)
         return button
     }()
 
     lazy var nextButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Continuar", for: .normal)
+        button.setTitle("Continue", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.backgroundColor = .black
+        button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(self.onNextTap), for: .touchUpInside)
         return button
     }()
@@ -62,14 +64,12 @@ final class SelectBackgroundSoundViewController: BaseViewController, SelectBackg
     }
 
     func setupUI() {
-        title = "Áudio"
+        title = "Audio"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
     }
 
     func setupViews() {
-        addShadow(view: noButton)
-        addShadow(view: nextButton)
         view.addSubview(descriptionLabel)
         view.addSubview(noButton)
         view.addSubview(nextButton)
@@ -102,15 +102,6 @@ final class SelectBackgroundSoundViewController: BaseViewController, SelectBackg
             $0.trailing.equalToSuperview().inset(16)
             $0.bottom.equalTo(noButton.snp.top)
         }
-    }
-
-    func addShadow(view: UIView, shadowColor: CGColor = UIColor.black.cgColor, shadowOffset: CGSize = .zero, shadowOpacity: Float = 0.5, shadowRadius: CGFloat = 5.0) {
-        view.layer.shadowColor = shadowColor
-        view.layer.shadowOffset = shadowOffset
-        view.layer.shadowOpacity = shadowOpacity
-        view.layer.shadowRadius = shadowRadius
-        view.layer.masksToBounds = false
-        view.layer.cornerRadius = 5
     }
 
     // MARK: Actions

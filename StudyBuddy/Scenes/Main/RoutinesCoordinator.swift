@@ -77,7 +77,7 @@ extension RoutinesCoordinator: RoutinesCoordinatorDelegate {
 
     func presentSelectAudioScreen(with numberOfSessions: Int) {
         routine.numberOfSessions = numberOfSessions
-        routine.rangeTime = "\(numberOfSessions) sessões"
+        routine.rangeTime = "\(numberOfSessions) sessions"
         let viewController = SelectBackgroundSoundFactory.make(delegate: self)
         self.rootViewController.pushViewController(viewController, animated: true)
     }

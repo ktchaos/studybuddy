@@ -16,7 +16,7 @@ protocol NewRoutineViewControlling {
 final class NewRoutineViewController: BaseViewController, NewRoutineViewControlling {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Título da rotina"
+        label.text = "Title"
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         label.textColor = .black
@@ -27,7 +27,10 @@ final class NewRoutineViewController: BaseViewController, NewRoutineViewControll
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 20)
         textField.layer.borderWidth = 1
+        textField.layer.cornerRadius = 12
+        textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.delegate = self
+        textField.placeholder = "My Routine"
         return textField
     }()
     private lazy var titleErrorLabel: UILabel = {
@@ -40,7 +43,7 @@ final class NewRoutineViewController: BaseViewController, NewRoutineViewControll
     }()
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Descreva brevemente o objetivo dessa rotina:"
+        label.text = "Describe briefly what's the goal of this routine"
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.textColor = .black
@@ -51,8 +54,10 @@ final class NewRoutineViewController: BaseViewController, NewRoutineViewControll
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.layer.borderWidth = 1
-//        textField.addPadding(.left(6))
+        textField.layer.cornerRadius = 12
+        textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.delegate = self
+        textField.placeholder = "Focusing to study for my finals..."
         return textField
     }()
     private lazy var descriptionErrorLabel: UILabel = {
@@ -65,10 +70,11 @@ final class NewRoutineViewController: BaseViewController, NewRoutineViewControll
     }()
     private lazy var nextButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Continuar", for: .normal)
+        button.setTitle("Continue", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.backgroundColor = .black
+        button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(self.onNextTap), for: .touchUpInside)
         return button
     }()
@@ -86,18 +92,18 @@ final class NewRoutineViewController: BaseViewController, NewRoutineViewControll
 
         setupUI()
         setupViews()
+        setupConstraints()
+        addPaddingToTextField(titleTextField)
+        addPaddingToTextField(descriptionTextField)
     }
 
     func setupUI() {
-        title = "Nova rotina"
+        title = "New routine"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
     }
 
     func setupViews() {
-        addShadow(view: titleTextField)
-        addShadow(view: descriptionTextField)
-        addShadow(view: nextButton)
         view.addSubview(titleTextField)
         view.addSubview(titleLabel)
         view.addSubview(titleErrorLabel)
@@ -105,12 +111,14 @@ final class NewRoutineViewController: BaseViewController, NewRoutineViewControll
         view.addSubview(descriptionLabel)
         view.addSubview(descriptionErrorLabel)
         view.addSubview(nextButton)
-
+    }
+    
+    func setupConstraints() {
         titleLabel.snp.makeConstraints {
             $0.height.equalTo(48)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
-            $0.top.equalToSuperview().offset(150)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(32)
         }
 
         titleTextField.snp.makeConstraints {
@@ -154,13 +162,12 @@ final class NewRoutineViewController: BaseViewController, NewRoutineViewControll
         }
     }
 
-    func addShadow(view: UIView, shadowColor: CGColor = UIColor.black.cgColor, shadowOffset: CGSize = .zero, shadowOpacity: Float = 0.5, shadowRadius: CGFloat = 5.0) {
-        view.layer.shadowColor = shadowColor
-        view.layer.shadowOffset = shadowOffset
-        view.layer.shadowOpacity = shadowOpacity
-        view.layer.shadowRadius = shadowRadius
-        view.layer.masksToBounds = false
-        view.layer.cornerRadius = 5
+    private func addPaddingToTextField(_ textField: UITextField) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftView = paddingView
+        textField.leftViewMode = .always
+        textField.rightView = paddingView
+        textField.rightViewMode = .always
     }
 
     // MARK: Actions
@@ -178,9 +185,9 @@ extension NewRoutineViewController: UITextFieldDelegate {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         titleErrorLabel.isHidden = true
-        titleErrorLabel.layer.borderColor = UIColor.black.cgColor
+        titleErrorLabel.layer.borderColor = UIColor.lightGray.cgColor
         descriptionErrorLabel.isHidden = true
-        descriptionTextField.layer.borderColor = UIColor.black.cgColor
+        descriptionTextField.layer.borderColor = UIColor.lightGray.cgColor
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

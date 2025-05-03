@@ -31,6 +31,7 @@ final class SoundCell: UICollectionViewCell, Identifiable {
         let stack = UIStackView(arrangedSubviews: [icon, nameLabel])
         stack.axis = .vertical
         stack.spacing = 16
+        stack.alignment = .center
         return stack
     }()
 
@@ -66,13 +67,12 @@ final class SoundCell: UICollectionViewCell, Identifiable {
 
     func setupConstraints() {
         icon.snp.makeConstraints {
-            $0.width.equalTo(64)
-            $0.height.equalTo(64)
+            $0.width.height.equalTo(64)
+            $0.centerX.equalToSuperview()
         }
         hStack.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview().inset(6)
-            $0.trailing.equalToSuperview().inset(6)
-            $0.leading.equalToSuperview().inset(6)
+            $0.top.bottom.equalToSuperview().inset(12)
+            $0.leading.trailing.equalToSuperview().inset(8)
         }
     }
 

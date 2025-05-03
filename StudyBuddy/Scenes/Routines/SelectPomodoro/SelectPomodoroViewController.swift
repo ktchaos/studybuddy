@@ -19,7 +19,7 @@ protocol SelectPomodoroViewControlling {
 class SelectPomodoroViewController: BaseViewController, SelectPomodoroViewControlling {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Cada sessão é composta de 50 minutos de foco e 10 minutos de intervalo.\n\nSelecione a quantidade de sessões:"
+        label.text = "Each session consists of 50 minutes of focus and 10 minutes of break.\n\nSelect the number of sessions:"
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 19)
         label.textColor = .black
@@ -27,10 +27,11 @@ class SelectPomodoroViewController: BaseViewController, SelectPomodoroViewContro
     }()
     private lazy var nextButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Continuar", for: .normal)
+        button.setTitle("Continue", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.backgroundColor = .black
+        button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(self.onNextTap), for: .touchUpInside)
         return button
     }()
@@ -86,7 +87,6 @@ class SelectPomodoroViewController: BaseViewController, SelectPomodoroViewContro
     }
 
     func setupViews() {
-        addShadow(view: nextButton)
         view.addSubview(descriptionLabel)
         view.addSubview(buttonsStackView)
         view.addSubview(nextButton)
@@ -122,15 +122,6 @@ class SelectPomodoroViewController: BaseViewController, SelectPomodoroViewContro
             $0.trailing.equalToSuperview().inset(16)
             $0.bottom.equalToSuperview().inset(62)
         }
-    }
-
-    func addShadow(view: UIView, shadowColor: CGColor = UIColor.black.cgColor, shadowOffset: CGSize = .zero, shadowOpacity: Float = 0.5, shadowRadius: CGFloat = 5.0) {
-        view.layer.shadowColor = shadowColor
-        view.layer.shadowOffset = shadowOffset
-        view.layer.shadowOpacity = shadowOpacity
-        view.layer.shadowRadius = shadowRadius
-        view.layer.masksToBounds = false
-        view.layer.cornerRadius = 5
     }
 
     // MARK: Actions

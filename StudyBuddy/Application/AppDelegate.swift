@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseCore
+import BackgroundTasks
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +16,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        registerBackgroundTasks()
+        requestNotificationAuthorization()
         return true
+    }
+
+    private func registerBackgroundTasks() {
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.chaos.StudyBuddy.pomodoroTask", using: nil) { task in
+            self.handlePomodoroTask(task: task as! BGProcessingTask)
+        }
+    }
+
+    private func requestNotificationAuthorization() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if let error = error {
+                print("Failed to request authorization: \(error.localizedDescription)")
+            }
+            if granted {
+                print("Notification authorization granted.")
+            } else {
+                print("Notification authorization denied.")
+            }
+        }
     }
 
     // MARK: UISceneSession Lifecycle
@@ -31,6 +55,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        schedulePomodoroTask()
+    }
+
+    private func schedulePomodoroTask() {
+        let request = BGProcessingTaskRequest(identifier: "com.chaos.StudyBuddy.pomodoroTask")
+        request.requiresNetworkConnectivity = false
+        request.requiresExternalPower = false
+
+        do {
+            try BGTaskScheduler.shared.submit(request)
+        } catch {
+            print("Could not schedule pomodoro task: \(error.localizedDescription)")
+        }
+    }
+
+    private func handlePomodoroTask(task: BGProcessingTask) {
+        schedulePomodoroTask() // Reschedule the task
+
+        task.expirationHandler = {
+            // Clean up if the task expires
+        }
+
+        // Perform the background task
+        if let backgroundEntryTime = UserDefaults.standard.object(forKey: "backgroundEntryTime") as? Date {
+            let elapsedTime = Date().timeIntervalSince(backgroundEntryTime)
+            NotificationCenter.default.post(name: Notification.Name("UpdatePomodoroTimer"), object: elapsedTime)
+        }
+
+        task.setTaskCompleted(success: true)
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        // Calculate the elapsed time and adjust the timer
+        NotificationCenter.default.post(name: Notification.Name("AppWillEnterForeground"), object: nil)
+    }
 
 }
 

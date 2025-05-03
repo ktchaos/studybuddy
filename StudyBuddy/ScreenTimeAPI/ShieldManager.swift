@@ -7,18 +7,20 @@
 
 import FamilyControls
 import ManagedSettings
+import DeviceActivity
+import Foundation
 
 final class ShieldManager {
     static let shared = ShieldManager()
     
     var discouragedSelections = FamilyActivitySelection()
+    var applicationProfile: ApplicationProfile!
     
     private let store = ManagedSettingsStore()
     
     func shieldActivities() {
-        // Clear to reset previous settings
         store.clearAllSettings()
-                     
+        
         let applications = discouragedSelections.applicationTokens
         let categories = discouragedSelections.categoryTokens
         

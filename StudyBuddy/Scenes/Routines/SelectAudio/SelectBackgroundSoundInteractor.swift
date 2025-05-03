@@ -19,10 +19,10 @@ final class SelectBackgroundSoundInteractor: SelectBackgroundSoundInteracting {
     private let presenter: SelectBackgroundSoundPresenting
     private var soundSelected: SoundConfig?
     private let dataSource = [
-        SoundConfig(image: UIImage(systemName: "waveform") ?? UIImage(), name: "Frequências", path: "frequency"),
+        SoundConfig(image: UIImage(systemName: "waveform") ?? UIImage(), name: "Frequencies", path: "frequency"),
         SoundConfig(image: UIImage(systemName: "guitars.fill") ?? UIImage(), name: "Jazz", path: "jazz"),
         SoundConfig(image: UIImage(systemName: "slider.horizontal.below.square.filled.and.square") ?? UIImage(), name: "Lo-Fi", path: "lo-fi"),
-        SoundConfig(image: UIImage(systemName: "tree.fill") ?? UIImage(), name: "Natureza", path: "nature")
+        SoundConfig(image: UIImage(systemName: "tree.fill") ?? UIImage(), name: "Nature", path: "nature")
     ]
 
     init(presenter: SelectBackgroundSoundPresenting) {

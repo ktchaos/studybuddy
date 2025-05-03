@@ -18,9 +18,9 @@ class ShieldConfigurationExtension: ShieldConfigurationDataSource {
         ShieldConfiguration(
             backgroundColor: .lightGray,
             icon: UIImage(named: "sbclock"),
-            title: ShieldConfiguration.Label(text: "Opa! O Study Buddy bloqueou esse aplicativo", color: .label),
-            subtitle: ShieldConfiguration.Label(text: "Ele ficará disponível ao final da sua sessão.", color: .systemBrown),
-            primaryButtonLabel: ShieldConfiguration.Label(text: "Fechar", color: .white),
+            title: ShieldConfiguration.Label(text: "Oops! Study Buddy has blocked this app.", color: .label),
+            subtitle: ShieldConfiguration.Label(text: "It will be available at the end of this session.", color: .systemBrown),
+            primaryButtonLabel: ShieldConfiguration.Label(text: "Close", color: .white),
             primaryButtonBackgroundColor: .black
         )
     }

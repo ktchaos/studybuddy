@@ -32,7 +32,7 @@ final class RoutineDetailsViewController: BaseViewController, RoutineDetailsView
     }()
     private lazy var startButton: UIButton = {
         let button = UIButton()
-        button.setTitle(" Começar rotina ", for: .normal)
+        button.setTitle(" Start routine ", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .systemGray5
         button.layer.borderWidth = 2
@@ -65,7 +65,7 @@ final class RoutineDetailsViewController: BaseViewController, RoutineDetailsView
     private lazy var soundLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.text = "  Som em background"
+        label.text = "  Sound "
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 17)
         return label
@@ -84,34 +84,8 @@ final class RoutineDetailsViewController: BaseViewController, RoutineDetailsView
         stack.distribution = .fillEqually
         return stack
     }()
-    private lazy var blockedAppsLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.text = "Os aplicativos a seguir estarão bloqueados"
-        label.font = UIFont.systemFont(ofSize: 17)
-        label.textColor = .black
-        return label
-    }()
-    private lazy var appsTableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(AppCell.self, forCellReuseIdentifier: AppCell.identifier)
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
-        tableView.allowsMultipleSelection = true
-        tableView.delegate = self
-        tableView.dataSource = self
-        return tableView
-    }()
 
     var interactor: RoutineDetailsInteractor?
-
-    let dataSource = [
-        App(icon: UIImage(named: "zap") ?? UIImage(), applicationName: "WhatsApp"),
-        App(icon: UIImage(named: "insta") ?? UIImage(), applicationName: "Instagram"),
-        App(icon: UIImage(named: "telegram") ?? UIImage(), applicationName: "Telegram"),
-        App(icon: UIImage(named: "linkedin") ?? UIImage(), applicationName: "LinkedIn"),
-    ]
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -124,15 +98,15 @@ final class RoutineDetailsViewController: BaseViewController, RoutineDetailsView
 
         setupUI()
         setupViews()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editButton)
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editButton)
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        title = "Rotina editada"
-        descriptionLabel.text = "descrição editada"
-        navigationController?.navigationBar.backItem?.backButtonTitle = " "
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        title = "Rotina editada"
+//        descriptionLabel.text = "descrição editada"
+//        navigationController?.navigationBar.backItem?.backButtonTitle = " "
+//    }
 
     func setupUI() {
         title = interactor?.getTitle()
@@ -148,8 +122,6 @@ final class RoutineDetailsViewController: BaseViewController, RoutineDetailsView
         view.addSubview(descriptionLabel)
         view.addSubview(pomodoroStack)
         view.addSubview(soundStack)
-        view.addSubview(blockedAppsLabel)
-        view.addSubview(appsTableView)
         view.addSubview(startButton)
 
         view.bringSubviewToFront(editButton)
@@ -158,7 +130,6 @@ final class RoutineDetailsViewController: BaseViewController, RoutineDetailsView
             $0.top.equalToSuperview().offset(150)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().inset(16)
-            $0.height.width.equalTo(54)
         }
 
         startButton.snp.makeConstraints {
@@ -181,46 +152,6 @@ final class RoutineDetailsViewController: BaseViewController, RoutineDetailsView
             $0.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(42)
         }
-
-        blockedAppsLabel.snp.makeConstraints {
-            $0.top.equalTo(soundStack.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(60)
-        }
-
-        appsTableView.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(blockedAppsLabel.snp.bottom).offset(16)
-            $0.bottom.equalToSuperview()
-        }
-    }
-
-    func addShadow(view: UIView, shadowColor: CGColor = UIColor.black.cgColor, shadowOffset: CGSize = .zero, shadowOpacity: Float = 0.5, shadowRadius: CGFloat = 5.0) {
-        view.layer.shadowColor = shadowColor
-        view.layer.shadowOffset = shadowOffset
-        view.layer.shadowOpacity = shadowOpacity
-        view.layer.shadowRadius = shadowRadius
-        view.layer.masksToBounds = false
-        view.layer.cornerRadius = 12
-    }
-}
-
-extension RoutineDetailsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let app = self.dataSource[indexPath.row]
-        if let cell = tableView.dequeueReusableCell(withIdentifier: AppCell.identifier, for: indexPath) as? AppCell {
-            cell.setupCell(with: app)
-            cell.toggle.isHidden = true
-            return cell
-        }
-
-        return UITableViewCell()
     }
 }
 
