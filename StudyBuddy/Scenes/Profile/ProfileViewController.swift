@@ -20,7 +20,7 @@ protocol PictureSelectionDelegate {
 class ProfileViewController: BaseViewController, ProfileViewControlling, PictureSelectionDelegate {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Meu Perfil"
+        label.text = "Profile"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         return label
