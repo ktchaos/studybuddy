@@ -9,16 +9,16 @@ Study Buddy is an iOS application designed to help users manage their time and r
 **Screenshots**
 
 - ** Shielded App **
-![Screenshot 1](screenshots/blockedapp.png)
+![Screenshot 1](Screenshots/blockedapp.PNG)
 
 - ** Pomodoro **
-![Screenshot 2](screenshots/pomodoro.png)
+![Screenshot 2](Screenshots/pomodoro.PNG)
 
 - ** Profile **
-![Screenshot 3](screenshots/profile.png)
+![Screenshot 3](Screenshots/profile.PNG)
 
 - ** Routines **
-![Screenshot 4](screenshots/routines.png)
+![Screenshot 4](Screenshots/routines.PNG)
 
 ---
 
